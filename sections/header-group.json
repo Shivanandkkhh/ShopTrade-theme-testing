@@ -1,1 +1,53 @@
-{"name":"t:sections.header.name","type":"header","sections":{"announcement-bar":{"type":"announcement-bar","blocks":{"announcement-bar-0":{"type":"announcement","settings":{"text":"WELCOME TO OUR STORE","text_alignment":"center","color_scheme":"accent-1","link":""}}},"block_order":["announcement-bar-0"],"settings":{}},"header":{"type":"header","settings":{"color_scheme":"background-1","logo_position":"middle-left","menu":"main-menu","menu_type_desktop":"dropdown","sticky_header_type":"on-scroll-up","show_line_separator":false,"mobile_logo_position":"center","margin_bottom":0,"padding_top":20,"padding_bottom":20}}},"order":["announcement-bar","header"]}
+{
+  "name": "t:sections.header.name",
+  "type": "header",
+  "sections": {
+    "header": {
+      "type": "header",
+      "blocks": {
+        "18c4969a-71ed-46f3-9b2f-13c4b4e61a88": {
+          "type": "header",
+          "disabled": true,
+          "settings": {
+            "iconUrl": ""
+          }
+        },
+        "ba861610-334e-4e80-a437-2f95e0f3a63d": {
+          "type": "header",
+          "settings": {
+            "iconHeader": "shopify:\/\/shop_images\/register-14.png",
+            "iconUrl": ""
+          }
+        },
+        "48585db4-943e-41b9-88db-53f2ddd365eb": {
+          "type": "header",
+          "settings": {
+            "iconHeader": "shopify:\/\/shop_images\/shoping_cart.png",
+            "iconUrl": ""
+          }
+        }
+      },
+      "block_order": [
+        "18c4969a-71ed-46f3-9b2f-13c4b4e61a88",
+        "ba861610-334e-4e80-a437-2f95e0f3a63d",
+        "48585db4-943e-41b9-88db-53f2ddd365eb"
+      ],
+      "settings": {
+        "image_with_text_image": "shopify:\/\/shop_images\/try-some-new-logo.svg",
+        "logo_aligment": "row-reverse",
+        "Logo_visibility": "none",
+        "text_visibility": "visible",
+        "bgColor": "#ffffff",
+        "MenuColor": "#000000",
+        "MenuFontSize": 17,
+        "HeadingColor": "#000000",
+        "HeadingFontSize": 36,
+        "padTop": 5,
+        "padBtm": 5
+      }
+    }
+  },
+  "order": [
+    "header"
+  ]
+}

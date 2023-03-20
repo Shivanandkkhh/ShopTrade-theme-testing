@@ -1,0 +1,255 @@
+{% style %}
+  .logo-alignment {
+    flex-direction: {{ section.settings.logo_aligment }};
+  }
+  .shop {
+    flex-direction: {{ section.settings.logo_text_alignment }};
+  }
+  .shop h1{
+   display: {{ section.settings.text_visibility }};
+  }
+  .shop img{
+    display:{{ section.settings.Logo_visibility }};
+  }
+  .main-container{
+    background-color: {{ section.settings.bgColor }};
+  }
+  .shopname{
+    font-size: {{ section.settings.HeadingFontSize }}px;
+    color: {{ section.settings.HeadingColor }};
+  }
+
+  .main2{
+    padding-top: {{ section.settings.padTop }}px;
+    padding-bottom: {{ section.settings.padBtm }}px;
+  }
+
+{% endstyle %}
+<div class="main-container">
+  <div class="wrapper">
+    <div class="main2 ">
+      <div class="logo-alignment">
+        {% comment %} store name {% endcomment %}
+        <div class="logo-desk-mob m child child1">
+          <div class="shop"> 
+            <h1 class="shopname">
+              {{ shop.name }} 
+              {% comment %} {{ section.settings.storename }} {% endcomment %}
+            </h1>
+            <img
+              class="shopname"
+              src="{{ section.settings.image_with_text_image | img_url }}" 
+              alt="">
+          </div>
+          
+        </div>
+        {% comment %} navigation menu {% endcomment %}
+        <nav class="nav-items m child child2" id="panel">
+          {% for link in linklists['main-menu'].links %}
+            {% if link.links != blank %}
+              {% assign link_handle = link.handle %}
+              <div class="links">
+                <button class="childLink-btn">
+                  {{ link.title }}
+                  {% render 'icon-dropdown' %}
+                </button>
+                    <div class="childLinks">
+                      {% for childlink in link.links %}
+                        {% if childlink.links != blank %}
+                          {% assign childlink_handle = childlink.handle %}
+                          <div class="links2">
+                            <button class="grandchildLink-btn">
+                              {{ childlink.title }}
+                              {% render 'icon-dropdown' %}
+                            </button>
+                                <div class="grandchildLinks">
+                                  {% for grandchildlink in childlink.links %}
+                                    <a href="{{ grandchildlink.url }}">
+                                      <div class="GrandChilds">
+                                        <p>
+                                          {{ grandchildlink.title }}
+                                        </p>
+                                      </div>
+                                    </a>
+                                  {% endfor %}
+                                </div>
+                          </div>
+                        {% else %}
+                          <a href="{{ childlink.url }}">
+                            <div>
+                              <p>
+                                {{ childlink.title }}
+                              </p>
+                            </div>
+                          </a>
+                        {% endif %}
+                      {% endfor %}
+                    </div>
+              </div>
+            {% else %}
+              <div class="nav-links">
+                <a style="color: {{ section.settings.MenuColor }}; font-size:{{ section.settings.MenuFontSize }}px;" href="{{ link.url }}">{{ link.title }}</a>
+              </div>
+            {% endif %}
+          {% endfor %}
+        </nav>
+      </div>
+      {% for block in section.blocks %}
+      <div class="nav-links-icons m child child3">
+        <a href="{{ block.settings.iconUrl }}">
+          <img src="{{ block.settings.iconHeader | img_url }}" alt="">
+        </a>
+      {% endfor %}
+      <div class="btnDiv">
+            <button class="btn">
+              {% render 'icon-menu' %}
+            </button>
+          </div> 
+      </div>
+    </div> 
+    </div>
+  </div>
+  </div>
+
+{% schema %}
+  {
+    "name": "Header",
+    "settings": [
+        {
+        "type": "header",
+        "content": "Logo"
+      },
+      {
+        "type": "image_picker",
+        "id": "image_with_text_image",
+        "label": "Image"
+      }, {
+        "type": "radio",
+        "id": "logo_aligment",
+        "label": "Logo alignment",
+        "options": [
+          {
+            "value": "row",
+            "label": "Left"
+          }, {
+            "value": "row-reverse",
+            "label": "Centered"
+          }
+        ],
+        "default": "row-reverse"
+      },  {
+        "type": "radio",
+        "id": "Logo_visibility",
+        "label": "Logo alignment",
+        "options": [
+          {
+            "value": "block",
+            "label": "Show Logo"
+          }, {
+            "value": "none",
+            "label": "Hidden Logo" 
+          }
+        ],
+        "default": "block"
+      },{
+        "type": "radio",
+        "id": "text_visibility",
+        "label": "Logo alignment",
+        "options": [
+          {
+            "value": "block",
+            "label": "Show Text"
+          }, {
+            "value": "none",
+            "label": "Hide Text"
+          }
+        ],
+        "default": "block"
+      },
+      {
+          "type": "color",
+          "id": "bgColor",
+          "label": "Header Background color",
+          "default": "#fff"
+        },
+      {
+          "type": "color",
+          "id": "MenuColor",
+          "label": "Menu color",
+          "default": "#000"
+        },
+        {
+          "type": "range",
+          "id": "MenuFontSize",
+          "min": 10,
+          "max": 100,
+          "step": 1,
+          "unit": "px",
+          "label": "Font size",
+          "default": 16
+        },
+      {
+          "type": "color",
+          "id": "HeadingColor",
+          "label": "Store Name color",
+          "default": "#000"
+        },
+        {
+          "type": "range",
+          "id": "HeadingFontSize",
+          "min": 10,
+          "max": 100,
+          "step": 1,
+          "unit": "px",
+          "label": "Store name font-size",
+          "default": 30
+        },
+        {
+          "type": "range",
+          "id": "padTop",
+          "min": 1,
+          "max": 100,
+          "step": 1,
+          "unit": "px",
+          "label": "Header Padding top",
+          "default": 5
+        },
+        {
+          "type": "range",
+          "id": "padBtm",
+          "min": 1,
+          "max": 100,
+          "step": 1,
+          "unit": "px",
+          "label": "Header Padding bottom",
+          "default": 5
+        }
+        
+
+    ],
+    "blocks": [
+      {
+        "name": "headerBlock",
+        "type": "header",
+        "settings": [
+        {
+          "type": "image_picker",
+          "id": "iconHeader",
+          "label": "Image"
+        },
+        {
+          "type": "url",
+          "id": "iconUrl",
+          "label": "Enter a url for icon"
+        }
+        ]
+      }
+    ],
+    "presets": [
+      {
+        "name": "Header"
+      }
+    ]
+
+  }
+{% endschema %}
