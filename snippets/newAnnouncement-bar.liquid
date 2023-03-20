@@ -1,0 +1,24 @@
+{% for block in section.blocks %}
+  {% case block.type %}
+    {% when 'anoun-bar' %}
+    <div>
+      {% if block.settings.text != blank %}
+        {% if block.settings.link != blank %}
+          <a href="" class="">
+          {% endif %}
+          <div>
+            <p>
+              <span></span>
+              {% if block.settings.link != blank %}
+                {% render 'icon-arrow' %}
+              {% endif %}
+            </p>
+          </div>
+        </a>
+
+
+      {% endif %}
+    </div>
+
+  {% endcase %}
+{% endfor %}

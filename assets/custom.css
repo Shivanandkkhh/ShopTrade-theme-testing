@@ -1,0 +1,291 @@
+body {
+    background-color: #e0dede !important;
+    overflow: hidden;
+}
+ 
+.image-with-text,
+.color-background-1,
+.newsletter {
+    visibility: hidden;
+}
+
+.main-container {
+    background-color: rgb(243, 237, 237);
+    position: relative;
+}
+
+.wrapper {
+ max-width: 1024px;
+ margin: 0 auto;
+   /* padding: 1rem; */
+}
+
+.main2 {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    padding-top: 1.5rem;
+    padding-bottom: 1.5rem;
+    width: 100%;
+    /* border-bottom:1px solid black; */
+}
+/* .child:nth-child(1) {
+    order: 2; 
+  }
+  
+  .child:nth-child(2) {
+    order: 3; 
+    flex: 0 0 auto;
+  }
+  
+  .child:nth-child(3) {
+    order: 1; 
+  }  */
+ 
+
+.shop {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+}
+
+.logo-alignment {
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    width: 70%;
+} 
+
+.shopname {
+    padding: 0 2rem;
+}
+
+.btnDiv {
+    display: none;
+}
+
+.nav-items {
+    display: flex;
+}
+
+.nav-links a {
+    color: #000;
+    margin: 0 10px;
+    text-decoration: none;
+}
+.links{
+    display: flex;
+    align-items: center;
+    /* justify-content: center; */
+    margin-bottom: 5px;
+    position: relative;
+}
+.childLinks{
+    display: none;
+   
+}
+.links button {
+    border: none;
+    color: #000;
+    background: none;
+    font-size: 17px;
+}
+.links:hover .childLinks{
+    position: absolute;
+    top: 2.7rem;
+    max-width: 160px;
+    left: 0;
+    padding: 0  2rem 2rem 2rem ;
+    background-color: #fff;
+    display: block;
+    box-shadow: 0px 0px 5px 5px #888888;
+}
+
+.links:hover svg{
+    /* transform: rotate(180deg);
+    transition: 0.70s;  */
+}
+  .childLinks p{
+    color:#000;
+  }
+  .childLinks a{
+    text-decoration: none;
+  }
+  .childLinks a:hover{
+    text-decoration: underline;
+  }
+  .links svg{
+    height: 2rem;
+    width: 2rem;
+  }
+.icons {
+    width: 10%;
+}
+.AnnounceText{
+    text-decoration: none;
+} 
+.marquee {
+    overflow: hidden;
+    white-space: nowrap;
+  animation-iteration-count: infinite;
+} 
+
+@keyframes marquee {
+    0% { transform: translateX(100%); }
+    100% { transform: translateX(-100%); }
+}
+.nav-links-icons{
+    display: flex;
+    padding: 0 10px;
+    align-items: center;
+    justify-content: space-between;
+}
+.nav-links-icons a{
+    height: 20px;
+}
+.nav-links-icons a img{
+    width: 100%;
+    height: 100%;
+    object-fit: contain;
+}
+.nav-links a:hover{
+   text-decoration: underline;
+}
+.grandchildLink-btn{
+    display: flex;
+}
+
+.GrandChilds {
+    display: none;
+    padding: 0 1rem;
+    /* width: 200px; */
+    background-color: #fff;
+}
+.links2 button{
+    padding: 10px 0;
+}
+.links{
+    transition: display 1s ease;;
+}
+.links2:hover .GrandChilds{
+    display: block; 
+}
+.links2:hover svg{ 
+    transform: rotate(180deg);
+    transition: 0.60s;
+}
+.links2 button:hover{
+    text-decoration: underline;
+}
+.GrandChilds p:hover{
+    text-decoration: underline;
+}
+
+@media screen and (min-width:768px) {
+    .main2 {
+        /* justify-content: flex-start; */
+        /* margin-left: 2.5rem;  */
+    }
+
+}
+@media screen and (min-width:2100px) {
+    .logo-alignment{
+        width: 61%;
+    }
+    
+}
+@media screen and (min-width:1440px) and (max-width:2099px) {
+    .logo-alignment{
+        width: 68%;
+    }
+    
+}
+
+@media screen and (max-width:1200px) {
+    .logo-alignment {
+        width: 70%;
+    }
+
+    .shopname {
+        font-size: 40px;
+    }
+
+}
+
+@media screen and (max-width:991px) {
+    .logo-alignment {
+        width: 80%;
+    }
+}
+
+@media screen and (max-width:833px) {
+    .shopname {
+        font-size: 30px;
+    }
+
+    .icons {
+        width: 11%;
+    }
+}
+
+@media screen and (max-width:767px) {
+    .btnDiv {
+        display: inline-block;
+        padding-left: 20px;
+    }
+    
+
+
+    #panel {
+        display: none;
+        position: absolute;
+        top: 0;
+        right: 0;
+        width: 200px;
+        height: 100%;
+        background-color: #fff;
+        height: 100vh;
+        color: #000; 
+        z-index: 9;
+        transition: transform 2s ease-in-out;
+        transform: translateX(100%);
+      }
+      
+      #panel.show {
+        display: block;
+        top: 100%;
+        transform: translateX(0);
+      }
+
+    .icons {
+        width: unset;
+    }
+
+    .logo-alignment {
+        width: unset;
+        display: unset;
+        flex: unset !important;
+        flex-direction: unset;
+    }
+
+    
+    .logo-desk-mob {
+        display: flex;
+        align-items: center;
+        justify-content: space-between;
+    }
+    .GrandChilds{
+       left: -140px;
+        right: 80%;
+        /* margin-right: 20px;  */
+        /* top: 100%; */
+    }
+
+}
+
+@media screen and (max-width:520px) {
+    .shopname {
+        font-size: 25px;
+        padding: 0 1rem;
+    }
+} 
