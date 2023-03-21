@@ -14,8 +14,8 @@ body {
     position: relative;
 }
 
-.wrapper {
- max-width: 1024px;
+.wrapper { 
+ max-width: 1290px;
  margin: 0 auto;
    /* padding: 1rem; */
 }
@@ -27,21 +27,8 @@ body {
     padding-top: 1.5rem;
     padding-bottom: 1.5rem;
     width: 100%;
-    /* border-bottom:1px solid black; */
 }
-/* .child:nth-child(1) {
-    order: 2; 
-  }
-  
-  .child:nth-child(2) {
-    order: 3; 
-    flex: 0 0 auto;
-  }
-  
-  .child:nth-child(3) {
-    order: 1; 
-  }  */
- 
+
 
 .shop {
     display: flex;
@@ -53,11 +40,17 @@ body {
     display: flex;
     align-items: center;
     justify-content: space-between;
-    width: 70%;
+    width: 63%;
 } 
 
 .shopname {
     padding: 0 2rem;
+    transition: all 1s ease;
+}
+.shopname:hover{
+    text-decoration: underline #000;
+    cursor: pointer;
+    
 }
 
 .btnDiv {
@@ -180,7 +173,6 @@ body {
 .GrandChilds p:hover{
     text-decoration: underline;
 }
-
 @media screen and (min-width:768px) {
     .main2 {
         /* justify-content: flex-start; */
@@ -213,9 +205,7 @@ body {
 }
 
 @media screen and (max-width:991px) {
-    .logo-alignment {
-        width: 80%;
-    }
+   
 }
 
 @media screen and (max-width:833px) {
@@ -225,6 +215,9 @@ body {
 
     .icons {
         width: 11%;
+    }
+    .logo-alignment {
+        width: 80%;
     }
 }
 
@@ -285,7 +278,7 @@ body {
 
 @media screen and (max-width:520px) {
     .shopname {
-        font-size: 25px;
+        font-size: 25px !important;
         padding: 0 1rem;
     }
 } 
