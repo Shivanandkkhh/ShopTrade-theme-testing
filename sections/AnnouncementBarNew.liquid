@@ -1,0 +1,161 @@
+{% for block in section.blocks %}
+  {% case block.type %}
+    {% when 'announcement' %}
+    <div>
+      {% if block.settings.text != blank %}
+        {% if block.settings.link != blank %}
+          <a class="AnnounceText" href="{{ block.settings.link }}" class=""> 
+        {% endif %}
+          <div style="background: {{ block.settings.backgroundColor }}; padding-top:{{ block.settings.top_padding }}px; padding-bottom:{{ block.settings.btm_padding }}px; border-bottom: 1px solid #000;">
+            <p class="marquee" style="text-align: {{ block.settings.vertical_alignment }}; animation-name: {{ block.settings.aniName }}; animation-duration: {{ block.settings.aniduarion }}s; animation-timing-function: {{ block.settings.aniTimeFunction }};"> 
+              <span  style="color: {{ block.settings.TextColor }} ; font-size: {{ block.settings.font_size }}px;">{{ block.settings.text }}</span>
+              {% if block.settings.link != blank %}
+                {% render 'icon-arrow' %}
+              {% endif %} 
+            </p>
+          </div>
+        </a>
+      {% endif %}
+    </div>
+  {% endcase %}
+{% endfor %} 
+
+{% schema %}
+{
+  "name": "announcement",
+  "max_blocks": 5,
+  "blocks": [
+    {
+      "type": "announcement",
+      "name": "announcement bar",
+      "settings": [
+        {
+          "type": "text",
+          "id": "text",
+          "default": "Hello",
+          "label": "Enter announcement text"
+        },
+        {
+          "type": "select",
+          "id": "vertical_alignment",
+          "label": "Vertical alignment",
+          "options": [
+            {
+              "value": "left",
+              "label": "left"
+            },
+            {
+              "value": "center",
+              "label": "Middle"
+            },
+            {
+              "value": "right",
+              "label": "right"
+            }
+          ],
+          "default": "center"
+        },
+        {
+          "type": "color",
+          "id": "TextColor",
+          "label": "Text color",
+          "default": "#000"
+        },
+        {
+          "type": "color",
+          "id": "backgroundColor",
+          "label": "Background color",
+          "default": "#fff"
+        },{
+          "type": "range",
+          "id": "font_size",
+          "min": 10,
+          "max": 100,
+          "step": 1,
+          "unit": "px",
+          "label": "Font size",
+          "default": 16
+        },
+        {
+          "type": "url",
+          "id": "link",
+          "label": "Text link"
+        },
+        {
+          "type": "select",
+          "id": "aniName",
+          "label": "Sliding Announcement Bar",
+          "options": [
+            {
+              "value": "marquee",
+              "label": "Enable sliding"
+            },
+            {
+              "value": "middle",
+              "label": "Disible sliding"
+            }
+          ],
+          "default": "marquee"
+        },
+        {
+          "type": "select",
+          "id": "aniTimeFunction",
+          "label": "Sliding type",
+          "options": [
+            {
+              "value": "linear",
+              "label": "linear"
+            },
+            {
+              "value": "ease",
+              "label": "ease"
+            },
+            {
+              "value": "ease-in",
+              "label": "ease-in"
+            },
+            {
+              "value": "ease-out",
+              "label": "ease-out"
+            }
+          ],
+          "default": "linear"
+        },{
+          "type": "range",
+          "id": "aniduarion",
+          "min": 10,
+          "max": 100,
+          "step": 1,
+          "unit": "s",
+          "label": "Animation duration",
+          "default": 16
+        },{
+          "type": "range",
+          "id": "top_padding",
+          "min": 1,
+          "max": 100,
+          "step": 1,
+          "unit": "px",
+          "label": "Bar top padding",
+          "default": 2
+        },{
+          "type": "range",
+          "id": "btm_padding",
+          "min": 1,
+          "max": 100,
+          "step": 1,
+          "unit": "px",
+          "label": "Bar Bottom padding",
+          "default": 2
+        }
+       
+      ]
+    }
+  ],
+  "presets": [
+    {
+      "name": "announcement"
+    }
+  ]
+}
+{% endschema %}
