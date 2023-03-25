@@ -30,10 +30,11 @@
     <div class="main2 ">
       <div class="logo-alignment">
         {% comment %} store name {% endcomment %}
-        <div class="logo-desk-mob m child child1">
+        <div class="logo-desk-mob m child1">
           <div class="shop"> 
             <h1 class="shopname">
-              {{ shop.name }} 
+             <a  href = "#"> 
+              {{ shop.name }} </a> 
               {% comment %} {{ section.settings.storename }} {% endcomment %}
             </h1>
             <img
@@ -44,7 +45,7 @@
           
         </div>
         {% comment %} navigation menu {% endcomment %}
-        <nav class="nav-items m child child2" id="panel">
+        <nav class="nav-items" id="panel">
           {% for link in linklists['main-menu'].links %}
             {% if link.links != blank %}
               {% assign link_handle = link.handle %}
@@ -95,7 +96,7 @@
         </nav>
       </div>
       {% for block in section.blocks %}
-      <div class="nav-links-icons m child child3">
+      <div class="nav-links-icons">
         <a href="{{ block.settings.iconUrl }}">
           <img src="{{ block.settings.iconHeader | img_url }}" alt="">
         </a>
@@ -104,12 +105,10 @@
             <button class="btn">
               {% render 'icon-menu' %}
             </button>
-          </div> 
-      </div>
-    </div> 
+      </div> 
     </div>
-  </div>
-  </div>
+  </div> 
+</div>
 
 {% schema %}
   {

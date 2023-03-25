@@ -45,12 +45,14 @@ body {
 
 .shopname {
     padding: 0 2rem;
-    transition: all 1s ease;
 }
+.shopname a{
+    color: #000;
+    text-decoration: none;
+}
+
 .shopname:hover{
-    text-decoration: underline #000;
     cursor: pointer;
-    
 }
 
 .btnDiv {
