@@ -1,0 +1,253 @@
+$color_1: #000;
+$background-color_1: #e0dede;
+$background-color_2: rgb(243, 237, 237);
+$background-color_3: #fff;
+
+@keyframes marquee {
+	0% {
+		transform: translateX(100%);
+	}
+	100% {
+		transform: translateX(-100%);
+	}
+}
+/* The below code from scss */
+/*# sourceMappingURL=custom.css.map */
+body {
+	background-color: $background-color_1 !important;
+	overflow: hidden;
+}
+.image-with-text {
+	visibility: hidden;
+}
+.color-background-1 {
+	visibility: hidden;
+}
+.newsletter {
+	visibility: hidden;
+}
+.main-container {
+	background-color: $background-color_2;
+	position: relative;
+}
+.wrapper {
+	max-width: 1340px;
+	margin: 0 auto;
+	padding: 0 1rem;
+}
+.main2 {
+	display: flex;
+	justify-content: space-between;
+	align-items: center;
+	padding-top: 1.5rem;
+	padding-bottom: 1.5rem;
+	width: 100%;
+}
+.shop {
+	display: flex;
+	align-items: center;
+	justify-content: center;
+}
+.logo-alignment {
+	display: flex;
+	align-items: center;
+	justify-content: space-between;
+	width: 63%;
+}
+.shopname {
+	padding: 0 2rem;
+	transition: all 1s ease;
+	&:hover {
+		cursor: pointer;
+	}
+}
+.btnDiv {
+	display: none;
+}
+.nav-items {
+	display: flex;
+}
+.nav-links {
+	a {
+		color: $color_1;
+		margin: 0 10px;
+		text-decoration: none;
+		&:hover {
+			text-decoration: underline;
+		}
+	}
+}
+.links {
+	display: flex;
+	align-items: center;
+	margin-bottom: 5px;
+	position: relative;
+	transition: display 1s ease;
+	button {
+		border: none;
+		color: $color_1;
+		background: none;
+		font-size: 17px;
+	}
+	&:hover {
+		.childLinks {
+			position: absolute;
+			top: 2.7rem;
+			max-width: 160px;
+			left: 0;
+			padding: 0 2rem 2rem 2rem;
+			background-color: $background-color_3;
+			display: block;
+			box-shadow: 0px 0px 5px 5px #888888;
+		}
+	}
+	svg {
+		height: 2rem;
+		width: 2rem;
+	}
+}
+.childLinks {
+	display: none;
+	p {
+		color: $color_1;
+	}
+	a {
+		text-decoration: none;
+		&:hover {
+			text-decoration: underline;
+		}
+	}
+}
+.icons {
+	width: 10%;
+}
+.AnnounceText {
+	text-decoration: none;
+}
+.marquee {
+	overflow: hidden;
+	white-space: nowrap;
+	animation-iteration-count: infinite;
+}
+.nav-links-icons {
+	display: flex;
+	padding: 0 10px;
+	align-items: center;
+	justify-content: space-between;
+	a {
+		height: 20px;
+		img {
+			width: 100%;
+			height: 100%;
+			object-fit: contain;
+		}
+	}
+}
+.grandchildLink-btn {
+	display: flex;
+}
+.GrandChilds {
+	display: none;
+	padding: 0 1rem;
+	background-color: $background-color_3;
+	p {
+		&:hover {
+			text-decoration: underline;
+		}
+	}
+}
+.links2 {
+	button {
+		padding: 10px 0;
+		&:hover {
+			text-decoration: underline;
+		}
+	}
+	&:hover {
+		.GrandChilds {
+			display: block;
+		}
+		svg {
+			transform: rotate(180deg);
+			transition: 0.60s;
+		}
+	}
+}
+@media screen and (min-width:2100px) {
+	.logo-alignment {
+		width: 61%;
+	}
+}
+@media screen and (min-width:1440px) and (max-width:2099px) {
+	.logo-alignment {
+		width: 68%;
+	}
+}
+@media screen and (max-width:1200px) {
+	.logo-alignment {
+		width: 70%;
+	}
+	.shopname {
+		font-size: 40px;
+	}
+}
+@media screen and (max-width:833px) {
+	.shopname {
+		font-size: 30px;
+	}
+	.icons {
+		width: 11%;
+	}
+	.logo-alignment {
+		width: 80%;
+	}
+}
+@media screen and (max-width:767px) {
+	.btnDiv {
+		display: inline-block;
+		padding-left: 20px;
+	}
+	#panel {
+		display: none;
+		position: absolute;
+		top: 0;
+		right: 0;
+		width: 200px;
+		height: 100%;
+		background-color: $background-color_3;
+		height: 100vh;
+		color: $color_1;
+		z-index: 9;
+		transition: transform 2s ease-in-out;
+		transform: translateX(100%);
+	}
+	#panel.show {
+		display: block;
+		top: 100%;
+		transform: translateX(0);
+	}
+	.icons {
+		width: unset;
+	}
+	.logo-alignment {
+		width: unset;
+		display: unset;
+		flex: unset !important;
+		flex-direction: unset;
+	}
+	.logo-desk-mob {
+		display: flex;
+		align-items: center;
+		justify-content: space-between;
+	}
+	.GrandChilds {
+		left: -140px;
+		right: 80%;
+	}
+}
+@media screen and (max-width:520px) {
+	.shopname {
+		font-size: 25px !important;
+		padding: 0 1rem;
+	}
+}

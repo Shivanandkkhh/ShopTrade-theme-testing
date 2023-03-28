@@ -42,8 +42,8 @@
         "MenuFontSize": 17,
         "HeadingColor": "#000000",
         "HeadingFontSize": 36,
-        "padTop": 5,
-        "padBtm": 5
+        "padTop": 7,
+        "padBtm": 15
       }
     }
   },
