@@ -1,6 +1,7 @@
 {% style %}
   .imgText{
     background: {{ section.settings.section-bg-color }};
+    flex-direction: {{ section.settings.adj-img }};
   }
     .btn a{
       font-size:{{ section.settings.btn-font-size }}px;
@@ -21,7 +22,6 @@
   <div class="wrapper">
     <div class="imgText">
       <div class="imgs">
-        {% comment %} <img src="{{ section.settings.it-img }}" alt=""> {% endcomment %}
         <img src="{{ section.settings.it-img | img_url: 'master' }}" alt="">
       </div>
       <div class="text">
@@ -35,7 +35,11 @@
             </p>
           {% endfor %}
           <div class="btn">
-            <a href="{{ section.settings.shopurl }}">
+            {% assign link = section.settings.shopurl %}
+            {% if link == blank %}
+              {% assign link = shop.url %}
+            {% endif %}
+            <a href="{{ link }}">
               {{ section.settings['btn-text'] }}
             </a>
           </div>
@@ -54,6 +58,22 @@
       "id": "section-bg-color",
       "label": "Section BG color",
       "default": "#fff"
+    },
+    {
+      "type": "select",
+      "id": "adj-img",
+      "label": "img and text adjustement",
+      "options": [
+        {
+          "value": "row",
+          "label": "Image first"
+        },
+        {
+          "value": "row-reverse",
+          "label": "Text first"
+        }
+      ],
+      "default": "row"
     },
     {
       "type": "image_picker",

@@ -2,22 +2,31 @@
   0% {
     transform: translateX(100%);
   }
+
   100% {
     transform: translateX(-100%);
   }
 }
+
 /* The below code from scss */
 
 body {
   background-color: #e0dede !important;
 }
-h1, h2, h3, h4, h5, h6, p{
+
+h1,
+h2,
+h3,
+h4,
+h5,
+h6,
+p {
   margin: 0;
-	padding: 0;
-	border: 0;
-	font-size: 100%;
-	font: inherit;
-	vertical-align: baseline;
+  padding: 0;
+  border: 0;
+  font-size: 100%;
+  font: inherit;
+  vertical-align: baseline;
 }
 
 .image-with-text {
@@ -42,7 +51,6 @@ h1, h2, h3, h4, h5, h6, p{
   max-width: 1340px;
   margin: 0 auto;
   padding: 0 1rem;
-  
 }
 
 .main2 {
@@ -82,6 +90,7 @@ h1, h2, h3, h4, h5, h6, p{
   margin: 0 10px;
   text-decoration: none;
 }
+
 .nav-links a:hover {
   text-decoration: underline;
 }
@@ -93,12 +102,14 @@ h1, h2, h3, h4, h5, h6, p{
   position: relative;
   transition: display 1s ease;
 }
+
 .links button {
   border: none;
   color: #000;
   background: none;
   font-size: 17px;
 }
+
 .links:hover .childLinks {
   position: absolute;
   top: 2.7rem;
@@ -109,6 +120,7 @@ h1, h2, h3, h4, h5, h6, p{
   display: block;
   box-shadow: 0px 0px 5px 5px #888888;
 }
+
 .links svg {
   height: 2rem;
   width: 2rem;
@@ -117,12 +129,15 @@ h1, h2, h3, h4, h5, h6, p{
 .childLinks {
   display: none;
 }
+
 .childLinks p {
   color: #000;
 }
+
 .childLinks a {
   text-decoration: none;
 }
+
 .childLinks a:hover {
   text-decoration: underline;
 }
@@ -147,14 +162,16 @@ h1, h2, h3, h4, h5, h6, p{
   align-items: center;
   justify-content: space-between;
 }
+
 .nav-links-icons a {
   height: 20px;
 }
+
 .nav-links-icons a img {
   width: 100%;
   height: 100%;
   -o-object-fit: contain;
-     object-fit: contain;
+  object-fit: contain;
 }
 
 .grandchildLink-btn {
@@ -166,6 +183,7 @@ h1, h2, h3, h4, h5, h6, p{
   padding: 0 1rem;
   background-color: #fff;
 }
+
 .GrandChilds p:hover {
   text-decoration: underline;
 }
@@ -173,17 +191,21 @@ h1, h2, h3, h4, h5, h6, p{
 .links2 button {
   padding: 10px 0;
 }
+
 .links2 button:hover {
   text-decoration: underline;
 }
+
 .links2:hover .GrandChilds {
   display: block;
 }
+
 .links2:hover svg {
   transform: rotate(180deg);
   transition: 0.6s;
 }
-.img_and_text{
+
+.img_and_text {
   padding-top: 2rem;
 }
 
@@ -192,14 +214,17 @@ h1, h2, h3, h4, h5, h6, p{
   width: 100%;
   display: flex;
 }
+
 .img_and_text .wrapper .imgText .imgs {
   width: 50%;
 }
+
 .img_and_text .wrapper .imgText .imgs img {
   object-fit: cover;
   height: 100%;
   width: 100%;
 }
+
 .img_and_text .wrapper .imgText .text {
   padding: 0 1% 0 2%;
   width: 50%;
@@ -207,18 +232,24 @@ h1, h2, h3, h4, h5, h6, p{
   align-items: center;
   justify-content: center;
 }
-.img_and_text .wrapper .imgText .text .btn{
+
+.img_and_text .wrapper .imgText .text .btn {
   border: 2px solid #000;
   max-width: fit-content;
   margin-bottom: 2%;
 }
-.img_and_text .wrapper .imgText .text .btn:hover{
+
+.img_and_text .wrapper .imgText .text .btn:hover {
   padding-right: 5px;
   transition: all 0.3s ease;
 }
+
 .img_and_text .wrapper .imgText .text .btn a {
   text-decoration: none;
   max-width: fit-content;
+}
+.img_and_text .wrapper .imgText .text .btn a:hover {
+ text-decoration: underline;
 }
 
 @media screen and (min-width: 2100px) {
@@ -226,50 +257,62 @@ h1, h2, h3, h4, h5, h6, p{
     width: 61%;
   }
 }
+
 @media screen and (min-width: 1440px) and (max-width: 2099px) {
   .logo-alignment {
     width: 68%;
   }
 }
+
 @media screen and (max-width: 1200px) {
   .logo-alignment {
     width: 70%;
   }
+
   .shopname {
     font-size: 40px;
   }
 }
+
 @media screen and (max-width: 833px) {
   .shopname {
     font-size: 30px;
   }
+
   .icons {
     width: 11%;
   }
+
   .logo-alignment {
     width: 80%;
   }
 }
+
 @media screen and (max-width: 767px) {
   .btnDiv {
     display: inline-block;
     padding-left: 20px;
   }
-  .img_and_text .wrapper .imgText{
+
+  .img_and_text .wrapper .imgText {
     flex-direction: column;
   }
+
   .img_and_text .wrapper .imgText .imgs {
     width: 100%;
   }
+
   .img_and_text .wrapper .imgText .text {
     padding: 0 1%;
     text-align: center;
     width: 100%;
   }
+
   .img_and_text .wrapper .imgText .text .btn {
     margin: 0 auto;
     margin-bottom: 2%;
   }
+
   #panel {
     display: none;
     position: absolute;
@@ -284,33 +327,41 @@ h1, h2, h3, h4, h5, h6, p{
     transition: transform 2s ease-in-out;
     transform: translateX(100%);
   }
+
   #panel.show {
     display: block;
     top: 100%;
     transform: translateX(0);
   }
+
   .icons {
     width: unset;
   }
+
   .logo-alignment {
     width: unset;
     display: unset;
     flex: unset !important;
     flex-direction: unset;
   }
+
   .logo-desk-mob {
     display: flex;
     align-items: center;
     justify-content: space-between;
   }
+
   .GrandChilds {
     left: -140px;
     right: 80%;
   }
 }
+
 @media screen and (max-width: 520px) {
   .shopname {
     font-size: 25px !important;
     padding: 0 1rem;
   }
-}/*# sourceMappingURL=custom.css.map */
+}
+
+/*# sourceMappingURL=custom.css.map */
