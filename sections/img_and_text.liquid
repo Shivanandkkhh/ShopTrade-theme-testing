@@ -1,0 +1,177 @@
+{% style %}
+  .imgText{
+    background: {{ section.settings.section-bg-color }};
+  }
+    .btn a{
+      font-size:{{ section.settings.btn-font-size }}px;
+      color: {{ section.settings.btn-color }};
+      background-color: {{ section.settings.btn-bg-color }};
+      padding: {{ section.settings.btn-padding }}px;
+    }
+    @media screen and (max-width:767px){
+    .btn a{
+      font-size:{{ section.settings.Mbtn-font-size }}px;
+      padding: {{ section.settings.Mbtn-padding }}px;
+    }
+
+    }
+{% endstyle %}
+
+<div class="img_and_text">
+  <div class="wrapper">
+    <div class="imgText">
+      <div class="imgs">
+        {% comment %} <img src="{{ section.settings.it-img }}" alt=""> {% endcomment %}
+        <img src="{{ section.settings.it-img | img_url: 'master' }}" alt="">
+      </div>
+      <div class="text">
+        <div>
+          {% for block in section.blocks %}
+            <p
+              class="block-text"
+              style="font-size:{{ block.settings.font-size }}px; color:{{ block.settings.font-color }}; padding-top: {{ block.settings.text-padding-top }}px;  padding-bottom: {{ block.settings.text-padding-bottom }}px; "
+            >
+              {{ block.settings['it-text'] }}
+            </p>
+          {% endfor %}
+          <div class="btn">
+            <a href="{{ section.settings.shopurl }}">
+              {{ section.settings['btn-text'] }}
+            </a>
+          </div>
+        </div>
+      </div>
+    </div>
+  </div>
+</div>
+
+{% schema %}
+{
+  "name": "image_and_text",
+  "settings": [
+    {
+      "type": "color",
+      "id": "section-bg-color",
+      "label": "Section BG color",
+      "default": "#fff"
+    },
+    {
+      "type": "image_picker",
+      "id": "it-img",
+      "label": "Choose image"
+    },
+    {
+      "type": "text",
+      "id": "btn-text",
+      "label": "Button Text",
+      "default": "Shop Now"
+    },
+    {
+      "type": "url",
+      "id": "shopurl",
+      "label": "Enter link"
+    },
+    {
+      "type": "range",
+      "id": "btn-font-size",
+      "min": 12,
+      "max": 100,
+      "step": 1,
+      "unit": "px",
+      "label": "Font size Desktop",
+      "default": 24
+    },
+    {
+      "type": "range",
+      "id": "Mbtn-font-size",
+      "min": 12,
+      "max": 100,
+      "step": 1,
+      "unit": "px",
+      "label": "Font size Desktop",
+      "default": 24
+    },
+    {
+      "type": "range",
+      "id": "btn-padding",
+      "min": 1,
+      "max": 100,
+      "step": 1,
+      "unit": "px",
+      "label": "padding Desktop",
+      "default": 4
+    },
+    {
+      "type": "range",
+      "id": "Mbtn-padding",
+      "min": 1,
+      "max": 40,
+      "step": 1,
+      "unit": "px",
+      "label": "Padding Mobile",
+      "default": 2
+    },
+    {
+      "type": "color",
+      "id": "btn-color",
+      "label": "font color",
+      "default": "#000000"
+    }
+  ],
+  "blocks": [
+    {
+      "name": "image_and_text",
+      "type": "block",
+      "settings": [
+        {
+          "type": "text",
+          "id": "it-text",
+          "label": "Enter a text"
+        },
+        {
+          "type": "range",
+          "id": "font-size",
+          "min": 12,
+          "max": 100,
+          "step": 1,
+          "unit": "px",
+          "label": "Font size",
+          "default": 26
+        },
+        {
+          "type": "range",
+          "id": "text-padding-top",
+          "min": 1,
+          "max": 100,
+          "step": 1,
+          "unit": "px",
+          "label": "padding top",
+          "default": 4
+        },
+        {
+          "type": "range",
+          "id": "text-padding-bottom",
+          "min": 1,
+          "max": 40,
+          "step": 1,
+          "unit": "px",
+          "label": "Padding bottom",
+          "default": 2
+        },
+        {
+          "type": "color",
+          "id": "font-color",
+          "label": "font color",
+          "default": "#000000"
+        }
+      ]
+    }
+  ],
+
+  "presets": [
+    {
+      "name": "image_and_text"
+    }
+  ]
+}
+{% endschema %}
