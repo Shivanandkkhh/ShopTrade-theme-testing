@@ -39,54 +39,60 @@
     "87cb6542-755a-40fb-9309-5bfa2735dab2": {
       "type": "img_and_text",
       "blocks": {
-        "db7ba349-eb62-4ce6-bdbb-57388614d1d0": {
-          "type": "block",
+        "e74cbcac-6155-4aa9-9c7f-71b31fda449b": {
+          "type": "AddText",
           "settings": {
             "it-text": "Nature",
-            "font-size": 40,
-            "text-padding-top": 2,
-            "text-padding-bottom": 10,
-            "font-color": "#000000"
-          }
-        },
-        "ba97533c-a007-4ad8-8634-f2290c6ab8b4": {
-          "type": "block",
-          "settings": {
-            "it-text": "Image result for nature summary",
-            "font-size": 24,
-            "text-padding-top": 6,
+            "font-size": 32,
+            "text-padding-top": 4,
             "text-padding-bottom": 2,
             "font-color": "#000000"
           }
         },
-        "4e7869ad-b562-42c8-bedf-3ae3d299da07": {
-          "type": "block",
+        "99d6f8dc-8458-4af0-844c-37f6886c9876": {
+          "type": "AddText",
           "settings": {
-            "it-text": "“Nature” is an 1836 essay by the American philosopher and poet Ralph Waldo Emerson. Philosophical in scope, it lays out the tenets of Emerson's ideas about Transcendentalism, a movement that promoted the virtues of the natural world and the individual and regarded society and organized religion as corrupting forces.",
-            "font-size": 14,
-            "text-padding-top": 8,
-            "text-padding-bottom": 16,
+            "it-text": "Emerson lays out and attempts",
+            "font-size": 26,
+            "text-padding-top": 4,
+            "text-padding-bottom": 2,
             "font-color": "#000000"
+          }
+        },
+        "ff6ebe81-c3e8-43c4-91bd-e61550c541a7": {
+          "type": "AddText",
+          "settings": {
+            "it-text": "Emerson lays out and attempts to solve an abstract problem: that humans do not fully accept nature's beauty. He writes that people are distracted by the demands of the world, whereas nature gives but humans fail to reciprocate.",
+            "font-size": 15,
+            "text-padding-top": 4,
+            "text-padding-bottom": 10,
+            "font-color": "#000000"
+          }
+        },
+        "d7b77c68-4e20-41e3-bdf1-d07cacee68e1": {
+          "type": "Button",
+          "settings": {
+            "btn-text": "Shop now",
+            "shopurl": "shopify:\/\/collections",
+            "btn-font-size": 16,
+            "btn-padding": 17,
+            "border_color": "#1773b0",
+            "btn-color": "#1f1f21",
+            "btn-bg-color": "#fff9f9"
           }
         }
       },
       "block_order": [
-        "db7ba349-eb62-4ce6-bdbb-57388614d1d0",
-        "ba97533c-a007-4ad8-8634-f2290c6ab8b4",
-        "4e7869ad-b562-42c8-bedf-3ae3d299da07"
+        "e74cbcac-6155-4aa9-9c7f-71b31fda449b",
+        "99d6f8dc-8458-4af0-844c-37f6886c9876",
+        "ff6ebe81-c3e8-43c4-91bd-e61550c541a7",
+        "d7b77c68-4e20-41e3-bdf1-d07cacee68e1"
       ],
       "settings": {
         "section-bg-color": "#ffffff",
         "adj-img": "row",
         "M-adj-img": "column",
-        "it-img": "shopify:\/\/shop_images\/golden-autumn-leaves.jpg",
-        "btn-text": "Shop Now",
-        "shopurl": "shopify:\/\/collections",
-        "btn-font-size": 16,
-        "Mbtn-font-size": 16,
-        "btn-padding": 4,
-        "Mbtn-padding": 2,
-        "btn-color": "#000000"
+        "it-img": "shopify:\/\/shop_images\/golden-autumn-leaves.jpg"
       }
     }
   },
