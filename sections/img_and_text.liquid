@@ -54,18 +54,19 @@
 
 {% schema %}
 {
-  "name": "image_and_text",
+  "name": "t:sections.img_and_text.name",
+  "class": "section",
   "settings": [
     {
       "type": "color",
       "id": "section-bg-color",
-      "label": "Section BG color",
+      "label": "t:sections.img_and_text.settings.section-bg-color.label",
       "default": "#fff"
     },
     {
       "type": "select",
       "id": "adj-img",
-      "label": "img and text adjustement",
+      "label": "Adjust text and image",
       "options": [
         {
           "value": "row",
@@ -160,7 +161,7 @@
   ],
   "blocks": [
     {
-      "name": "image_and_text",
+      "name": "t:sections.image-with-text.blocks.heading.name",
       "type": "block",
       "settings": [
         {
@@ -210,7 +211,7 @@
 
   "presets": [
     {
-      "name": "image_and_text"
+      "name": "t:sections.Img_and_text.presets.name"
     }
   ]
 }
