@@ -113,9 +113,11 @@
       ],
       "settings": {
         "section-bg-color": "#ffffff",
+        "adj-img": "row",
+        "M-adj-img": "column",
         "it-img": "shopify:\/\/shop_images\/golden-autumn-leaves.jpg",
         "btn-text": "Shop Now",
-        "shopurl": "",
+        "shopurl": "shopify:\/\/collections",
         "btn-font-size": 16,
         "Mbtn-font-size": 16,
         "btn-padding": 4,
