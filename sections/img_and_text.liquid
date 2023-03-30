@@ -1,71 +1,89 @@
 {% style %}
-    .imgText{
-      background: {{ section.settings.section-bg-color }};
-      flex-direction: {{ section.settings.adj-img }};
-    }
-    /* .img_and_text .wrapper .imgText .text .btn {
-    border: 2px solid;
-  } */
-      /* .btn a{
-        font-size:{{ block.settings.btn-font-size }}px;
-        color: {{ block.settings.btn-color }};
-        background-color: {{ block.settings.btn-bg-color }};
-        padding: {{ block.settings.btn-padding }}px;
-      } */
-      @media screen and (max-width:767px){
-      /* .btn a{
-        font-size:{{ section.settings.Mbtn-font-size }}px;
-        padding: {{ section.settings.Mbtn-padding }}px;
-      } */
-      .imgText{
-        flex-direction: {{ section.settings.M-adj-img }} !important;
-      }
+  .it-container{
+    background-image: url('{{ section.settings.section_bg_img | img_url: width : 'master'}}');
+    background-repeat: no-repeat;
+  background-size: cover;
+  background-position: center;
+  height: 100%;
+  width: 100%;
+  }
 
+  .it-container .imgText .imgs img{
+    display:{{ section.settings.enable-img }};
+  }
+
+      .imgText{
+        width: 100%;
+        Height: 100%;
+        z-index: 2;
+        object-fit: cover;
+        flex-direction: {{ section.settings.adj-img }};
       }
+      /* .img_and_text .wrapper .imgText .text .btn {
+      border: 2px solid;
+    } */
+        /* .btn a{
+          font-size:{{ block.settings.btn-font-size }}px;
+          color: {{ block.settings.btn-color }};
+          background-color: {{ block.settings.btn-bg-color }};
+          padding: {{ block.settings.btn-padding }}px;
+        } */
+        @media screen and (max-width:767px){
+        /* .btn a{
+          font-size:{{ section.settings.Mbtn-font-size }}px;
+          padding: {{ section.settings.Mbtn-padding }}px;
+        } */
+        .imgText{
+          flex-direction: {{ section.settings.M-adj-img }} !important;
+        }
+
+        }
 {% endstyle %}
 
 <div class="img_and_text">
   <div class="wrapper">
-    <div class="imgText">
-      <div class="imgs">
-        <img src="{{ section.settings.it-img | img_url: 'master' }}" alt="">
-      </div>
-      <div class="text">
-        <div>
-          {% for block in section.blocks %}
-            {% case block.type %}
-              {% when 'AddText' %}
-                <p
-                  class="block-text"
-                  style="font-size:{{ block.settings.font-size }}px; color:{{ block.settings.font-color }}; padding-top: {{ block.settings.text-padding-top }}px;  padding-bottom: {{ block.settings.text-padding-bottom }}px; "
-                >
-                  {{ block.settings['it-text'] }}
-                </p>
-              {% when 'AddPara' %}
-                <p
-                  class="block-text-para"
-                  style="font-size:{{ block.settings.para-font-size }}px; color:{{ block.settings.para_font_color }}; padding-top: {{ block.settings.tpara-PD-top }}px;  padding-bottom: {{ block.settings.para-pad-btm }}px; "
-                >
-                  {{ block.settings['para-text'] }}
-                </p>
-              {% when 'Button' %}
-                <div
-                  class="btn"
-                  style="background-color: {{ block.settings.btn-bg-color }}; border:2px solid {{ block.settings.border_color }};"
-                >
-                  {% assign link = section.settings.shopurl %}
-                  {% if link == blank %}
-                    {% assign link = shop.url %}
-                  {% endif %}
-                  <a
-                    style="  font-size:{{ block.settings.btn-font-size }}px; color: {{ block.settings.btn-color }};   padding: {{ block.settings.btn-padding }}px;"
-                    href="{{ link }}"
+    <div class="it-container">
+      <div class="imgText" style="background: {{ section.settings.section_bg_color }};">
+        <div class="imgs">
+          <img src="{{ section.settings.it-img | img_url: 'master' }}" alt="">
+        </div>
+        <div class="text">
+          <div>
+            {% for block in section.blocks %}
+              {% case block.type %}
+                {% when 'AddText' %}
+                  <p
+                    class="block-text"
+                    style="font-size:{{ block.settings.font-size }}px; color:{{ block.settings.font-color }}; padding-top: {{ block.settings.text-padding-top }}px;  padding-bottom: {{ block.settings.text-padding-bottom }}px; "
                   >
-                    {{ block.settings['btn-text'] }}
-                  </a>
-                </div>
-            {% endcase %}
-          {% endfor %}
+                    {{ block.settings['it-text'] }}
+                  </p>
+                {% when 'AddPara' %}
+                  <p
+                    class="block-text-para"
+                    style="font-size:{{ block.settings.para-font-size }}px; color:{{ block.settings.para_font_color }}; padding-top: {{ block.settings.tpara-PD-top }}px;  padding-bottom: {{ block.settings.para-pad-btm }}px; "
+                  >
+                    {{ block.settings['para-text'] }}
+                  </p>
+                {% when 'Button' %}
+                  <div
+                    class="btn"
+                    style="background-color: {{ block.settings.btn-bg-color }}; border:2px solid {{ block.settings.border_color }};"
+                  >
+                    {% assign link = section.settings.shopurl %}
+                    {% if link == blank %}
+                      {% assign link = shop.url %}
+                    {% endif %}
+                    <a
+                      style="  font-size:{{ block.settings.btn-font-size }}px; color: {{ block.settings.btn-color }};   padding: {{ block.settings.btn-padding }}px;"
+                      href="{{ link }}"
+                    >
+                      {{ block.settings['btn-text'] }}
+                    </a>
+                  </div>
+              {% endcase %}
+            {% endfor %}
+          </div>
         </div>
       </div>
     </div>
@@ -78,11 +96,15 @@
   "class": "section",
   "settings": [
     {
-      "type": "color",
-      "id": "section-bg-color",
-      "label": "t:sections.img_and_text.settings.section-bg-color.label",
-      "default": "#fff"
+      "type": "image_picker",
+      "id": "section_bg_img",
+      "label": "Select a background Image"
     },
+    // {
+    //   "type": "color",
+    //   "id": "section_bg_color",
+    //   "label": "Select a background color"
+    // },
     {
       "type": "select",
       "id": "adj-img",
@@ -120,6 +142,22 @@
       "type": "image_picker",
       "id": "it-img",
       "label": "Choose image"
+    },
+    {
+      "type": "select",
+      "id": "enable-img",
+      "label": "Image visibility",
+      "options": [
+        {
+          "value": "block",
+          "label": "Visible"
+        },
+        {
+          "value": "none",
+          "label": "Hide"
+        }
+      ],
+      "default": "block"
     }
   ],
   "blocks": [

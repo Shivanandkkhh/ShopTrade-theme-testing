@@ -46,7 +46,7 @@
             "font-size": 32,
             "text-padding-top": 4,
             "text-padding-bottom": 2,
-            "font-color": "#000000"
+            "font-color": "#ffffff"
           }
         },
         "99d6f8dc-8458-4af0-844c-37f6886c9876": {
@@ -56,7 +56,7 @@
             "font-size": 26,
             "text-padding-top": 4,
             "text-padding-bottom": 2,
-            "font-color": "#000000"
+            "font-color": "#ffffff"
           }
         },
         "ff6ebe81-c3e8-43c4-91bd-e61550c541a7": {
@@ -66,7 +66,7 @@
             "font-size": 15,
             "text-padding-top": 4,
             "text-padding-bottom": 10,
-            "font-color": "#000000"
+            "font-color": "#ffffff"
           }
         },
         "d7b77c68-4e20-41e3-bdf1-d07cacee68e1": {
@@ -89,10 +89,11 @@
         "d7b77c68-4e20-41e3-bdf1-d07cacee68e1"
       ],
       "settings": {
-        "section-bg-color": "#ffffff",
+        "section_bg_img": "shopify:\/\/shop_images\/self-serve-coffee-shop.jpg",
         "adj-img": "row",
         "M-adj-img": "column",
-        "it-img": "shopify:\/\/shop_images\/golden-autumn-leaves.jpg"
+        "it-img": "shopify:\/\/shop_images\/golden-autumn-leaves.jpg",
+        "enable-img": "block"
       }
     }
   },
