@@ -1,43 +1,69 @@
 {% style %}
-  .imgText{
-    background: {{ section.settings.section-bg-color }};
+  .it-container{
+    background-image: url('{{ section.settings.section_bg_img | img_url: width : 'master'}}');
+   
   }
-    .btn a{
-      font-size:{{ section.settings.btn-font-size }}px;
-      color: {{ section.settings.btn-color }};
-      background-color: {{ section.settings.btn-bg-color }};
-      padding: {{ section.settings.btn-padding }}px;
-    }
-    @media screen and (max-width:767px){
-    .btn a{
-      font-size:{{ section.settings.Mbtn-font-size }}px;
-      padding: {{ section.settings.Mbtn-padding }}px;
-    }
 
-    }
+  .it-container .imgText .imgs img{
+    display:{{ section.settings.enable-img }};
+  }
+
+      .imgText{
+        flex-direction: {{ section.settings.adj-img }};
+      }
+   
+        @media screen and (max-width:767px){
+      
+        .imgText{
+          flex-direction: {{ section.settings.M-adj-img }} !important;
+        }
+
+        }
 {% endstyle %}
 
 <div class="img_and_text">
   <div class="wrapper">
-    <div class="imgText">
-      <div class="imgs">
-        {% comment %} <img src="{{ section.settings.it-img }}" alt=""> {% endcomment %}
-        <img src="{{ section.settings.it-img | img_url: 'master' }}" alt="">
-      </div>
-      <div class="text">
-        <div>
-          {% for block in section.blocks %}
-            <p
-              class="block-text"
-              style="font-size:{{ block.settings.font-size }}px; color:{{ block.settings.font-color }}; padding-top: {{ block.settings.text-padding-top }}px;  padding-bottom: {{ block.settings.text-padding-bottom }}px; "
-            >
-              {{ block.settings['it-text'] }}
-            </p>
-          {% endfor %}
-          <div class="btn">
-            <a href="{{ section.settings.shopurl }}">
-              {{ section.settings['btn-text'] }}
-            </a>
+    <div class="it-container">
+      <div class="imgText" style="background: {{ section.settings.section_bg_color }};">
+        <div class="imgs">
+          <img src="{{ section.settings.it-img | img_url: 'master' }}" alt="">
+        </div>
+        <div class="text">
+          <div>
+            {% for block in section.blocks %}
+              {% case block.type %}
+                {% when 'AddText' %}
+                  <p
+                    class="block-text"
+                    style="font-size:{{ block.settings.font-size }}px; color:{{ block.settings.font-color }}; padding-top: {{ block.settings.text-padding-top }}px;  padding-bottom: {{ block.settings.text-padding-bottom }}px; "
+                  >
+                    {{ block.settings['it-text'] }}
+                  </p>
+                {% when 'AddPara' %}
+                  <p
+                    class="block-text-para"
+                    style="font-size:{{ block.settings.para-font-size }}px; color:{{ block.settings.para_font_color }}; padding-top: {{ block.settings.tpara-PD-top }}px;  padding-bottom: {{ block.settings.para-pad-btm }}px; "
+                  >
+                    {{ block.settings['para-text'] }}
+                  </p>
+                {% when 'Button' %}
+                  <div
+                    class="btn"
+                    style="background-color: {{ block.settings.btn-bg-color }}; border:2px solid {{ block.settings.border_color }};"
+                  >
+                    {% assign link = section.settings.shopurl %}
+                    {% if link == blank %}
+                      {% assign link = shop.url %}
+                    {% endif %}
+                    <a
+                      style="  font-size:{{ block.settings.btn-font-size }}px; color: {{ block.settings.btn-color }};   padding: {{ block.settings.btn-padding }}px;"
+                      href="{{ link }}"
+                    >
+                      {{ block.settings['btn-text'] }}
+                    </a>
+                  </div>
+              {% endcase %}
+            {% endfor %}
           </div>
         </div>
       </div>
@@ -47,13 +73,51 @@
 
 {% schema %}
 {
-  "name": "image_and_text",
+  "name": "t:sections.img_and_text.name",
+  "class": "section",
   "settings": [
     {
-      "type": "color",
-      "id": "section-bg-color",
-      "label": "Section BG color",
-      "default": "#fff"
+      "type": "image_picker",
+      "id": "section_bg_img",
+      "label": "Select a background Image"
+    },
+    // {
+    //   "type": "color",
+    //   "id": "section_bg_color",
+    //   "label": "Select a background color"
+    // },
+    {
+      "type": "select",
+      "id": "adj-img",
+      "label": "Adjust text and image",
+      "options": [
+        {
+          "value": "row",
+          "label": "Image left"
+        },
+        {
+          "value": "row-reverse",
+          "label": "Text left"
+        }
+      ],
+      "default": "row"
+    },
+    {
+      "type": "select",
+      "id": "M-adj-img",
+      "label": "img and text adjustement Mobile",
+      "options": [
+        {
+          "value": "column",
+          "label": "Image Top"
+        },
+        {
+          "value": "column-reverse",
+          "label": "Text Top"
+        }
+      ],
+
+      "default": "column"
     },
     {
       "type": "image_picker",
@@ -61,67 +125,26 @@
       "label": "Choose image"
     },
     {
-      "type": "text",
-      "id": "btn-text",
-      "label": "Button Text",
-      "default": "Shop Now"
-    },
-    {
-      "type": "url",
-      "id": "shopurl",
-      "label": "Enter link"
-    },
-    {
-      "type": "range",
-      "id": "btn-font-size",
-      "min": 12,
-      "max": 100,
-      "step": 1,
-      "unit": "px",
-      "label": "Font size Desktop",
-      "default": 24
-    },
-    {
-      "type": "range",
-      "id": "Mbtn-font-size",
-      "min": 12,
-      "max": 100,
-      "step": 1,
-      "unit": "px",
-      "label": "Font size Desktop",
-      "default": 24
-    },
-    {
-      "type": "range",
-      "id": "btn-padding",
-      "min": 1,
-      "max": 100,
-      "step": 1,
-      "unit": "px",
-      "label": "padding Desktop",
-      "default": 4
-    },
-    {
-      "type": "range",
-      "id": "Mbtn-padding",
-      "min": 1,
-      "max": 40,
-      "step": 1,
-      "unit": "px",
-      "label": "Padding Mobile",
-      "default": 2
-    },
-    {
-      "type": "color",
-      "id": "btn-color",
-      "label": "font color",
-      "default": "#000000"
+      "type": "select",
+      "id": "enable-img",
+      "label": "Image visibility",
+      "options": [
+        {
+          "value": "block",
+          "label": "Visible"
+        },
+        {
+          "value": "none",
+          "label": "Hide"
+        }
+      ],
+      "default": "block"
     }
   ],
   "blocks": [
     {
-      "name": "image_and_text",
-      "type": "block",
+      "name": "AddText",
+      "type": "AddText",
       "settings": [
         {
           "type": "text",
@@ -165,12 +188,143 @@
           "default": "#000000"
         }
       ]
+    },
+    {
+      "name": "AddPara",
+      "type": "AddPara",
+      "settings": [
+        {
+          "type": "richtext",
+          "id": "para-text",
+          "label": "Enter a para"
+        },
+        {
+          "type": "range",
+          "id": "para-font-size",
+          "min": 12,
+          "max": 100,
+          "step": 1,
+          "unit": "px",
+          "label": "Font size",
+          "default": 26
+        },
+        {
+          "type": "range",
+          "id": "para-PD-top",
+          "min": 1,
+          "max": 100,
+          "step": 1,
+          "unit": "px",
+          "label": "padding top",
+          "default": 4
+        },
+        {
+          "type": "range",
+          "id": "para-pad-btm",
+          "min": 1,
+          "max": 40,
+          "step": 1,
+          "unit": "px",
+          "label": "Padding bottom",
+          "default": 2
+        },
+        {
+          "type": "range",
+          "id": "para-Line-h",
+          "min": 1,
+          "max": 100,
+          "step": 1,
+          "unit": "px",
+          "label": "Line Height",
+          "default": 2
+        },
+        {
+          "type": "color",
+          "id": "para_font_color",
+          "label": "font color",
+          "default": "#000000"
+        }
+      ]
+    },
+    {
+      "name": "Button",
+      "type": "Button",
+      "settings": [
+        {
+          "type": "text",
+          "id": "btn-text",
+          "label": "Button Text",
+          "default": "Shop Now"
+        },
+        {
+          "type": "url",
+          "id": "shopurl",
+          "label": "Enter link"
+        },
+        {
+          "type": "range",
+          "id": "btn-font-size",
+          "min": 12,
+          "max": 100,
+          "step": 1,
+          "unit": "px",
+          "label": " Button Font size",
+          "default": 24
+        },
+        // {
+        //   "type": "range",
+        //   "id": "Mbtn-font-size",
+        //   "min": 1,
+        //   "max": 100,
+        //   "step": 1,
+        //   "unit": "px",
+        //   "label": "Button Font size Desktop",
+        //   "default": 16
+        // },
+        {
+          "type": "range",
+          "id": "btn-padding",
+          "min": 1,
+          "max": 100,
+          "step": 1,
+          "unit": "px",
+          "label": "Button padding",
+          "default": 4
+        },
+        // {
+        //   "type": "range",
+        //   "id": "Mbtn-padding",
+        //   "min": 1,
+        //   "max": 40,
+        //   "step": 1,
+        //   "unit": "px",
+        //   "label": "Button Padding Mobile",
+        //   "default": 2
+        // },
+        {
+          "type": "color",
+          "id": "border_color",
+          "label": "Border Color",
+          "default": "#000000"
+        },
+        {
+          "type": "color",
+          "id": "btn-color",
+          "label": "font color",
+          "default": "#000000"
+        },
+        {
+          "type": "color",
+          "id": "btn-bg-color",
+          "label": "Background color"
+        }
+      ]
     }
   ],
 
   "presets": [
     {
-      "name": "image_and_text"
+      "name": "t:sections.Img_and_text.presets.name"
     }
   ]
 }

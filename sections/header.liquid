@@ -94,17 +94,27 @@
           {% endfor %}
         </nav>
       </div>
-      {% for block in section.blocks %}
+      
       <div class="nav-links-icons m child child3">
-        <a href="{{ block.settings.iconUrl }}">
-          <img src="{{ block.settings.iconHeader | img_url }}" alt="">
-        </a> 
-      {% endfor %}
-      <div class="btnDiv">
-            <button class="btn">
-              {% render 'icon-menu' %}
-            </button>
-          </div> 
+          {% for block in section.blocks %}
+            {% case block.type %}
+              {% when 'Account' %}
+                <a class="account" href="{{ block.settings.iconUrl }}">
+                  <img src="{{ block.settings.iconHeader | img_url }}" alt="">
+                </a> 
+              {% when 'Cart' %}
+                <a href=""> 
+                  <img  class="cart" src="{{ block.settings.iconHeaders | img_url }}" alt="">
+                </a> 
+          {% endcase %}
+          {% endfor %}
+        </div>
+        <div class="btnDiv">
+              <button class="btn">
+                {% render 'icon-menu' %}
+              </button>
+            </div> 
+        </div>
       </div>
     </div> 
     </div>
@@ -224,13 +234,12 @@
           "label": "Header Padding bottom",
           "default": 5
         }
-        
-
     ],
+    "max_blocks":2,
     "blocks": [
       {
-        "name": "headerBlock",
-        "type": "header",
+        "name": "Account",
+        "type": "Account",
         "settings": [
         {
           "type": "image_picker",
@@ -240,6 +249,21 @@
         {
           "type": "url",
           "id": "iconUrl",
+          "label": "Enter a url for icon"
+        }
+      ]
+      },{
+        "name": "Cart",
+        "type": "Cart",
+        "settings": [
+        {
+          "type": "image_picker",
+          "id": "iconHeaders",
+          "label": "Image"
+        },
+        {
+          "type": "url",
+          "id": "iconUrls",
           "label": "Enter a url for icon"
         }
         ]
