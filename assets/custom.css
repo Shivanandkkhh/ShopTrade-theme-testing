@@ -165,6 +165,7 @@ p {
 
 .nav-links-icons a {
   height: 20px;
+  padding: 0 5px;
 }
 
 .nav-links-icons a img {
@@ -251,6 +252,19 @@ p {
   text-decoration: none;
   max-width: fit-content;
 }
+.it-container{
+  background-repeat: no-repeat;
+  background-size: cover;
+  background-position: center;
+  height: 100%;
+  width: 100%;
+}
+.imgText{
+  width: 100%;
+  Height: 100%;
+  z-index: 2;
+  object-fit: cover;
+}
 
 @media screen and (min-width: 2100px) {
   .logo-alignment {
@@ -332,6 +346,11 @@ p {
     display: block;
     top: 100%;
     transform: translateX(0);
+  }
+  .cartItems.show{
+    display: block;
+    top: 0;
+    transform: translate(0);
   }
 
   .icons {
