@@ -13,3 +13,11 @@
 //   const element = document.querySelector('[x-data]');
 //   element.setAttribute('x-data', JSON.stringify(dataObject));
   
+
+// cart
+const cart  = document.querySelector(".cart");
+const cartItems = document.querySelector(".cartItems");
+
+cart.addEventListener('click',function(){
+  cartItems.classList.toggle('show');
+})

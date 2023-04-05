@@ -5,32 +5,24 @@
     "header": {
       "type": "header",
       "blocks": {
-        "18c4969a-71ed-46f3-9b2f-13c4b4e61a88": {
-          "type": "header",
-          "disabled": true,
+        "92e0ab2b-c9d2-4174-8d86-33916606a7ce": {
+          "type": "Account",
           "settings": {
+            "iconHeader": "shopify:\/\/shop_images\/icons8-male-user-50.png",
             "iconUrl": ""
           }
         },
-        "ba861610-334e-4e80-a437-2f95e0f3a63d": {
-          "type": "header",
+        "d2a8e594-2c1b-4b7d-8428-335fe4dea9f3": {
+          "type": "Cart",
           "settings": {
-            "iconHeader": "shopify:\/\/shop_images\/register-14.png",
-            "iconUrl": ""
-          }
-        },
-        "48585db4-943e-41b9-88db-53f2ddd365eb": {
-          "type": "header",
-          "settings": {
-            "iconHeader": "shopify:\/\/shop_images\/shoping_cart.png",
-            "iconUrl": ""
+            "iconHeaders": "shopify:\/\/shop_images\/icons8-shopping-cart-24.png",
+            "iconUrls": ""
           }
         }
       },
       "block_order": [
-        "18c4969a-71ed-46f3-9b2f-13c4b4e61a88",
-        "ba861610-334e-4e80-a437-2f95e0f3a63d",
-        "48585db4-943e-41b9-88db-53f2ddd365eb"
+        "92e0ab2b-c9d2-4174-8d86-33916606a7ce",
+        "d2a8e594-2c1b-4b7d-8428-335fe4dea9f3"
       ],
       "settings": {
         "image_with_text_image": "shopify:\/\/shop_images\/try-some-new-logo.svg",
@@ -42,8 +34,8 @@
         "MenuFontSize": 17,
         "HeadingColor": "#000000",
         "HeadingFontSize": 36,
-        "padTop": 5,
-        "padBtm": 5
+        "padTop": 7,
+        "padBtm": 15
       }
     }
   },

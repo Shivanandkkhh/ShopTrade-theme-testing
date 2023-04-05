@@ -1,0 +1,26 @@
+.img_and_text {
+	.wrapper {
+		.imgText {
+			height: auto;
+			width: 100%;
+			display: flex;
+			.imgs {
+				width: 50%;
+				img {
+					height: 100%;
+					width: 100%;
+				}
+			}
+			.text {
+				padding-left: 2%;
+				width: 50%;
+				.btn {
+					a {
+						color: $color_1;
+						text-decoration: none;
+					}
+				}
+			}
+		}
+	}
+}

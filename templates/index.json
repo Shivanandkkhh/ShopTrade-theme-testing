@@ -1,1 +1,104 @@
-{"sections":{"image-with-text":{"type":"image-with-text","blocks":{"heading":{"type":"heading","settings":{"heading":"IMAGE WITH TEXT","heading_size":"h0"}},"text":{"type":"text","settings":{"text":"<p>Pair text with an image to share something inspiring about your brand that encourages shoppers to browse your products.<\/p>","text_style":"body"}},"button":{"type":"button","settings":{"button_label":"SHOP","button_link":""}}},"block_order":["heading","text","button"],"settings":{"height":"adapt","desktop_image_width":"medium","layout":"text_first","desktop_content_position":"middle","desktop_content_alignment":"left","content_layout":"no-overlap","color_scheme":"background-1","mobile_content_alignment":"left","padding_top":40,"padding_bottom":0}},"featured_collection":{"type":"featured-collection","settings":{"title":"","heading_size":"h2","description":"","show_description":false,"description_style":"body","collection":"all","products_to_show":4,"columns_desktop":4,"full_width":false,"show_view_all":false,"view_all_style":"solid","enable_desktop_slider":false,"color_scheme":"background-1","image_ratio":"portrait","show_secondary_image":false,"show_vendor":false,"show_rating":false,"enable_quick_add":false,"columns_mobile":"2","swipe_on_mobile":false,"padding_top":0,"padding_bottom":40}}},"order":["image-with-text","featured_collection"]}
+{
+  "sections": {
+    "image-with-text": {
+      "type": "image-with-text",
+      "disabled": true,
+      "blocks": {
+        "text": {
+          "type": "text",
+          "settings": {
+            "text": "<p>Pair text with an image to share something inspiring about your brand that encourages shoppers to browse your products.<\/p>",
+            "text_style": "body"
+          }
+        },
+        "c36494a6-c0e3-4d9f-8df3-7c9852a77183": {
+          "type": "heading",
+          "settings": {
+            "heading": "no",
+            "heading_size": "h1"
+          }
+        }
+      },
+      "block_order": [
+        "text",
+        "c36494a6-c0e3-4d9f-8df3-7c9852a77183"
+      ],
+      "settings": {
+        "height": "adapt",
+        "desktop_image_width": "medium",
+        "layout": "text_first",
+        "desktop_content_position": "middle",
+        "desktop_content_alignment": "left",
+        "content_layout": "no-overlap",
+        "color_scheme": "background-1",
+        "mobile_content_alignment": "left",
+        "padding_top": 40,
+        "padding_bottom": 0
+      }
+    },
+    "87cb6542-755a-40fb-9309-5bfa2735dab2": {
+      "type": "img_and_text",
+      "blocks": {
+        "e74cbcac-6155-4aa9-9c7f-71b31fda449b": {
+          "type": "AddText",
+          "settings": {
+            "it-text": "Nature",
+            "font-size": 32,
+            "text-padding-top": 4,
+            "text-padding-bottom": 2,
+            "font-color": "#ffffff"
+          }
+        },
+        "99d6f8dc-8458-4af0-844c-37f6886c9876": {
+          "type": "AddText",
+          "settings": {
+            "it-text": "Emerson lays out and attempts",
+            "font-size": 26,
+            "text-padding-top": 4,
+            "text-padding-bottom": 2,
+            "font-color": "#ffffff"
+          }
+        },
+        "ff6ebe81-c3e8-43c4-91bd-e61550c541a7": {
+          "type": "AddText",
+          "settings": {
+            "it-text": "Emerson lays out and attempts to solve an abstract problem: that humans do not fully accept nature's beauty. He writes that people are distracted by the demands of the world, whereas nature gives but humans fail to reciprocate.",
+            "font-size": 15,
+            "text-padding-top": 4,
+            "text-padding-bottom": 10,
+            "font-color": "#ffffff"
+          }
+        },
+        "d7b77c68-4e20-41e3-bdf1-d07cacee68e1": {
+          "type": "Button",
+          "settings": {
+            "btn-text": "Shop now",
+            "shopurl": "shopify:\/\/collections",
+            "btn-font-size": 16,
+            "btn-padding": 17,
+            "border_color": "#1773b0",
+            "btn-color": "#1f1f21",
+            "btn-bg-color": "#fff9f9"
+          }
+        }
+      },
+      "block_order": [
+        "e74cbcac-6155-4aa9-9c7f-71b31fda449b",
+        "99d6f8dc-8458-4af0-844c-37f6886c9876",
+        "ff6ebe81-c3e8-43c4-91bd-e61550c541a7",
+        "d7b77c68-4e20-41e3-bdf1-d07cacee68e1"
+      ],
+      "settings": {
+        "section_bg_img": "shopify:\/\/shop_images\/self-serve-coffee-shop.jpg",
+        "adj-img": "row",
+        "M-adj-img": "column",
+        "it-img": "shopify:\/\/shop_images\/golden-autumn-leaves.jpg",
+        "enable-img": "block"
+      }
+    }
+  },
+  "order": [
+    "image-with-text",
+    "87cb6542-755a-40fb-9309-5bfa2735dab2"
+  ]
+}
