@@ -1,1 +1,14 @@
-{"sections":{"main":{"type":"main-404","settings":{}}},"order":["main"]}
+{
+  "layout": "custom_theme",
+  "wrapper": "div#404_template.custom-class[custom-attribute=hello]",
+  "sections": {
+    "tempalte-404": {
+      "type": "example-404",
+      "settings": {
+      }
+    }
+  },
+  "order": [
+    "tempalte-404"
+  ]
+}

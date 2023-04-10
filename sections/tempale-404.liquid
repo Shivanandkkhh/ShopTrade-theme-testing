@@ -1,0 +1,20 @@
+<h1>{{ section.settings.text404 }}</h1>  
+<p> {{ section.settings.subtext }} </p>
+
+{% schema %}
+    {
+        "name":"404-page",
+        "settings":[
+            {
+                "type":"text",
+                "id":"text404",
+                "label":"text 404" 
+            },
+            {
+                "type":"text",
+                "id":"subtext",
+                "label":"text 404"
+            }
+        ]
+    }
+{% endschema %}

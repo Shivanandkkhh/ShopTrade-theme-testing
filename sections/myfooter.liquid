@@ -1,0 +1,222 @@
+{% style %}
+  .footer-blocks{
+      /* display: flex; */
+  }
+    .footer-menus{
+        background-color: {{ section.settings.BG_color }};
+    }
+{% endstyle %}
+<div class="container">
+  <div class="wrapper footer-blocks">
+    <div class="footer-menus">
+      {% for block in section.blocks %}
+        {% case block.type %}
+          {% when 'Addlogo' %}
+            <div class="membership">
+              <div class="logo-img">
+                <img src="{{ block.settings.logo | img_url: 'master' }}" alt="">
+              </div>
+            </div>
+          {% when 'QuickLinks' %}
+            <div
+              class="quickLinks"
+              style="padding-top:{{ block.settings.font_pad_top }}px; padding-bottom:{{ block.settings.font_pad_bottom }}px; background:{{ block.settings.link-text-BGcolor }};"
+            >
+              <a
+                href="{{ block.settings.link-url }}"
+                style="font-size:{{ block.settings.font_size }}px; font-weight:{{ block.settings.font_weight }}; color:{{ block.settings.link-text-color }};"
+              >
+                {{ block.settings['link-text'] }}
+              </a>
+            </div>
+          {% when 'para' %}
+            <div
+              class="para"
+              style="padding-top:{{ block.settings.para_font_pad_top }}px; padding-bottom:{{ block.settings.para_font_pad_bottom }};px"
+            >
+              <p style="font-size:{{ block.settings.para_font_size }}px; font-weight:{{ block.settings.para_font_weight }}; color:{{ block.settings.para-text-color }};">
+                {{ block.settings.richtexts }}
+              </p>
+            </div>
+        {% endcase %}
+      {% endfor %}
+      <div>
+        {{ section.settings.link_lists }}
+      </div>
+    </div>
+  </div>
+</div>
+{% schema %}
+{
+  "name": "footer",
+  "settings": [
+    {
+      "type": "color",
+      "id": "BG_color",
+      "label": "Background"
+    },
+    {
+      "type": "link_list",
+      "id": "link_lists",
+      "label": "Link List"
+    }
+  ],
+  "blocks": [
+    {
+      "name": "Addlogo",
+      "type": "Addlogo",
+      "settings": [
+        {
+          "type": "image_picker",
+          "id": "logo",
+          "label": "Image"
+        }
+      ]
+    },
+    {
+      "name": "QuickLinks",
+      "type": "QuickLinks",
+      "settings": [
+        {
+          "type": "text",
+          "id": "link-text",
+          "label": "Enter text"
+        },
+        {
+          "type": "url",
+          "id": "link-url",
+          "label": "Enter text"
+        },
+        {
+          "type": "range",
+          "id": "font_size",
+          "min": 1,
+          "max": 100,
+          "step": 1,
+          "unit": "px",
+          "label": "Font size",
+          "default": 16
+        },
+        {
+          "type": "range",
+          "id": "font_weight",
+          "min": 1,
+          "max": 100,
+          "step": 1,
+          "unit": "px",
+          "label": "Font weight",
+          "default": 16
+        },
+        {
+          "type": "range",
+          "id": "font_pad_top",
+          "min": 1,
+          "max": 100,
+          "step": 1,
+          "unit": "px",
+          "label": "Padding top",
+          "default": 16
+        },
+        {
+          "type": "range",
+          "id": "font_pad_bottom",
+          "min": 1,
+          "max": 100,
+          "step": 1,
+          "unit": "px",
+          "label": "Padding bottom",
+          "default": 16
+        },
+        {
+          "type": "color",
+          "id": "link-text-color",
+          "label": "text color",
+          "default": "#000000"
+        },
+        {
+          "type": "color",
+          "id": "link-text-BGcolor",
+          "label": "text background"
+        },
+        {
+          "type": "range",
+          "id": "border-radius",
+          "min": 1,
+          "max": 100,
+          "step": 1,
+          "unit": "px",
+          "label": "curve",
+          "default": 5
+        }
+      ]
+    },
+    {
+      "name": "para",
+      "type": "para",
+      "settings": [
+        {
+          "type": "richtext",
+          "id": "richtexts",
+          "label": "Enter  para"
+        },
+        {
+          "type": "url",
+          "id": "para_link-url",
+          "label": "Enter text"
+        },
+        {
+          "type": "range",
+          "id": "para_font_size",
+          "min": 1,
+          "max": 100,
+          "step": 1,
+          "unit": "px",
+          "label": "Font size",
+          "default": 16
+        },
+        {
+          "type": "range",
+          "id": "para_font_weight",
+          "min": 1,
+          "max": 100,
+          "step": 1,
+          "unit": "px",
+          "label": "Font weight",
+          "default": 16
+        },
+        {
+          "type": "range",
+          "id": "para_font_pad_top",
+          "min": 1,
+          "max": 100,
+          "step": 1,
+          "unit": "px",
+          "label": "Padding top",
+          "default": 16
+        },
+        {
+          "type": "range",
+          "id": "para_font_pad_bottom",
+          "min": 1,
+          "max": 100,
+          "step": 1,
+          "unit": "px",
+          "label": "Padding bottom",
+          "default": 16
+        },
+        {
+          "type": "color",
+          "id": "para-text-color",
+          "label": "text color",
+          "default": "#000000"
+        }
+      ]
+    }
+  ],
+  "presets": [
+    {
+      "name": "Newfooter"
+    }
+  ]
+}
+{% endschema %}

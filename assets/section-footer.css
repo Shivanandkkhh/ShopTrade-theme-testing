@@ -10,7 +10,11 @@
   padding-bottom: 5rem;
   display: block;
 }
-
+@media (min-width: 1024px) {
+  .grid--3-col-tablet .grid__item {
+    width: calc(20% - var(--grid-desktop-horizontal-spacing) * 4 / 5);
+  }
+}
 @media screen and (max-width: 749px) {
   .footer .grid {
     display: block;
@@ -125,9 +129,42 @@
   margin-top: 3rem;
   gap: 1rem;
 }
+.cx-membership{
+  padding: 10px;
+}
 
 .footer-block--newsletter:only-child {
   margin-top: 0;
+}
+.SubText-email{
+  margin-left: 20px;
+  line-height: 1;
+}
+.email-icon{
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  padding-right: 5px;
+  padding-bottom: 5px;
+  max-width: fit-content;
+}
+.icon{
+  height: 16px;
+  width: 20px;
+  padding-left: 5px;
+}
+.icon img{
+  height: 100%;
+  object-fit: contain;
+  min-width: 100%;
+}
+.cx-btn{
+  margin-top: 10px;
+  padding: 4px 8px;
+  max-width: fit-content;
+}
+.cx-btn a{
+  text-decoration: none;
 }
 
 @media screen and (max-width: 749px) {
@@ -145,6 +182,7 @@
 
 .footer-block__heading {
   margin-bottom: 2rem;
+  font-family: "Avenir next";
   margin-top: 0;
   font-size: calc(var(--font-heading-scale) * 1.6rem);
 }
@@ -463,6 +501,9 @@ noscript .localization-selector.link {
 .footer-block__details-content .list-menu__item--active {
   transition: text-decoration-thickness var(--duration-short) ease;
   color: rgb(var(--color-foreground));
+}
+.footer-block__details-content.list-unstyled a{
+  padding: 10px 0 0 0;
 }
 
 @media screen and (min-width: 750px) {
