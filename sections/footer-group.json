@@ -43,14 +43,19 @@
         "0f13c292-29f5-48af-a9a6-0a469c00b43d": {
           "type": "CXPro",
           "settings": {
+            "cx-bg-color": "#ffffff",
             "image_logo": "shopify:\/\/shop_images\/Layer_2.png",
             "cx-color": "#000000",
             "cx_title": "CX Pro Membership",
-            "cx-font_size": 18,
+            "cx-head-font": 18,
             "cx_subtitle": "And get exclusive rewards and offers on your Orthodontic supplies",
-            "cx-sub_size": 12,
-            "cx-text_size": 14,
-            "menus": "cx-pro-membership"
+            "cx-sub-font": 12,
+            "cx-font-size": 14,
+            "cx-pad-top": 10,
+            "menus": "cx-pro-membership",
+            "cx-btnText": "Become a CX Pro Member",
+            "cx-btn-color": "#ffffff",
+            "btn-bg-color": "#ee0000"
           }
         },
         "0a030126-da3c-4bc3-851f-9ba6da57167b": {
@@ -110,7 +115,7 @@
         "b07ab85f-0c10-446f-8762-52f6a060b71e"
       ],
       "settings": {
-        "color_scheme": "#0034d1",
+        "sec_bg_color": "#f6f7fa",
         "newsletter_enable": false,
         "newsletter_heading": "",
         "enable_follow_on_shop": false,

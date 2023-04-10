@@ -38,7 +38,10 @@
   }
 {%- endstyle -%}
 
-<footer class="footer color-{{ section.settings.color_scheme }} gradient section-{{ section.id }}-padding">
+<footer
+  class="footer color-{{ section.settings.color_scheme }} gradient section-{{ section.id }}-padding"
+  style=" background: {{ section.settings.sec_bg_color }}"
+>
   {%- liquid
     assign has_social_icons = true
     if settings.social_facebook_link == blank and settings.social_instagram_link == blank and settings.social_youtube_link == blank and settings.social_tiktok_link == blank and settings.social_twitter_link == blank and settings.social_pinterest_link == blank and settings.social_snapchat_link == blank and settings.social_tumblr_link == blank and settings.social_vimeo_link == blank
@@ -811,32 +814,35 @@
   ],
   "settings": [
     {
-      "type": "select",
-      "id": "color_scheme",
-      "options": [
-        {
-          "value": "accent-1",
-          "label": "t:sections.all.colors.accent_1.label"
-        },
-        {
-          "value": "accent-2",
-          "label": "t:sections.all.colors.accent_2.label"
-        },
-        {
-          "value": "background-1",
-          "label": "t:sections.all.colors.background_1.label"
-        },
-        {
-          "value": "background-2",
-          "label": "t:sections.all.colors.background_2.label"
-        },
-        {
-          "value": "inverse",
-          "label": "t:sections.all.colors.inverse.label"
-        }
-      ],
-      "default": "background-1",
-      "label": "t:sections.all.colors.label"
+      //   "type": "select",
+      //   "id": "color_scheme",
+      //   "options": [
+      //     {
+      //       "value": "#F6F7FA",
+      //       "label": "t:sections.all.colors.accent_1.label"
+      //     },
+      //     {
+      //       "value": "accent-2",
+      //       "label": "t:sections.all.colors.accent_2.label"
+      //     },
+      //     {
+      //       "value": "background-1",
+      //       "label": "t:sections.all.colors.background_1.label"
+      //     },
+      //     {
+      //       "value": "background-2",
+      //       "label": "t:sections.all.colors.background_2.label"
+      //     },
+      //     {
+      //       "value": "inverse",
+      //       "label": "t:sections.all.colors.inverse.label"
+      //     }
+      //   ],
+      //   "default": "background-1",
+      //   "label": "t:sections.all.colors.label"
+      "type": "color",
+      "id": "sec_bg_color",
+      "label": "Background"
     },
     {
       "type": "header",
