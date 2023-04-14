@@ -288,15 +288,14 @@ li a {
   column-gap: 4%;
   height: 100%;
   max-width: fit-content;
-  animation: slide-rl 10s linear infinite;
 }
-.slider-marquee-contents{
+/* .slider-marquee-contents{
   animation: slide-lr 10s linear infinite;
 }
 
 .slider-marquee-contents{
   animation: slide-lr 10s linear infinite;
-}
+} */
 
 .media-sliding-images {
   display: flex;

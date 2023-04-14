@@ -14,7 +14,8 @@
         "26f64c58-894f-456b-926b-9900910a3d54": {
           "type": "block",
           "settings": {
-            "sliding-reverse": true,
+            "animation-type": "slide-lr",
+            "animation-speed": 4,
             "image_one": "shopify:\/\/shop_images\/vape-grape.png",
             "slider-Heading": "<p>Passion Fruit Grapefruit<\/p>",
             "slider-Heading_color": "#000000",
@@ -30,7 +31,8 @@
         "bbaf35a3-136a-4c38-b79b-a242e91cbf0f": {
           "type": "block",
           "settings": {
-            "sliding-reverse": false,
+            "animation-type": "slide-rl",
+            "animation-speed": 10,
             "image_one": "shopify:\/\/shop_images\/vape-lemon1.png",
             "slider-Heading": "<p>Lemon<\/p>",
             "slider-Heading_color": "#000000",
@@ -46,7 +48,8 @@
         "c563c12d-5bc4-4b08-9f24-affa5a84b0b3": {
           "type": "block",
           "settings": {
-            "sliding-reverse": true,
+            "animation-type": "slide-lr",
+            "animation-speed": 20,
             "image_one": "shopify:\/\/shop_images\/vape-mint.png",
             "slider-Heading": "<p>Mint Ice<\/p>",
             "slider-Heading_color": "#000000",

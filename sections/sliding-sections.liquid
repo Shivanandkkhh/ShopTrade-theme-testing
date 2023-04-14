@@ -3,7 +3,7 @@
   <div class="wrapper"> 
   <div class="slider-marquee-content-parent">
   {% for block in section.blocks %}
-    <div class="slider-marquee-content  {% if block.settings.sliding-reverse %}slider-marquee-contents {% endif %}">
+    <div class="slider-marquee-content" style="animation: {{ block.settings.animation-type }} {{ block.settings.animation-speed }}s linear infinite;">
       <div class="media-sliding-images">
         {% if block.settings.image_one %}
           <div class="media-sliding-images-one">
@@ -44,10 +44,30 @@
       "type": "block",
       "settings": [
         {
-          "type": "checkbox",
-          "id": "sliding-reverse",
-          "label": "Slide Right to Left"
-        },    
+          "type": "select",
+          "id": "animation-type",
+          "label": "Animation Type",
+          "options": [
+            {
+              "value": "slide-rl",
+              "label": "Right to Left"
+            },
+            {
+              "value": "slide-lr",
+              "label": "Left to RIght"
+            }
+          ],
+          "default": "slide-rl"
+        },{
+            "type": "range",
+            "id": "animation-speed",
+            "min": 1,
+            "max": 100,
+            "step": 1,
+            "unit": "s",
+            "label": "Animation speed",
+            "default": 10
+          },            
         {
           "type": "image_picker",
           "id": "image_one",
