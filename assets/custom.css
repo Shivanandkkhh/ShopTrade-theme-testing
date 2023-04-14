@@ -11,7 +11,7 @@
 /* The below code from scss */
 
 body {
-  background-color: #e0dede !important;
+  background-color: #fff !important;
 }
 
 h1,
@@ -31,7 +31,10 @@ p {
   vertical-align: baseline;
   line-height: 1.6;
 }
-li a{
+.announcement-bar-new{
+  overflow: hidden;
+}
+li a {
   padding: 0;
 }
 
@@ -249,7 +252,7 @@ li a{
 }
 
 .img_and_text .wrapper .imgText .text .btn:hover {
-  padding:0 5px;
+  padding: 0 5px;
   border-radius: 10px;
   transition: all 0.5s ease-in-out;
 }
@@ -258,40 +261,121 @@ li a{
   text-decoration: none;
   max-width: fit-content;
 }
-.it-container{
+
+.it-container {
   background-repeat: no-repeat;
   background-size: cover;
   background-position: center;
   height: 100%;
   width: 100%;
 }
-.imgText{
+
+.imgText {
   width: 100%;
   Height: 100%;
   z-index: 2;
   object-fit: cover;
 }
 
+/* sliding section css starts here */
+.slider-marquee-content-parent{
+  overflow: hidden;
+}
+.slider-marquee-content {
+  display: grid;
+  grid-template-columns: repeat(3, 1fr);
+  align-items: center;
+  column-gap: 4%;
+  height: 100%;
+  max-width: fit-content;
+  animation: slide-rl 10s linear infinite;
+}
+.slider-marquee-contents{
+  animation: slide-lr 10s linear infinite;
+}
+
+.slider-marquee-contents{
+  animation: slide-lr 10s linear infinite;
+}
+
+.media-sliding-images {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  flex-basis: initial;
+  height: 38px;
+  width: 239px;
+}
+
+.media-sliding-images img {
+  width: 100%;
+  height: 100%;
+  object-fit: cover;
+}
+.slider-heading {
+  white-space: nowrap;
+}
+
+.slider-sub-heading {
+  max-width: fit-content;
+  border: 1px solid;
+  padding: 10px 30px;
+  border-radius: 60px;
+  white-space: nowrap;
+  cursor: pointer;
+}
+
+.slider-sub-heading a {
+  text-decoration: none;
+}
+
+
+
+@keyframes slide-rl {
+  0% {
+    transform: translateX(0);
+  }
+
+  100% {
+    transform: translateX(100%);
+  }
+}
+@keyframes slide-lr {
+  0% {
+    transform: translateX(0);
+  }
+
+  100% {
+    transform: translateX(-100%);
+  }
+}
+
+/* sliding section css ends here */
+
 /* footer css starts here */
-.container .wrapper .membership .logo-img{
+.container .wrapper .membership .logo-img {
   width: 40px;
   height: 40px;
 }
 
-.container .wrapper .membership .logo-img img{
+.container .wrapper .membership .logo-img img {
   width: 100%;
   height: 100%;
 }
-.quickLinks a{
+
+.quickLinks a {
   text-decoration: none;
 }
-.quickLinks a:hover{
+
+.quickLinks a:hover {
   text-decoration: underline;
 }
-.footer-menus .para p{
+
+.footer-menus .para p {
   color: #000;
 }
-.footer-block__details-content.list-unstyled a{
+
+.footer-block__details-content.list-unstyled a {
   text-decoration: none;
   font-size: 14px;
   font-family: 'Avenir Next';
@@ -381,7 +465,8 @@ li a{
     top: 100%;
     transform: translateX(0);
   }
-  .cartItems.show{
+
+  .cartItems.show {
     display: block;
     top: 0;
     transform: translate(0);
@@ -408,12 +493,23 @@ li a{
     left: -140px;
     right: 80%;
   }
+  .slider-heading{
+    font-size: 59px !important;
+  }
+  .slider-sub-heading a{
+    font-size:18px !important;
+  }
+ 
 }
 
 @media screen and (max-width: 520px) {
   .shopname {
     font-size: 25px !important;
     padding: 0 1rem;
+  }
+  .media-sliding-images {
+    height: 28px;
+    width: 173px;
   }
 }
 

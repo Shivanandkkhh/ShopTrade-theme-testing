@@ -1,24 +1,29 @@
-{% for block in section.blocks %}
-  {% case block.type %}
-    {% when 'announcement' %}
-    <div>
-      {% if block.settings.text != blank %}
-        {% if block.settings.link != blank %}
-          <a class="AnnounceText" href="{{ block.settings.link }}" class=""> 
+<div class="announcement-bar-new">
+  {% for block in section.blocks %}
+    {% case block.type %}
+      {% when 'announcement' %}
+      <div>
+        {% if block.settings.text != blank %}
+          {% if block.settings.link != blank %}
+            <a class="AnnounceText" href="{{ block.settings.link }}" class=""> 
+          {% endif %}
+            <div style="background: {{ block.settings.backgroundColor }}; padding-top:{{ block.settings.top_padding }}px; padding-bottom:{{ block.settings.btm_padding }}px; border-bottom: 1px solid #000;">
+              <p class="marquee" style="text-align: {{ block.settings.vertical_alignment }}; animation-name: {{ block.settings.aniName }}; animation-duration: {{ block.settings.animation }}s; animation-timing-function: {{ block.settings.aniTimeFunction }};"> 
+                <span  style="color: {{ block.settings.textColor }} ; font-size: {{ block.settings.fontSize }}px;">{{ block.settings.text }}</span>
+                {% if block.settings.link != blank %}
+                  {% render 'icon-arrow' %}
+                {% endif %} 
+              </p>
+            </div>
+          {% if block.settings.link != blank %}
+            </a>
+          {% endif %}
         {% endif %}
-          <div style="background: {{ block.settings.backgroundColor }}; padding-top:{{ block.settings.top_padding }}px; padding-bottom:{{ block.settings.btm_padding }}px; border-bottom: 1px solid #000;">
-            <p class="marquee" style="text-align: {{ block.settings.vertical_alignment }}; animation-name: {{ block.settings.aniName }}; animation-duration: {{ block.settings.aniduarion }}s; animation-timing-function: {{ block.settings.aniTimeFunction }};"> 
-              <span  style="color: {{ block.settings.TextColor }} ; font-size: {{ block.settings.font_size }}px;">{{ block.settings.text }}</span>
-              {% if block.settings.link != blank %}
-                {% render 'icon-arrow' %}
-              {% endif %} 
-            </p>
-          </div>
-        </a>
-      {% endif %}
-    </div>
-  {% endcase %}
-{% endfor %} 
+      </div>
+    {% endcase %}
+  {% endfor %} 
+</div>
+
 
 {% schema %}
 {
