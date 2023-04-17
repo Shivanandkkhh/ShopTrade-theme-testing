@@ -1,112 +1,98 @@
-<div class="wrapper">
-  <div class="slider-marquee-content-parent">
-    {% for block in section.blocks %}
-      <div
-        class="slider-marquee-content"
-        style="animation: {{ block.settings.animation-type }} {{ block.settings.animation-speed }}s linear infinite ;"
-        onmouseover="this.style.animationPlayState='paused'"
-        onmouseout="this.style.animationPlayState='running'"
-      >
-        <div class="media-sliding-images">
-          {% if block.settings.image_one %}
-            <div class="media-sliding-images-one">
-              <img src="{{ block.settings.image_one | img_url: 'master' }}" alt="">
-            </div>
-          {% endif %}
-          {% if block.settings.image_two %}
-            <div class="media-sliding-images-two">
-              <img src="{{ block.settings.image_two | img_url: 'master' }}" alt="">
-            </div>
-          {% endif %}
-          {% if block.settings.image_three %}
-            <div class="media-sliding-images-three">
-              <img src="{{ block.settings.image_three | img_url: 'master' }}" alt="">
-            </div>
-          {% endif %}
-        </div>
-        <div
-          class="slider-heading"
-          style="font-size: {{ block.settings.font_size_header_desktop }}px; color: {{ block.settings.slider-Heading_color }}; font-weight:{{ block.settings.Header_font_weight }}"
-        >
-          {{ block.settings['slider-Heading'] }}
-        </div>
-        <div class="slider-sub-heading" style="border:2px solid {{ block.settings.sub_text_color }};">
-          <a
-            style="color:{{ block.settings.sub_text_color }}; font-weight:{{ block.settings.sub_font_weight }}"
-            href="{{ block.settings.sub_link }};"
-          >
-            {{ block.settings.Sub_text }}
-          </a>
-        </div>
-        <div
-          class="slider-heading"
-          style="font-size: {{ block.settings.font_size_header_desktop }}px; color: {{ block.settings.slider-Heading_color }}; font-weight:{{ block.settings.Header_font_weight }}"
-        >
-          {{ block.settings['slider-Heading'] }}
-        </div>
-        <div class="media-sliding-images">
-          {% if block.settings.image_one %}
-            <div class="media-sliding-images-one">
-              <img src="{{ block.settings.image_one | img_url: 'master' }}" alt="">
-            </div>
-          {% endif %}
-          {% if block.settings.image_two %}
-            <div class="media-sliding-images-two">
-              <img src="{{ block.settings.image_two | img_url: 'master' }}" alt="">
-            </div>
-          {% endif %}
-          {% if block.settings.image_three %}
-            <div class="media-sliding-images-three">
-              <img src="{{ block.settings.image_three | img_url: 'master' }}" alt="">
-            </div>
-          {% endif %}
-        </div>
-        <div
-          class="slider-heading"
-          style="font-size: {{ block.settings.font_size_header_desktop }}px; color: {{ block.settings.slider-Heading_color }}; font-weight:{{ block.settings.Header_font_weight }}"
-        >
-          {{ block.settings['slider-Heading'] }}
-        </div>
-        <div class="slider-sub-heading" style="border:2px solid {{ block.settings.sub_text_color }};">
-          <a
-            style="color:{{ block.settings.sub_text_color }}; font-weight:{{ block.settings.sub_font_weight }}"
-            href="{{ block.settings.sub_link }};"
-          >
-            {{ block.settings.Sub_text }}
-          </a>
-        </div>
-        <div
-          class="slider-heading"
-          style="font-size: {{ block.settings.font_size_header_desktop }}px; color: {{ block.settings.slider-Heading_color }}; font-weight:{{ block.settings.Header_font_weight }}"
-        >
-          {{ block.settings['slider-Heading'] }}
-        </div>
-        <div class="media-sliding-images">
-          {% if block.settings.image_one %}
-            <div class="media-sliding-images-one">
-              <img src="{{ block.settings.image_one | img_url: 'master' }}" alt="">
-            </div>
-          {% endif %}
-          {% if block.settings.image_two %}
-            <div class="media-sliding-images-two">
-              <img src="{{ block.settings.image_two | img_url: 'master' }}" alt="">
-            </div>
-          {% endif %}
-          {% if block.settings.image_three %}
-            <div class="media-sliding-images-three">
-              <img src="{{ block.settings.image_three | img_url: 'master' }}" alt="">
-            </div>
-          {% endif %}
-        </div>
-        <div
-          class="slider-heading"
-          style="font-size: {{ block.settings.font_size_header_desktop }}px; color: {{ block.settings.slider-Heading_color }}; font-weight:{{ block.settings.Header_font_weight }}"
-        >
-          {{ block.settings['slider-Heading'] }}
-        </div>
+<div class="slider-marquee-content-parent">
+  {% for block in section.blocks %}
+    <div
+      class="slider-marquee-content"
+      style="animation: {{ block.settings.animation-type }} {{ block.settings.animation-speed }}s linear infinite ;"
+      onmouseover="this.style.animationPlayState='paused'"
+      onmouseout="this.style.animationPlayState='running'"
+    >
+      <div class="media-sliding-images">
+        {% if block.settings.image_one %}
+          <div class="media-sliding-images-one">
+            <img src="{{ block.settings.image_one | img_url: 'master' }}" alt="">
+          </div>
+        {% endif %}
       </div>
-    {% endfor %}
-  </div>
+      <div
+        class="slider-heading"
+        style="font-size: {{ block.settings.font_size_header_desktop }}px; color: {{ block.settings.slider-Heading_color }}; font-weight:{{ block.settings.Header_font_weight }}"
+      >
+        {{ block.settings['slider-Heading'] }}
+      </div>
+      <div class="slider-sub-heading" style="border:2px solid {{ block.settings.sub_text_color }};">
+        <a
+          style="color:{{ block.settings.sub_text_color }}; font-weight:{{ block.settings.sub_font_weight }}"
+          href="{{ block.settings.sub_link }};"
+        >
+          {{ block.settings.Sub_text }}
+        </a>
+      </div>
+      <div
+        class="slider-heading"
+        style="font-size: {{ block.settings.font_size_header_desktop }}px; color: {{ block.settings.slider-Heading_color }}; font-weight:{{ block.settings.Header_font_weight }}"
+      >
+        {{ block.settings['slider-Heading'] }}
+      </div>
+      <div class="media-sliding-images">
+        {% if block.settings.image_one %}
+          <div class="media-sliding-images-one">
+            <img src="{{ block.settings.image_one | img_url: 'master' }}" alt="">
+          </div>
+        {% endif %}
+      </div>
+      <div
+        class="slider-heading"
+        style="font-size: {{ block.settings.font_size_header_desktop }}px; color: {{ block.settings.slider-Heading_color }}; font-weight:{{ block.settings.Header_font_weight }}"
+      >
+        {{ block.settings['slider-Heading'] }}
+      </div>
+      <div
+        class="slider-sub-heading"
+        style="border:2px solid {{ block.settings.sub_text_color }};"
+        onmouseover="this.style.background=' {{ block.settings.sub_text_color }} '"
+        onmouseout="this.style.background='initial'"
+      >
+        <a
+          style="color:{{ block.settings.sub_text_color }}; font-weight:{{ block.settings.sub_font_weight }};"
+          onmouseover="this.style.color='#fff'"
+          onmouseout="this.style.color='{{ block.settings.sub_text_color }}'"
+          href="{{ block.settings.sub_link }};"
+        >
+          {{ block.settings.Sub_text }}
+        </a>
+      </div>
+      <div class="slider-heading"
+        style="font-size: {{ block.settings.font_size_header_desktop }}px; color: {{ block.settings.slider-Heading_color }}; font-weight:{{ block.settings.Header_font_weight }}">
+        {{ block.settings['slider-Heading'] }}
+      </div>
+      <div class="media-sliding-images">
+        {% if block.settings.image_one %}
+          <div class="media-sliding-images-one">
+            <img src="{{ block.settings.image_one | img_url: 'master' }}" alt="">
+          </div>
+        {% endif %}
+      </div>
+      <div class="slider-heading"
+        style="font-size: {{ block.settings.font_size_header_desktop }}px; color: {{ block.settings.slider-Heading_color }}; font-weight:{{ block.settings.Header_font_weight }}">
+        {{ block.settings['slider-Heading'] }}
+      </div>
+      <div class="slider-sub-heading"
+        style="border:2px solid {{ block.settings.sub_text_color }};"
+        onmouseover="this.style.background=' {{ block.settings.sub_text_color }} '"
+        onmouseout="this.style.background='initial'">
+        <a style="color:{{ block.settings.sub_text_color }}; font-weight:{{ block.settings.sub_font_weight }};"
+          onmouseover="this.style.color='#fff'"
+          onmouseout="this.style.color='{{ block.settings.sub_text_color }}'"
+          href="{{ block.settings.sub_link }};">
+          {{ block.settings.Sub_text }}
+        </a>
+      </div>
+      <div class="slider-heading"
+        style="font-size: {{ block.settings.font_size_header_desktop }}px; color: {{ block.settings.slider-Heading_color }}; font-weight:{{ block.settings.Header_font_weight }};">
+        {{ block.settings['slider-Heading'] }}
+      </div>
+    </div>
+  {% endfor %}
 </div>
 {% schema %}
 {
@@ -146,16 +132,6 @@
         {
           "type": "image_picker",
           "id": "image_one",
-          "label": "Image"
-        },
-        {
-          "type": "image_picker",
-          "id": "image_two",
-          "label": "Image"
-        },
-        {
-          "type": "image_picker",
-          "id": "image_three",
           "label": "Image"
         },
         {
