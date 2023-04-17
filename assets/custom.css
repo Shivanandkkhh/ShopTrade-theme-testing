@@ -286,7 +286,7 @@ li a {
 }
 .slider-marquee-content {
   display: grid;
-  grid-template-columns: repeat(5, 1fr);
+  grid-template-columns: repeat(10, 1fr);
   align-items: center;
   column-gap: 4%;
   height: 100%;
@@ -331,11 +331,11 @@ li a {
 
   @keyframes slide-rl {
     0% {
-      transform: translateX(0);
+      transform: translateX(-100%);
     }
 
     100% {
-      transform: translateX(100%);
+      transform: translateX(0%);
     }
   }
   @keyframes slide-lr {
