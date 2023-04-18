@@ -21,3 +21,8 @@ const cartItems = document.querySelector(".cartItems");
 cart.addEventListener('click',function(){
   cartItems.classList.toggle('show');
 })
+
+
+// 
+var copy = document.querySelector('.').cloneNode(true);
+document.querySelector('.').appendChild()

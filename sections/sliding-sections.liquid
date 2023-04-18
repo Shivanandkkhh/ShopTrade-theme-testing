@@ -6,17 +6,11 @@
       onmouseover="this.style.animationPlayState='paused'"
       onmouseout="this.style.animationPlayState='running'"
     >
-      <div class="media-sliding-images">
-        {% if block.settings.image_one %}
-          <div class="media-sliding-images-one">
+      <div class="media-sliding-images ">        
             <img src="{{ block.settings.image_one | img_url: 'master' }}" alt="">
-          </div>
-        {% endif %}
       </div>
-      <div
-        class="slider-heading"
-        style="font-size: {{ block.settings.font_size_header_desktop }}px; color: {{ block.settings.slider-Heading_color }}; font-weight:{{ block.settings.Header_font_weight }}"
-      >
+      <div class="slider-heading"
+        style="font-size: {{ block.settings.font_size_header_desktop }}px; color: {{ block.settings.slider-Heading_color }}; font-weight:{{ block.settings.Header_font_weight }}">
         {{ block.settings['slider-Heading'] }}
       </div>
       <div class="slider-sub-heading" style="border:2px solid {{ block.settings.sub_text_color }};">
@@ -26,70 +20,6 @@
         >
           {{ block.settings.Sub_text }}
         </a>
-      </div>
-      <div
-        class="slider-heading"
-        style="font-size: {{ block.settings.font_size_header_desktop }}px; color: {{ block.settings.slider-Heading_color }}; font-weight:{{ block.settings.Header_font_weight }}"
-      >
-        {{ block.settings['slider-Heading'] }}
-      </div>
-      <div class="media-sliding-images">
-        {% if block.settings.image_one %}
-          <div class="media-sliding-images-one">
-            <img src="{{ block.settings.image_one | img_url: 'master' }}" alt="">
-          </div>
-        {% endif %}
-      </div>
-      <div
-        class="slider-heading"
-        style="font-size: {{ block.settings.font_size_header_desktop }}px; color: {{ block.settings.slider-Heading_color }}; font-weight:{{ block.settings.Header_font_weight }}"
-      >
-        {{ block.settings['slider-Heading'] }}
-      </div>
-      <div
-        class="slider-sub-heading"
-        style="border:2px solid {{ block.settings.sub_text_color }};"
-        onmouseover="this.style.background=' {{ block.settings.sub_text_color }} '"
-        onmouseout="this.style.background='initial'"
-      >
-        <a
-          style="color:{{ block.settings.sub_text_color }}; font-weight:{{ block.settings.sub_font_weight }};"
-          onmouseover="this.style.color='#fff'"
-          onmouseout="this.style.color='{{ block.settings.sub_text_color }}'"
-          href="{{ block.settings.sub_link }};"
-        >
-          {{ block.settings.Sub_text }}
-        </a>
-      </div>
-      <div class="slider-heading"
-        style="font-size: {{ block.settings.font_size_header_desktop }}px; color: {{ block.settings.slider-Heading_color }}; font-weight:{{ block.settings.Header_font_weight }}">
-        {{ block.settings['slider-Heading'] }}
-      </div>
-      <div class="media-sliding-images">
-        {% if block.settings.image_one %}
-          <div class="media-sliding-images-one">
-            <img src="{{ block.settings.image_one | img_url: 'master' }}" alt="">
-          </div>
-        {% endif %}
-      </div>
-      <div class="slider-heading"
-        style="font-size: {{ block.settings.font_size_header_desktop }}px; color: {{ block.settings.slider-Heading_color }}; font-weight:{{ block.settings.Header_font_weight }}">
-        {{ block.settings['slider-Heading'] }}
-      </div>
-      <div class="slider-sub-heading"
-        style="border:2px solid {{ block.settings.sub_text_color }};"
-        onmouseover="this.style.background=' {{ block.settings.sub_text_color }} '"
-        onmouseout="this.style.background='initial'">
-        <a style="color:{{ block.settings.sub_text_color }}; font-weight:{{ block.settings.sub_font_weight }};"
-          onmouseover="this.style.color='#fff'"
-          onmouseout="this.style.color='{{ block.settings.sub_text_color }}'"
-          href="{{ block.settings.sub_link }};">
-          {{ block.settings.Sub_text }}
-        </a>
-      </div>
-      <div class="slider-heading"
-        style="font-size: {{ block.settings.font_size_header_desktop }}px; color: {{ block.settings.slider-Heading_color }}; font-weight:{{ block.settings.Header_font_weight }};">
-        {{ block.settings['slider-Heading'] }}
       </div>
     </div>
   {% endfor %}
