@@ -6,6 +6,7 @@
         "padding_top": 28,
         "padding_bottom": 28
       }
+
     },
     "7b3cc485-e616-428d-a099-7d8adc1a2f3d": {
       "type": "myfooter",
@@ -223,3 +224,11 @@
     "5bea836e-e251-4760-b098-24a3fc0f72e9"
   ]
 }
+
+    }
+  },
+  "order": [
+    "main"
+  ]
+}
+
