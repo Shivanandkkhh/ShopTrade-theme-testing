@@ -1,0 +1,40 @@
+<div class="container">
+  <div class="wrapper">
+    <div class="carousel-img-parent">
+      <div class="carousel-imagies">
+        {% for block in section.blocks %}
+          <div class="carousel-img">
+            {% if block.settings['carousel-img'] %}
+              <img src="{{ block.settings.carousel-img | img_url: 'master' }}" alt="">
+            {% endif %}
+          </div>
+        {% endfor %}
+      </div>
+    </div>
+  </div>
+</div>
+{% schema %}
+{
+  "name": "carousel-img",
+  "settings": [],
+  "blocks": [
+    {
+      "name": "carousel-img",
+      "type": "carousel-img",
+      "settings": [
+        {
+          "type": "image_picker",
+          "id": "carousel-img",
+          "label": "Image"
+        }
+      ]
+    }
+  ],
+
+  "presets": [
+    {
+      "name": "carousel-img"
+    }
+  ]
+}
+{% endschema %}

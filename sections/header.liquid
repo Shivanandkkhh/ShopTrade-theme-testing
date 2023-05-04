@@ -90,7 +90,7 @@
               <div class="nav-links">
                 <a style="color: {{ section.settings.MenuColor }}; font-size:{{ section.settings.MenuFontSize }}px;" href="{{ link.url }}">{{ link.title }}</a>
               </div>
-            {% endif %}
+            {% endif %} 
           {% endfor %}
         </nav>
       </div>
@@ -99,14 +99,16 @@
           {% for block in section.blocks %}
             {% case block.type %}
               {% when 'Account' %}
+                {% if shop.customer_accounts_enabled %}
                 <a class="account" href="{{ block.settings.iconUrl }}">
                   <img src="{{ block.settings.iconHeader | img_url }}" alt="">
-                </a> 
+                </a>
+              {% endif %}
               {% when 'Cart' %}
                 <a href=""> 
                   <img  class="cart" src="{{ block.settings.iconHeaders | img_url }}" alt="">
                 </a> 
-          {% endcase %}
+           {% endcase %}
           {% endfor %}
         </div>
         <div class="btnDiv">

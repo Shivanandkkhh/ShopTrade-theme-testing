@@ -21,3 +21,25 @@ const cartItems = document.querySelector(".cartItems");
 cart.addEventListener('click',function(){
   cartItems.classList.toggle('show');
 })
+
+// 
+$(document).ready(function() {
+  $('.slider-marquee-content-parent').slick({
+    // slidesToShow: 2,
+    dots: false,
+    autoplaySpeed: 0,
+    autoplay: true,
+    speed:10000,
+    slidesToScroll: 2,
+    cssEase: 'linear',
+    infinite: true,
+  });
+  $('.slider-marquee-content').hover(
+    function() {
+      $(this).slick('slickPause');
+    },
+    function() {
+      $(this).slick('slickPlay');
+    }
+  );
+});
