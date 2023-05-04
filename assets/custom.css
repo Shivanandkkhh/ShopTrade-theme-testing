@@ -1,4 +1,4 @@
-@keyframes marquee {
+/* @keyframes marquee {
   0% {
     transform: translateX(100%);
   }
@@ -6,7 +6,7 @@
   100% {
     transform: translateX(-100%);
   }
-}
+} */
 
 /* The below code from scss */
 
@@ -278,75 +278,7 @@ li a {
 }
 
 /* sliding section css starts here */
-.main-parent-slider{
-  display: flex;
-}
-.slider-marquee-content-parent{
-  overflow: hidden;
-}
-.slider-marquee-content {
-  display: grid;
-  grid-template-columns: repeat(12, 1fr);
-  align-items: center;
-  column-gap: 4%;
-  height: 100%;
-  max-width: fit-content;
-  white-space: nowrap;
-}
-.slider-marquee-content:hover{
-  cursor: wait;
-}
-.media-sliding-images {
-  display: flex;
-  align-items: center;
-  justify-content: center;
-  flex-basis: initial;
-  height: 38px;
-  width: 239px;
-}
 
-.media-sliding-images img {
-  width: 100%;
-  height: 100%;
-  object-fit: cover;
-}
-.slider-heading {
-  white-space: nowrap;
-}
-
-.slider-sub-heading {
-  max-width: fit-content;
-  border: 1px solid;
-  padding: 10px 30px;
-  border-radius: 60px;
-  white-space: nowrap;
-  cursor: pointer;
-}
-
-.slider-sub-heading a {
-  text-decoration: none;
-}
-
-
-
-  @keyframes slide-rl {
-    0% {
-      transform: translateX(-100%);
-    }
-
-    100% {
-      transform: translateX(100%);
-    }
-  }
-  @keyframes slide-lr {
-    0% {
-      transform: translateX(100%);
-    }
-
-    100% {
-      transform: translateX(-100%);
-    }
-  }
 
 /* sliding section css ends here */
 
@@ -511,4 +443,53 @@ li a {
   }
 }
 
-/*# sourceMappingURL=custom.css.map */
+/*  */
+.slider-marquee-content-parent{
+  overflow: hidden;
+  display: flex;
+  width: auto;
+}
+
+.slick-track{
+  display: flex !important;
+  align-items: center !important;
+  justify-content: space-between !important;
+  max-width: max-content !important;
+  /* transform:translate3d(-2500px, 0px, 0px) !important; */
+}
+.slider-marquee-content:hover{
+  cursor: wait;
+}
+.media-sliding-images {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  flex-basis: initial;
+  height: 38px !important;
+  width: 239px !important;
+}
+
+.media-sliding-images img {
+  width: 100%;
+  height: 100%;
+  object-fit: cover;
+}
+.slider-heading {
+  white-space: nowrap;
+}
+
+.slider-sub-heading {
+  max-width: fit-content;
+  border: 1px solid;
+  padding: 10px 30px;
+  border-radius: 60px;
+  cursor: pointer;
+}
+
+.slider-sub-heading a {
+  text-decoration: none;
+}
+
+.slider-heading.slick-slide.slick-active{
+  width: max-content !important;
+}

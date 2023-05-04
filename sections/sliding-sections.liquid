@@ -1,13 +1,11 @@
 <div class="slider-marquee-content-parent">
   {% for block in section.blocks %}
-    <div
-      class="slider-marquee-content"
+    <div class="slider-marquee-content"
       style="animation: {{ block.settings.animation-type }} {{ block.settings.animation-speed }}s linear infinite ;"
       onmouseover="this.style.animationPlayState='paused'"
-      onmouseout="this.style.animationPlayState='running'"
-    >
-      <div class="media-sliding-images ">        
-            <img src="{{ block.settings.image_one | img_url: 'master' }}" alt="">
+      onmouseout="this.style.animationPlayState='running'">
+      <div class="media-sliding-images ">
+            <img src="{{ block.settings.image_one | img_url: 'master' }}" alt=""> 
       </div>
       <div class="slider-heading"
         style="font-size: {{ block.settings.font_size_header_desktop }}px; color: {{ block.settings.slider-Heading_color }}; font-weight:{{ block.settings.Header_font_weight }}">
@@ -65,7 +63,7 @@
           "label": "Image"
         },
         {
-          "type": "richtext",
+          "type": "text",
           "id": "slider-Heading",
           "label": "Heading"
         },

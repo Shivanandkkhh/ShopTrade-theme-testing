@@ -15,7 +15,7 @@
           "type": "block",
           "settings": {
             "animation-type": "slide-lr",
-            "animation-speed": 4,
+            "animation-speed": 15,
             "image_one": "shopify:\/\/shop_images\/vape-grape.png",
             "slider-Heading": "<p>Passion Fruit Grapefruit<\/p>",
             "slider-Heading_color": "#000000",
