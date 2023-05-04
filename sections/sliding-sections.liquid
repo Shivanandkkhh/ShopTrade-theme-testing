@@ -1,0 +1,162 @@
+<div class="slider-marquee-content-parent">
+  {% for block in section.blocks %}
+    <div class="slider-marquee-content"
+      style="animation: {{ block.settings.animation-type }} {{ block.settings.animation-speed }}s linear infinite ;"
+      onmouseover="this.style.animationPlayState='paused'"
+      onmouseout="this.style.animationPlayState='running'">
+      <div class="media-sliding-images ">
+            <img src="{{ block.settings.image_one | img_url: 'master' }}" alt=""> 
+      </div>
+      <div class="slider-heading"
+        style="font-size: {{ block.settings.font_size_header_desktop }}px; color: {{ block.settings.slider-Heading_color }}; font-weight:{{ block.settings.Header_font_weight }}">
+        {{ block.settings['slider-Heading'] }}
+      </div>
+      <div class="slider-sub-heading" style="border:2px solid {{ block.settings.sub_text_color }};">
+        <a
+          style="color:{{ block.settings.sub_text_color }}; font-weight:{{ block.settings.sub_font_weight }}"
+          href="{{ block.settings.sub_link }};"
+        >
+          {{ block.settings.Sub_text }}
+        </a>
+      </div>
+    </div>
+  {% endfor %}
+</div>
+{% schema %}
+{
+  "name": "Sliding Img and Text",
+  "settings": [],
+  "blocks": [
+    {
+      "name": "Sliding block",
+      "type": "block",
+      "settings": [
+        {
+          "type": "select",
+          "id": "animation-type",
+          "label": "Animation Type",
+          "options": [
+            {
+              "value": "slide-rl",
+              "label": "Right to Left"
+            },
+            {
+              "value": "slide-lr",
+              "label": "Left to RIght"
+            }
+          ],
+          "default": "slide-rl"
+        },
+        {
+          "type": "range",
+          "id": "animation-speed",
+          "min": 1,
+          "max": 100,
+          "step": 1,
+          "unit": "s",
+          "label": "Animation speed",
+          "default": 10
+        },
+        {
+          "type": "image_picker",
+          "id": "image_one",
+          "label": "Image"
+        },
+        {
+          "type": "text",
+          "id": "slider-Heading",
+          "label": "Heading"
+        },
+        {
+          "type": "color",
+          "id": "slider-Heading_color",
+          "label": "Heading Color",
+          "default": "#000000"
+        },
+        {
+          "type": "range",
+          "id": "font_size_header_desktop",
+          "min": 10,
+          "max": 100,
+          "step": 1,
+          "unit": "px",
+          "label": "Font size",
+          "default": 79
+        },
+        {
+          "type": "select",
+          "id": "Header_font_weight",
+          "label": "Font Weight",
+          "options": [
+            {
+              "value": "400",
+              "label": "normal"
+            },
+            {
+              "value": "600",
+              "label": "bold"
+            },
+            {
+              "value": "700",
+              "label": "bolder"
+            }
+          ],
+          "default": "700"
+        },
+        {
+          "type": "text",
+          "id": "Sub_text",
+          "label": "Sub Text",
+          "default": "Try Passion Grapefruit"
+        },
+        {
+          "type": "color",
+          "id": "sub_text_color",
+          "label": "Body text",
+          "default": "#000000"
+        },
+        {
+          "type": "url",
+          "id": "sub_link",
+          "label": "Button link"
+        },
+        {
+          "type": "range",
+          "id": "font_size_sub_desktop",
+          "min": 10,
+          "max": 100,
+          "step": 1,
+          "unit": "px",
+          "label": "Font size",
+          "default": 20
+        },
+        {
+          "type": "select",
+          "id": "sub_font_weight",
+          "label": "Font Weight",
+          "options": [
+            {
+              "value": "400",
+              "label": "normal"
+            },
+            {
+              "value": "600",
+              "label": "bold"
+            },
+            {
+              "value": "700",
+              "label": "bolder"
+            }
+          ],
+          "default": "400"
+        }
+      ]
+    }
+  ],
+  "presets": [
+    {
+      "name": "Sliding Img and Text"
+    }
+  ]
+}
+{% endschema %}

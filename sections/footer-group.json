@@ -39,8 +39,83 @@
     },
     "footer": {
       "type": "footer",
+      "blocks": {
+        "0f13c292-29f5-48af-a9a6-0a469c00b43d": {
+          "type": "CXPro",
+          "settings": {
+            "cx-bg-color": "#ffffff",
+            "image_logo": "shopify:\/\/shop_images\/Layer_2.png",
+            "cx-color": "#000000",
+            "cx_title": "CX Pro Membership",
+            "cx-head-font": 18,
+            "cx_subtitle": "And get exclusive rewards and offers on your Orthodontic supplies",
+            "cx-sub-font": 12,
+            "cx-font-size": 14,
+            "cx-pad-top": 10,
+            "menus": "cx-pro-membership",
+            "cx-btnText": "Become a CX Pro Member",
+            "cx-btn-color": "#ffffff",
+            "btn-bg-color": "#ee0000"
+          }
+        },
+        "0a030126-da3c-4bc3-851f-9ba6da57167b": {
+          "type": "link_list",
+          "settings": {
+            "heading": "Shop",
+            "heading_font_size": 14,
+            "heading_color": "#152b73",
+            "menu": "shop",
+            "text_color": "#152b73"
+          }
+        },
+        "74db8212-dd4f-45ad-a7d8-5bd677c125d0": {
+          "type": "link_list",
+          "settings": {
+            "heading": "Best-Sellers",
+            "heading_font_size": 14,
+            "heading_color": "#152b73",
+            "menu": "best-sellers",
+            "text_color": "#152b73"
+          }
+        },
+        "0189bbb9-065c-4192-be17-387b5859e20e": {
+          "type": "link_list",
+          "settings": {
+            "heading": "Informations",
+            "heading_font_size": 14,
+            "heading_color": "#152b73",
+            "menu": "informations",
+            "text_color": "#152b73"
+          }
+        },
+        "b07ab85f-0c10-446f-8762-52f6a060b71e": {
+          "type": "text",
+          "settings": {
+            "heading": "Unlock Savings: Sign Up for Our Dental Professionals Newsletter",
+            "heading_font_size": 14,
+            "heading_color": "#152b73",
+            "subtext": "<p>Join over 7000+ dental professionals receiving the best deals every week.<\/p>",
+            "icon-email": "shopify:\/\/shop_images\/Vector_4.png",
+            "subemail": "<p>Please enter your e-mail<\/p>",
+            "subBGColor": "#ffffff",
+            "margi_top": 10,
+            "subtextColor": "#000000",
+            "subtexts": "<p>By clicking the button you agree to the <a href=\"\/pages\/example1\" title=\"example1\">Privacy Policy <\/a>and <a href=\"\/collections\/all\" title=\"All products\">Terms and Conditions.<\/a><\/p>",
+            "paddin_top": 16,
+            "unlock_font_size": 14,
+            "link_color": "#152b73"
+          }
+        }
+      },
+      "block_order": [
+        "0f13c292-29f5-48af-a9a6-0a469c00b43d",
+        "0a030126-da3c-4bc3-851f-9ba6da57167b",
+        "74db8212-dd4f-45ad-a7d8-5bd677c125d0",
+        "0189bbb9-065c-4192-be17-387b5859e20e",
+        "b07ab85f-0c10-446f-8762-52f6a060b71e"
+      ],
       "settings": {
-        "color_scheme": "background-2",
+        "sec_bg_color": "#f6f7fa",
         "newsletter_enable": false,
         "newsletter_heading": "",
         "enable_follow_on_shop": false,

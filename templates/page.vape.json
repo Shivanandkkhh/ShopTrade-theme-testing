@@ -1,0 +1,79 @@
+{
+  "sections": {
+    "main": {
+      "type": "main-page",
+      "disabled": true,
+      "settings": {
+        "padding_top": 28,
+        "padding_bottom": 28
+      }
+    },
+    "534eef81-3117-48ac-a5a1-55e00b5572af": {
+      "type": "sliding-sections",
+      "blocks": {
+        "26f64c58-894f-456b-926b-9900910a3d54": {
+          "type": "block",
+          "settings": {
+            "animation-type": "slide-lr",
+            "animation-speed": 15,
+            "image_one": "shopify:\/\/shop_images\/vape-grape.png",
+            "slider-Heading": "<p>Passion Fruit Grapefruit<\/p>",
+            "slider-Heading_color": "#000000",
+            "font_size_header_desktop": 79,
+            "Header_font_weight": "700",
+            "Sub_text": "Try Passion Grapefruit",
+            "sub_text_color": "#ffac9a",
+            "sub_link": "",
+            "font_size_sub_desktop": 20,
+            "sub_font_weight": "600"
+          }
+        },
+        "bbaf35a3-136a-4c38-b79b-a242e91cbf0f": {
+          "type": "block",
+          "settings": {
+            "animation-type": "slide-rl",
+            "animation-speed": 10,
+            "image_one": "shopify:\/\/shop_images\/vape-lemon1.png",
+            "slider-Heading": "<p>Lemon<\/p>",
+            "slider-Heading_color": "#000000",
+            "font_size_header_desktop": 79,
+            "Header_font_weight": "700",
+            "Sub_text": "Try Lemon",
+            "sub_text_color": "#f2cc0d",
+            "sub_link": "",
+            "font_size_sub_desktop": 20,
+            "sub_font_weight": "400"
+          }
+        },
+        "c563c12d-5bc4-4b08-9f24-affa5a84b0b3": {
+          "type": "block",
+          "settings": {
+            "animation-type": "slide-lr",
+            "animation-speed": 20,
+            "image_one": "shopify:\/\/shop_images\/vape-mint.png",
+            "slider-Heading": "<p>Mint Ice<\/p>",
+            "slider-Heading_color": "#000000",
+            "font_size_header_desktop": 79,
+            "Header_font_weight": "700",
+            "Sub_text": "Try Mint Ice",
+            "sub_text_color": "#6ec59f",
+            "sub_link": "",
+            "font_size_sub_desktop": 20,
+            "sub_font_weight": "600"
+          }
+        }
+      },
+      "block_order": [
+        "26f64c58-894f-456b-926b-9900910a3d54",
+        "bbaf35a3-136a-4c38-b79b-a242e91cbf0f",
+        "c563c12d-5bc4-4b08-9f24-affa5a84b0b3"
+      ],
+      "settings": {
+      }
+    }
+  },
+  "order": [
+    "main",
+    "534eef81-3117-48ac-a5a1-55e00b5572af"
+  ]
+}
