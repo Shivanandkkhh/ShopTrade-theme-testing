@@ -11,7 +11,7 @@
 /* The below code from scss */
 
 body {
-  background-color: #fff !important;
+  background-color: #ffffff !important;
 }
 
 h1,
@@ -31,9 +31,11 @@ p {
   vertical-align: baseline;
   line-height: 1.6;
 }
-.announcement-bar-new{
+
+.announcement-bar-new {
   overflow: hidden;
 }
+
 li a {
   padding: 0;
 }
@@ -423,13 +425,15 @@ li a {
     left: -140px;
     right: 80%;
   }
-  .slider-heading{
+
+  .slider-heading {
     font-size: 59px !important;
   }
-  .slider-sub-heading a{
-    font-size:18px !important;
+
+  .slider-sub-heading a {
+    font-size: 18px !important;
   }
- 
+
 }
 
 @media screen and (max-width: 520px) {
@@ -437,6 +441,7 @@ li a {
     font-size: 25px !important;
     padding: 0 1rem;
   }
+
   .media-sliding-images {
     height: 28px;
     width: 173px;
@@ -444,22 +449,24 @@ li a {
 }
 
 /*  */
-.slider-marquee-content-parent{
+.slider-marquee-content-parent {
   overflow: hidden;
   display: flex;
   width: auto;
 }
 
-.slick-track{
+.slick-track {
   display: flex !important;
   align-items: center !important;
   justify-content: space-between !important;
   max-width: max-content !important;
   /* transform:translate3d(-2500px, 0px, 0px) !important; */
 }
-.slider-marquee-content:hover{
+
+.slider-marquee-content:hover {
   cursor: wait;
 }
+
 .media-sliding-images {
   display: flex;
   align-items: center;
@@ -474,6 +481,7 @@ li a {
   height: 100%;
   object-fit: cover;
 }
+
 .slider-heading {
   white-space: nowrap;
 }
@@ -490,6 +498,254 @@ li a {
   text-decoration: none;
 }
 
-.slider-heading.slick-slide.slick-active{
+.slider-heading.slick-slide.slick-active {
   width: max-content !important;
 }
+
+/* .product__title h1{
+  color: red;
+} */
+
+/* the product page css starts from here */
+.product__info-wrapper.grid__item {
+  font-family: "Avenir Next", sans-serif;
+  color: #142c73;
+}
+
+.product__title h1 {
+  color: #142c73;
+  font-size: 30px;
+  line-height: 1.3;
+  font-weight: 300;
+}
+
+.price-item.price-item--regular {
+  color: #142c73 !important;
+  font-weight: 300;
+
+}
+
+.price-item.price-item--sale.price-item--last {
+  color: red;
+  font-weight: 700;
+  font-size: 20px;
+  font-family: "Avenir Next", sans-serif;
+}
+
+.quantity__label.form__label {
+  font-weight: 500;
+  color: #142c73;
+  font-size: 16px;
+}
+
+.quantity {
+  border: 1px solid #142c73 !important;
+  border-radius: 10px !important;
+}
+
+.quantity__input {
+  background-color: #142c73 !important;
+  font-size: 16px !important;
+}
+
+.quantity__button.no-js-hidden {
+  color: #142c73;
+  background: transparent;
+}
+
+.quantity__button svg {
+  width: 3rem !important;
+}
+
+.product-form__buttons .button {
+  background-color: #ee0000;
+}
+
+.product-form__buttons .button:after {
+  box-shadow: unset;
+}
+
+.product-form__buttons .button::after :hover {
+  box-shadow: #ee0000 !important;
+}
+
+.product-form__submit.button.button--full-width span {
+  color: #fff;
+  font-size: 16px;
+  font-weight: 600;
+}
+
+.chm-toggle__button h2 {
+  color: #142c73;
+}
+
+.mt0.mt--first-child-0 p span,
+.mt0.mt--first-child-0 p {
+  color: #142c73;
+}
+
+.mt0.mt--first-child-0 p a {
+  color: #0568d6;
+}
+
+.quantity:before {
+  background: none !important;
+}
+
+.product-form__error-message {
+  color: #ee0000;
+}
+
+.quantity__button .quantity__input {
+  font-size: 16px !important;
+}
+
+.product__description .chm-toggle__button {
+  margin-bottom: 20px;
+}
+
+.product__description .mt0.mt--first-child-0 p {
+  margin-bottom: 16px;
+}
+
+.product-form__input.product-form__quantity .quantity__rules-cart {
+  display: none;
+}
+
+.price-item.price-item--sale.price-item--last {
+  font-size: 16px;
+  font-weight: 300;
+}
+
+.price__sales .price-item.price-item--regulars {
+  padding-left: 1rem;
+}
+
+.changing-slider-direction {
+  display: flex;
+  flex-direction: row-reverse;
+  width: 100%;
+}
+
+.slider-component-main-img {
+  width: 90%;
+}
+
+.slider-component-sub-img {
+  width: 10%;
+}
+
+.slider-component-sub-img .thumbnail-list.list-unstyled.slider.slider--mobile {
+  display: unset;
+}
+
+.slider-component-sub-img .thumbnail-list.list-unstyled.slider.slider--mobile li {
+  margin: 0 10px 20px 0;
+}
+
+/* .product__media.media.media--transparent img{
+  height: 200px;
+} */
+/* the product page css ends from here */
+
+/* product-discount-main snippet styling starts from here */
+.product-discount-main {
+  margin-top: 20px;
+}
+
+.product-discount-main .product-discount_heading {
+  display: flex;
+}
+
+.product-discount-main .product-discount_heading span svg {
+  width: fit-content;
+  height: auto; 
+  margin-right: 20px;
+}
+
+.product-discount-main .product-discount_heading span h6 {
+  color: #142c73;
+  font-size: 16px;
+  padding: 0;
+  margin: 0;
+}
+
+.product-discount-main .discount_bar_heading p {
+  margin-bottom: 20px;
+  color: #142c73;
+  font-size: 16px;
+}
+
+.product-discount-main .discount__information .discount_info_1 p,
+.discount_info_2 p,
+.discount_info_3 p {
+  color: #142c73;
+  min-height: 82px;
+  font-size: 16px;
+  padding: 0 20px;
+  background-color: #f5f7ff;
+  text-align: center;
+  border-radius: 5px;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+}
+
+.product-discount-main .discount__information {
+  display: grid;
+  margin-top: 20px;
+  grid-template-columns: repeat(auto-fill, minmax(283px, 1fr));
+  grid-column-gap: 24px;
+  grid-row-gap: 20px;
+}
+
+.product-discount-main .discount_bar_main .discount_bar_second_main {
+  position: relative;
+}
+
+.product-discount-main .discount_bar_main .discount_bar {
+  position: relative;
+  display: grid;
+  grid-template-columns: auto auto;
+  justify-content: center;
+  align-items: center;
+  width: 100%;
+  overflow: hidden;
+  border-radius: 8px;
+  gap: 10px;
+  padding: 5px 15px;
+}
+
+.product-discount-main .discount_bar_main .discount_bar::after {
+  content: "";
+  position: absolute;
+  top: 0;
+  left: 0;
+  width: calc(4400 / 500000 * 100%);
+  height: 100%;
+  z-index: -1;
+  background: #1A2B6F;
+  max-width: 100%;
+}
+
+.product-discount-main .discount_bar_main .discount_bar::before {
+  content: "";
+  position: absolute;
+  top: 0;
+  left: 0;
+  border: 1px solid #E4EBFF;
+  border-radius: 8px;
+  width: 100%;
+  height: 100%;
+  z-index: -1;
+  background: #E4EBFF;
+}
+
+.product-discount-main .discount_bar_main .discount_bar_circle {
+  position: absolute;
+  z-index: 10;
+  left: 0;
+  top: -5px;
+}
+
+/* product-discount-main snippet styling ends from here */
