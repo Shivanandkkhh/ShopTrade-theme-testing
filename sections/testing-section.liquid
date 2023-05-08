@@ -1,0 +1,31 @@
+<div {{ block.shopify_attributes }}>
+  {% for block in section.blocks %}
+    <img src="{{ block.settings.img-check | img_url:'master'}}"> 
+  {% endfor %}
+  {{ customer.tags }}
+</div>
+{% schema %}
+{
+  "name": "testing",
+  "settings": [],
+  "blocks": [
+    {
+      "name": "blocks",
+      "type": "blocks",
+      "settings": [
+        {
+          "type": "image_picker",
+          "id": "img-check",
+          "label": "Select a image"
+        }
+      ]
+    }
+  ],
+
+  "presets": [
+    {
+      "name": "testing"
+    }
+  ]
+}
+{% endschema %}
