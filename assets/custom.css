@@ -676,20 +676,20 @@ li a {
   font-size: 16px;
 }
 
-.product-discount-main .discount__information .discount_info_1 p,
-.discount_info_2 p,
-.discount_info_3 p {
+.product-discount-main .discount__information .discount_info p {
   color: #142c73;
   min-height: 82px;
   font-size: 16px;
-  padding: 0 20px;
+  padding: 20px 20px;
   background-color: #f5f7ff;
   text-align: center;
   border-radius: 5px;
-  display: flex;
-  align-items: center;
-  justify-content: center;
+  margin: 0 auto;
 }
+.product-discount-main .discount__information .discount_info svg{
+  display: none;
+}
+
 
 .product-discount-main .discount__information {
   display: grid;
@@ -703,7 +703,7 @@ li a {
   position: relative;
 }
 
-.product-discount-main .discount_bar_main .discount_bar {
+/* .product-discount-main .discount_bar_main .discount_bar {
   position: relative;
   display: grid;
   grid-template-columns: auto auto;
@@ -714,9 +714,9 @@ li a {
   border-radius: 8px;
   gap: 10px;
   padding: 5px 15px;
-}
+} */
 
-.product-discount-main .discount_bar_main .discount_bar::after {
+/* .product-discount-main .discount_bar_main .discount_bar::after {
   content: "";
   position: absolute;
   top: 0;
@@ -726,9 +726,9 @@ li a {
   z-index: -1;
   background: #1A2B6F;
   max-width: 100%;
-}
+} */
 
-.product-discount-main .discount_bar_main .discount_bar::before {
+/* .product-discount-main .discount_bar_main .discount_bar::before {
   content: "";
   position: absolute;
   top: 0;
@@ -739,7 +739,7 @@ li a {
   height: 100%;
   z-index: -1;
   background: #E4EBFF;
-}
+} */
 
 .product-discount-main .discount_bar_main .discount_bar_circle {
   position: absolute;
@@ -747,5 +747,47 @@ li a {
   left: 0;
   top: -5px;
 }
+.product-discount-main .discount__information .discount_info_tik {
+  position: relative;
+}
+.product-discount-main .discount__information .discount_info_tik p {
+  background-color: #D9FFCF;
+  border:1px solid #009688;
+}
+
+.product-discount-main .discount__information .discount_info_tik svg{
+  display: block;
+  position: absolute;
+  top: -15px;
+  right: 50%;
+  left: 50%;
+}
 
 /* product-discount-main snippet styling ends from here */
+/* .content-for-layout.focus-none{
+  background: #2e2d2d;
+} */
+.discount_bar_second_main .discount_bar_parent {
+  background: #E4EBFF;
+  border-radius: 10px;
+  width: 100%;
+}
+
+.discount_bar_parent .discount_bar {
+  background-color: #1A2B6F;
+  width: 1%;
+  height: 10px;
+  border-top-left-radius: 10px;
+  border-bottom-left-radius: 10px;
+  position: relative;
+}
+
+.discount_bar_second_main .discount_bar_circle{
+  margin-left: 0%;
+  position: absolute;
+  top: 3px;
+}
+
+.discount_bar_second_main .btn-pg-bar {
+  margin-top: 20px;
+}
