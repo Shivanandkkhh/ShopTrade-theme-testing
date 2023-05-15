@@ -54,7 +54,10 @@
 >
   <div id="GalleryStatus-{{ section.id }}" class="visually-hidden" role="status"></div>
   <div class="changing-slider-direction">
-    <slider-component id="GalleryViewer-{{ section.id }}{{ id_append }}" class="slider-mobile-gutter slider-component-main-img">
+    <slider-component
+      id="GalleryViewer-{{ section.id }}{{ id_append }}"
+      class="slider-mobile-gutter slider-component-main-img"
+    >
       {%- unless is_duplicate -%}
         <a class="skip-to-content-link button visually-hidden quick-add-hidden" href="#ProductInfo-{{ section.id }}">
           {{ 'accessibility.skip_to_product_info' | t }}
@@ -62,7 +65,7 @@
       {%- endunless -%}
       <ul
         id="Slider-Gallery-{{ section.id }}{{ id_append }}"
-        class="product__media-list contains-media grid grid--peek list-unstyled slider slider--mobile"
+        class="product__media-list contains-media grid grid--peek list-unstyled slider"
         role="list"
       >
         {%- if product.selected_or_first_available_variant.featured_media != null -%}
@@ -309,4 +312,3 @@
   </div>
   {% render 'product_discount' %}
 </media-gallery>
-
