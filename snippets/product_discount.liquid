@@ -16,16 +16,15 @@
         {% assign cart_disc = 95600 %}
         {% assign cart_value = cart.total_price %}
         {% assign Discount = cart_disc | minus: cart_value %}
-        {% if Discount < 95600 and Discount > 0 %}
-          spend <strong> {{ Discount | money }} </strong> more to <strong>Get get 10% OFF</strong>
-        {% else %}
-
-        {% endif %}
+        spend <strong> {{ Discount | money }} </strong> more to <strong>Get get 10% OFF</strong>
       </p>
+      <p>cart price is : {{ cart.total_price | money }}</p>
+      <p>discount {{ discount_allocation.amount }}</p>
+      {% comment %} <p>{{ line_item.discount_allocations }}</p> {% endcomment %}
     </div>
     <div class="discount_bar_second_main">
       <div class="discount_bar_parent">
-        <div class="discount_bar" data-total-price="{{ cart.total_price | json }}">i</div>
+        <div class="discount_bar">hello</div>
       </div>
       <div class="discount_bar_circle">
         <svg width="20" height="20" viewBox="0 0 20 20" fill="none" xmlns="http://www.w3.org/2000/svg">
@@ -33,24 +32,25 @@
           <rect x="3" y="3" width="14" height="14" rx="7" fill="#DA2F20"></rect>
         </svg>
       </div>
+      <button class="btn-pg-bar">click me</button>
     </div>
   </div>
   <div class="discount__information">
-    <div class="discount_info disc_info-1 {% if cart.total_price >= 50000 %} discount_info_tik   {% endif %}">
+    <div class="discount_info {% if cart.total_price >= 50000 %} discount_info_tik   {% endif %}">
       <p>Complementary Gift on orders above <strong> RS.500 </strong></p>
       <svg width="29" height="29" viewBox="0 0 29 29" fill="none" xmlns="http://www.w3.org/2000/svg">
         <circle cx="14.25" cy="14.25" r="13.5" fill="white" stroke="#009688" stroke-width="1.5"/>
         <path d="M6.75 12.75L11.25 19.5L21 9" stroke="#009688" stroke-width="3"/>
       </svg>
     </div>
-    <div class="discount_info disc_info-2 {% if cart.total_price >= 100000 %} discount_info_tik   {% endif %}">
+    <div class="discount_info {% if cart.total_price >= 100000 %} discount_info_tik   {% endif %}">
       <p>Spend RS.1000+ to get <strong> &nbsp 10% OFF </strong></p>
       <svg width="29" height="29" viewBox="0 0 29 29" fill="none" xmlns="http://www.w3.org/2000/svg">
         <circle cx="14.25" cy="14.25" r="13.5" fill="white" stroke="#009688" stroke-width="1.5"/>
         <path d="M6.75 12.75L11.25 19.5L21 9" stroke="#009688" stroke-width="3"/>
       </svg>
     </div>
-    <div class="discount_info disc_info-3 {% if cart.total_price >= 500000 %} discount_info_tik   {% endif %}">
+    <div class="discount_info {% if cart.total_price >= 500000 %} discount_info_tik   {% endif %}">
       <p>Spend RS.5000+ to get <strong> &nbsp 20% OFF </strong></p>
       <svg width="29" height="29" viewBox="0 0 29 29" fill="none" xmlns="http://www.w3.org/2000/svg">
         <circle cx="14.25" cy="14.25" r="13.5" fill="white" stroke="#009688" stroke-width="1.5"/>
