@@ -658,11 +658,6 @@ li a {
   margin: 0 10px 20px 0;
 }
 
-/* .product__media.media.media--transparent img{
-  height: 200px;
-} */
-/* the product page css ends from here */
-
 /* product-discount-main snippet styling starts from here */
 .product-discount-main {
   margin-top: 20px;
@@ -670,6 +665,9 @@ li a {
 
 .product-discount-main .product-discount_heading {
   display: flex;
+}
+.card__content .card__information .rating-star::before{
+  -webkit-text-fill-color: #ee0000 !important;
 }
 
 .product-discount-main .product-discount_heading span svg {
@@ -727,11 +725,6 @@ li a {
 .product-discount-main .discount_bar_main .discount_bar_second_main {
   position: relative;
 }
-
-
-
-
-
 
 .product-discount-main .discount_bar_main .discount_bar_circle {
   position: absolute;
@@ -825,11 +818,15 @@ li a {
   }
 }
 
-.slider-counter.caption{
+.slider-buttons .slider-counter.caption{
   color: #142c73 !important;
   font-size: 16px;
 }
 
-.slider-button{
+.slider-buttons  .slider-button{
   color: #142c73 !important;
+}
+.chm-toggle__button .h4.mt0.mb0{
+display: flex;
+align-items: center;
 }
