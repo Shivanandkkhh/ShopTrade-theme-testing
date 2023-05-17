@@ -30,6 +30,11 @@
   --color-background: var(--color-base-accent-2);
   --gradient-background: var(--gradient-base-accent-2);
 }
+.color-accent-4{
+  --color-foreground: var(--color-base-solid-button-labels);
+  --color-background: var(--color-base-accent-4);
+  --gradient-background: var(--gradient-base-accent-4);
+}
 
 .color-foreground-outline-button {
   --color-foreground: var(--color-base-outline-button-labels);
@@ -42,6 +47,10 @@
 .color-foreground-accent-2 {
   --color-foreground: var(--color-base-accent-2);
 }
+.color-foreground-accent-4 {
+  --color-foreground: var(--color-base-accent-4);
+}
+
 
 :root,
 .color-background-1 {
@@ -60,7 +69,7 @@
 :root,
 .color-background-1 {
   --color-button: var(--color-base-accent-1);
-  --color-button-text: var(--color-base-solid-button-labels);
+  --color-button-text: var(--color-shadow);
   --alpha-button-background: 1;
   --alpha-button-border: 1;
 }
@@ -117,7 +126,8 @@
 .color-background-2,
 .color-inverse,
 .color-accent-1,
-.color-accent-2 {
+.color-accent-2,
+.color-accent-4 {
   --color-badge-background: var(--color-background);
   --color-badge-border: var(--color-background);
   --alpha-badge-border: 1;

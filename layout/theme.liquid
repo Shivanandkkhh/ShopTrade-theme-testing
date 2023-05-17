@@ -10,12 +10,11 @@
     <link rel="stylesheet" type="text/css" href="{{ 'custom.css' | asset_url }}">
     <link rel="stylesheet" type="text/css" href="{{ 'product-page.scss' | asset_url }}">
     <link rel="stylesheet" type="text/css" href="{{ 'customs.css' | style_url }}">
-    {{ '//code.jquery.com/jquery-3.6.0.min.js' | script_tag }}  
-{{ 'https://cdn.jsdelivr.net/npm/slick-carousel@1.8.1/slick/slick.min.js' | script_tag }}
-{{ 'https://cdn.jsdelivr.net/npm/slick-carousel@1.8.1/slick/slick.css' | stylesheet_tag }}
-{{ 'https://cdn.jsdelivr.net/npm/slick-carousel@1.8.1/slick/slick-theme.css' | stylesheet_tag }}
+    {{ '//code.jquery.com/jquery-3.6.0.min.js' | script_tag }}
+    {{ 'https://cdn.jsdelivr.net/npm/slick-carousel@1.8.1/slick/slick.min.js' | script_tag }}
+    {{ 'https://cdn.jsdelivr.net/npm/slick-carousel@1.8.1/slick/slick.css' | stylesheet_tag }}
+    {{ 'https://cdn.jsdelivr.net/npm/slick-carousel@1.8.1/slick/slick-theme.css' | stylesheet_tag }}
 
- 
     {%- if settings.favicon != blank -%}
       <link rel="icon" type="image/png" href="{{ settings.favicon | image_url: width: 32, height: 32 }}">
     {%- endif -%}
@@ -76,6 +75,7 @@
         --color-base-outline-button-labels: {{ settings.colors_outline_button_labels.red }}, {{ settings.colors_outline_button_labels.green }}, {{ settings.colors_outline_button_labels.blue }};
         --color-base-accent-1: {{ settings.colors_accent_1.red }}, {{ settings.colors_accent_1.green }}, {{ settings.colors_accent_1.blue }};
         --color-base-accent-2: {{ settings.colors_accent_2.red }}, {{ settings.colors_accent_2.green }}, {{ settings.colors_accent_2.blue }};
+        --color-base-accent-4: {{ settings.colors_accent_4.red }}, {{ settings.colors_accent_4.green }}, {{ settings.colors_accent_4.blue }};
         --payment-terms-background-color: {{ settings.colors_background_1 }};
 
         --gradient-base-background-1: {% if settings.gradient_background_1 != blank %}{{ settings.gradient_background_1 }}{% else %}{{ settings.colors_background_1 }}{% endif %};

@@ -128,6 +128,9 @@
         "colors_accent_2": {
           "label": "Accent 2"
         },
+        "colors_accent_4":{
+          "label": "Accent 4"
+        },
         "gradient_accent_2": {
           "label": "Accent 2 gradient"
         },
@@ -398,6 +401,9 @@
         },
         "accent_2": {
           "label": "Accent 2"
+        },
+        "accent_4": {
+          "label": "Accent 4"
         },
         "background_1": {
           "label": "Background 1"

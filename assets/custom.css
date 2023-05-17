@@ -12,6 +12,7 @@
 
 body {
   background-color: #ffffff !important;
+  font-family: 'Avenir Next';
 }
 
 h1,
@@ -30,6 +31,14 @@ p {
   font: inherit;
   vertical-align: baseline;
   line-height: 1.6;
+  font-family: 'Avenir Next' !important;
+  color: #142c73;
+}
+h1,h2{
+  font-weight: 600;
+}
+a{
+  font-weight: 300;
 }
 
 .announcement-bar-new {
@@ -516,7 +525,7 @@ li a {
   color: #142c73;
   font-size: 30px;
   line-height: 1.3;
-  font-weight: 300;
+  font-weight: 600;
 }
 
 .price-item.price-item--regular {
@@ -577,6 +586,7 @@ li a {
 
 .chm-toggle__button h2 {
   color: #142c73;
+  font-weight: 600;
 }
 
 .mt0.mt--first-child-0 p span,
@@ -686,7 +696,7 @@ li a {
   display: flex;
 }
 .card__content .card__information .rating-star::before{
-  -webkit-text-fill-color: #ee0000 !important;
+  -webkit-text-fill-color: #FEC107 !important;
 }
 
 .product-discount-main .product-discount_heading span svg {
@@ -736,7 +746,7 @@ li a {
   margin-top: 20px;
   /* grid-template-columns: repeat(auto-fill, minmax(283px, 1fr)); */
   grid-template-areas: 'main main'
-              'sub-1 sub-2';
+              'sub-2 sub-1';
   grid-column-gap: 24px;
   grid-row-gap: 20px;
 }
@@ -784,6 +794,7 @@ li a {
   border-top-left-radius: 10px;
   border-bottom-left-radius: 10px;
   position: relative;
+  color: #fff;
 }
 
 .discount_bar_second_main .discount_bar_circle{
@@ -791,7 +802,9 @@ li a {
   position: absolute;
   top: 3px;
 }
-
+.price.price--on-sale .price__container .price__sales .price-item.price-item--regulars{
+  color: #fff;
+}
 .discount_bar_second_main .btn-pg-bar {
   margin-top: 20px;
 }
@@ -811,6 +824,7 @@ li a {
   }
 
 }
+
 .product__info-wrapper.grid__item .rating-star::before{
   -webkit-text-fill-color: #ee0000 !important;
 }
@@ -822,6 +836,12 @@ li a {
   .product-discount-main{
     width: unset;
   }
+}
+.product-media-container  .product__modal-opener .product__media{
+  border-radius: 20px;
+}
+.product-media-container  .product__modal-opener {
+  background-color: #fff;
 }
 .product-media-container.constrain-height .media{
   padding-top: 50% !important;
@@ -855,7 +875,32 @@ align-items: center;
     height: 60px;
   }
 }
+.mobile-facets__open-wrapper .mobile-facets__open{
+  color: #142c73;
+}
 
 .related-products__heading.h2{
   color: #142c73;
+  font-weight: 600;
+}
+.oke-reviewsTab.oke-reviewsTab--small-top-left.oke-reviewsTab--large-top-left{
+  background-color: rgb(250, 10, 10);
+}
+/* adjusting you may also need section inbuilt  */
+/* over riding the properties from the base and component.css */
+/* .card__badge{
+  align-self: unset !important;
+  grid-row-start: unset !important;
+}*/
+.card__content .card__badge span{
+  color: #fff;
+} 
+.card__content .card__badge{
+  padding: 2% 0 0 2%;
+}
+.card-wrapper .card .card__inner .card__media{
+  border-radius: 20px !important;
+}
+.card-wrapper .card .card__inner{
+  background: #fff;
 }

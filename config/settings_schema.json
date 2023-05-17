@@ -62,8 +62,14 @@
       {
         "type": "color",
         "id": "colors_accent_2",
-        "default": "#334FB4",
+        "default": "#E91314",
         "label": "t:settings_schema.colors.settings.colors_accent_2.label"
+      },
+      {
+        "type": "color",
+        "id": "colors_accent_4",
+        "default": "#E91314",
+        "label": "Accent 4"
       },
       {
         "id": "gradient_accent_2",
@@ -1312,11 +1318,15 @@
             "label": "t:sections.all.colors.accent_2.label"
           },
           {
+            "value": "accent-4",
+            "label": "accent-4"
+          },
+          {
             "value": "background-2",
             "label": "t:sections.all.colors.background_2.label"
           }
         ],
-        "default": "accent-2",
+        "default": "accent-1",
         "label": "t:settings_schema.badges.settings.sale_badge_color_scheme.label"
       },
       {
