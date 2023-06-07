@@ -5,6 +5,7 @@
     "colors_accent_1": "#e3fc02",
     "gradient_accent_1": "",
     "colors_accent_2": "#ffffff",
+    "colors_accent_4": "#dd1d1d",
     "gradient_accent_2": "",
     "colors_text": "#ffffff",
     "colors_outline_button_labels": "#e3fc02",
@@ -101,9 +102,9 @@
     "drawer_shadow_horizontal_offset": 0,
     "drawer_shadow_vertical_offset": 4,
     "drawer_shadow_blur": 5,
-    "badge_position": "bottom left",
+    "badge_position": "top left",
     "badge_corner_radius": 40,
-    "sale_badge_color_scheme": "accent-2",
+    "sale_badge_color_scheme": "accent-4",
     "sold_out_badge_color_scheme": "background-1",
     "accent_icons": "text",
     "brand_headline": "",
@@ -185,7 +186,16 @@
     },
     "content_for_index": [
 
-    ]
+    ],
+    "blocks": {
+      "733389323033596483": {
+        "type": "shopify:\/\/apps\/okendo-product-reviews-ugc\/blocks\/theme-settings\/bb689e69-ea70-4661-8fb7-ad24a2e23c29",
+        "disabled": false,
+        "settings": {
+          "show_preview_data": true
+        }
+      }
+    }
   },
   "presets": {
     "Default": {
@@ -195,6 +205,7 @@
       "gradient_accent_1": "",
       "colors_accent_2": "#ffffff",
       "gradient_accent_2": "",
+      "colors_accent_4": "#FF0410",
       "colors_text": "#ffffff",
       "colors_outline_button_labels": "#e3fc02",
       "colors_background_1": "#1f1f21",

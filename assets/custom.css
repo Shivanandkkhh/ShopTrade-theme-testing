@@ -12,7 +12,9 @@
 
 body {
   background-color: #ffffff !important;
+  font-family: 'Avenir Next';
 }
+
 
 h1,
 h2,
@@ -30,6 +32,21 @@ p {
   font: inherit;
   vertical-align: baseline;
   line-height: 1.6;
+  font-family: 'Avenir Next' !important;
+  color: #142c73;
+}
+
+.container{
+  width: 1200px;
+  margin: 0 auto;
+}
+h1,
+h2 {
+  font-weight: 600;
+}
+
+a {
+  font-weight: 300;
 }
 
 .announcement-bar-new {
@@ -516,7 +533,7 @@ li a {
   color: #142c73;
   font-size: 30px;
   line-height: 1.3;
-  font-weight: 300;
+  font-weight: 600;
 }
 
 .price-item.price-item--regular {
@@ -527,9 +544,10 @@ li a {
 
 .price-item.price-item--sale.price-item--last {
   color: red;
-  font-weight: 700;
-  font-size: 20px;
+  font-weight: 700 !important;
+  font-size: 20px !important;
   font-family: "Avenir Next", sans-serif;
+  margin-bottom:8px;
 }
 
 .quantity__label.form__label {
@@ -541,6 +559,7 @@ li a {
 .quantity {
   border: 1px solid #142c73 !important;
   border-radius: 10px !important;
+  min-height: calc((0.5 * 2) + 4.5rem) !important;
 }
 
 .quantity__input {
@@ -573,15 +592,26 @@ li a {
   color: #fff;
   font-size: 16px;
   font-weight: 600;
+  padding: 11.5px 0;
+}
+@media(min-width:1024px){
+  .button--full-width{
+      width: 109% !important;
+  }
 }
 
 .chm-toggle__button h2 {
   color: #142c73;
+  font-weight: 600;
+  font-size: 20px;
 }
 
 .mt0.mt--first-child-0 p span,
 .mt0.mt--first-child-0 p {
   color: #142c73;
+  font-size: 14px;
+  font-weight: 300;
+  letter-spacing: initial;
 }
 
 .mt0.mt--first-child-0 p a {
@@ -601,11 +631,11 @@ li a {
 }
 
 .product__description .chm-toggle__button {
-  margin-bottom: 20px;
+  margin-bottom: 17px;
 }
 
 .product__description .mt0.mt--first-child-0 p {
-  margin-bottom: 16px;
+  margin-bottom: 15px;
 }
 
 .product-form__input.product-form__quantity .quantity__rules-cart {
@@ -627,39 +657,78 @@ li a {
   width: 100%;
 }
 
+@media(max-width:1024px) {
+  .changing-slider-direction {
+    display: unset;
+  }
+}
+
 .slider-component-main-img {
   width: 90%;
+}
+
+@media(max-width:1024px) {
+  .slider-component-main-img {
+    width: unset;
+  }
 }
 
 .slider-component-sub-img {
   width: 10%;
 }
 
+@media(max-width:1024px) {
+  .slider-component-sub-img {
+    width: unset;
+  }
+}
+
 .slider-component-sub-img .thumbnail-list.list-unstyled.slider.slider--mobile {
   display: unset;
+}
+
+@media(max-width:750px) {
+  .slider-component-sub-img .thumbnail-list.list-unstyled.slider.slider--mobile {
+    /* display: grid;
+    grid-template-columns: repeat(4, 1fr); */
+    display: flex;
+    flex-wrap: wrap;
+    justify-content: space-between;
+  }
+
+  .thumbnail-list__item {
+    flex-basis: calc(25% - 10px);
+    margin-bottom: 10px;
+  }
+
 }
 
 .slider-component-sub-img .thumbnail-list.list-unstyled.slider.slider--mobile li {
   margin: 0 10px 20px 0;
 }
 
-/* .product__media.media.media--transparent img{
-  height: 200px;
-} */
-/* the product page css ends from here */
+@media(max-width:750px) {
+  .slider-component-sub-img .thumbnail-list.list-unstyled.slider.slider--mobile li {
+    margin: 0;
+  }
+}
 
 /* product-discount-main snippet styling starts from here */
-.product-discount-main {
+/* .product-discount-main {
   margin-top: 20px;
-}
+} */
 
 .product-discount-main .product-discount_heading {
   display: flex;
 }
 
+.card__content .card__information .rating-star::before {
+  -webkit-text-fill-color: #FEC107 !important;
+}
+
 .product-discount-main .product-discount_heading span svg {
   width: fit-content;
-  height: auto; 
+  height: auto;
   margin-right: 20px;
 }
 
@@ -676,69 +745,45 @@ li a {
   font-size: 16px;
 }
 
-.product-discount-main .discount__information .discount_info_1 p,
-.discount_info_2 p,
-.discount_info_3 p {
+.product-discount-main .discount__information .discount_info p {
   color: #142c73;
   min-height: 82px;
   font-size: 16px;
-  padding: 0 20px;
+  padding: 20px 20px;
   background-color: #f5f7ff;
   text-align: center;
   border-radius: 5px;
-  display: flex;
-  align-items: center;
-  justify-content: center;
+  margin: 0 auto;
+}
+
+.product-discount-main .discount__information .discount_info svg {
+  display: none;
+}
+
+.disc_info-2 {
+  grid-area: sub-1;
+}
+
+.disc_info-1 {
+  grid-area: main;
+}
+
+.disc_info-2 {
+  grid-area: sub-2;
 }
 
 .product-discount-main .discount__information {
   display: grid;
   margin-top: 20px;
-  grid-template-columns: repeat(auto-fill, minmax(283px, 1fr));
+  /* grid-template-columns: repeat(auto-fill, minmax(283px, 1fr)); */
+  grid-template-areas: 'main main'
+    'sub-2 sub-1';
   grid-column-gap: 24px;
   grid-row-gap: 20px;
 }
 
 .product-discount-main .discount_bar_main .discount_bar_second_main {
   position: relative;
-}
-
-.product-discount-main .discount_bar_main .discount_bar {
-  position: relative;
-  display: grid;
-  grid-template-columns: auto auto;
-  justify-content: center;
-  align-items: center;
-  width: 100%;
-  overflow: hidden;
-  border-radius: 8px;
-  gap: 10px;
-  padding: 5px 15px;
-}
-
-.product-discount-main .discount_bar_main .discount_bar::after {
-  content: "";
-  position: absolute;
-  top: 0;
-  left: 0;
-  width: calc(4400 / 500000 * 100%);
-  height: 100%;
-  z-index: -1;
-  background: #1A2B6F;
-  max-width: 100%;
-}
-
-.product-discount-main .discount_bar_main .discount_bar::before {
-  content: "";
-  position: absolute;
-  top: 0;
-  left: 0;
-  border: 1px solid #E4EBFF;
-  border-radius: 8px;
-  width: 100%;
-  height: 100%;
-  z-index: -1;
-  background: #E4EBFF;
 }
 
 .product-discount-main .discount_bar_main .discount_bar_circle {
@@ -748,4 +793,390 @@ li a {
   top: -5px;
 }
 
+.product-discount-main .discount__information .discount_info_tik {
+  position: relative;
+}
+
+.product-discount-main .discount__information .discount_info_tik p {
+  background-color: #D9FFCF;
+  border: 1px solid #009688;
+}
+
+.product-discount-main .discount__information .discount_info_tik svg {
+  display: block;
+  position: absolute;
+  top: -15px;
+  right: 50%;
+  left: 50%;
+}
+
 /* product-discount-main snippet styling ends from here */
+/* .content-for-layout.focus-none{
+  background: #2e2d2d;
+} */
+.discount_bar_second_main .discount_bar_parent {
+  background: #E4EBFF;
+  border-radius: 10px;
+  width: 100%;
+}
+
+.discount_bar_parent .discount_bar {
+  background-color: #1A2B6F;
+  width: 1%;
+  height: 10px;
+  border-top-left-radius: 10px;
+  border-bottom-left-radius: 10px;
+  position: relative;
+  color: #fff;
+}
+
+.discount_bar_second_main .discount_bar_circle {
+  margin-left: 0%;
+  position: absolute;
+  top: 3px;
+}
+
+.price.price--on-sale .price__container .price__sales .price-item.price-item--regulars {
+  color: #fff;
+}
+
+.discount_bar_second_main .btn-pg-bar {
+  margin-top: 20px;
+}
+
+.product__info-wrapper.grid__item .rating-count.caption{
+  font-size: 14px;
+}
+.product__info-wrapper.grid__item .rating-count.caption a {
+  text-decoration: none;
+}
+/*  */
+.card__information .card__heading.h5,
+.rating-count.caption {
+  color: #142c73;
+}
+
+.card__content .card__information {
+  background: #fff;
+}
+
+.card--card .card__content {
+  padding: unset !important;
+}
+
+@media(max-width:1024px) {
+  .product__info-wrapper.grid__item {
+    margin-top: 83px;
+  }
+
+}
+
+.product__info-wrapper.grid__item .rating-star::before {
+  -webkit-text-fill-color: #ee0000 !important;
+  font-size: 20px;
+  font-weight: bolder;
+  /* border: 2px solid #ee0000; */
+}
+
+.product .rating-star{
+  --letter-spacing: 0.2 !important;
+}
+.product-discount-main {
+  width: 90%;
+  margin-left: auto;
+}
+
+@media(max-width:1024px) {
+  .product-discount-main {
+    width: unset;
+  }
+}
+
+.product-media-container .product__modal-opener .product__media {
+  border-radius: 20px;
+}
+
+.product-media-container .product__modal-opener {
+  background-color: #fff;
+}
+
+.product-media-container.constrain-height .media {
+  padding-top: 50% !important;
+}
+
+@media (min-width:767px) and (max-width:1024px) {
+  .product-media-container.constrain-height .media {
+    padding-top: 100% !important;
+  }
+}
+
+/* @media (max-width:520px){
+  .product-media-container.constrain-height .media{
+    padding-top: 50% !important;
+  }
+} */
+
+.slider-buttons .slider-counter.caption {
+  color: #142c73 !important;
+  font-size: 16px;
+}
+
+.slider-buttons .slider-button {
+  color: #142c73 !important;
+}
+
+.chm-toggle__button .h4.mt0.mb0 {
+  display: flex;
+  align-items: center;
+}
+
+@media(max-width:750px) {
+  .thumbnail-list__item .thumbnail {
+    height: 60px;
+  }
+}
+
+.mobile-facets__open-wrapper .mobile-facets__open {
+  color: #142c73;
+}
+
+.related-products__heading.h2 {
+  color: #142c73;
+  font-weight: 600;
+}
+
+.oke-reviewsTab.oke-reviewsTab--small-top-left.oke-reviewsTab--large-top-left {
+  background-color: rgb(250, 10, 10);
+}
+
+/* adjusting you may also need section inbuilt  */
+/* over riding the properties from the base and component.css */
+/* .card__badge{
+  align-self: unset !important;
+  grid-row-start: unset !important;
+}*/
+.card__content .card__badge span {
+  color: #fff;
+  border-radius: 5px;
+}
+
+.card__content .card__badge {
+  padding: 2% 0 0 2%;
+}
+
+.card-wrapper .card .card__inner .card__media {
+  border-radius: 20px !important;
+}
+
+.card-wrapper .card .card__inner {
+  background: #fff;
+}
+
+.product__info-container .badge.badge--bottom-left.color-accent-4 {
+  color: #fff;
+  font-size: 16px;
+  margin-bottom: 5px;
+  border-radius: 5px;
+}
+
+/* the membership section of cx ortho starts from here */
+.product-discount-main .membership_section {
+  border: 1px solid #BABFD3;
+  padding: 16px 18px;
+  border-radius: 10px;
+}
+
+.membership_section .membership__heaing .membership__text_main {
+  font-weight: 600;
+  color: #142c73;
+  padding-bottom: 5px;
+  font-size: 14px;
+}
+
+.membership_section .membership__heaing .membership__text_sub {
+  color: #152B73 ;
+  font-size: 14px;
+  margin: 0;
+}
+
+.membership_section .discount_bar_main .discount_bar_heading p {
+  font-size: 8px;
+  padding: 5px;
+  border: 0.5px solid #BABFD3;
+  max-width: fit-content;
+  border-radius: 10px;
+  font-weight: 300;
+  margin-bottom: 8px;
+}
+
+/* .membership_section .membership__heaing {
+  color: #142c73;
+  margin: 0;
+} */
+
+.membership_section .membership__compliments div {
+  margin-bottom: 5px;
+  color: #6c77a0;
+}
+
+.membership_section .membership_btn {
+  background: #1A2B6F;
+  text-align: center;
+  padding: 3px 0;
+  border-radius: 5px;
+  margin-bottom: 15px;
+  cursor: pointer;
+}
+
+.membership_section .membership_btn a {
+  color: #fff;
+  text-decoration: none;
+  cursor: pointer;
+
+}
+
+.discount_bar_second_main .discount_bar_parent {
+  margin-bottom: 20px;
+}
+
+.membership_section .sign_in_info {
+  text-align: center;
+  color: #6c77a0;
+}
+
+.membership_section .sign_in_info span {
+  color: #1A2B6F;
+  text-decoration: underline;
+}
+
+.green-svg svg circle {
+  stroke: green;
+}
+
+.green-svg svg circle path {
+  fill: green;
+}
+
+.gift__compliment,
+.initial_off___compliment,
+.final_off___compliment {
+  display: flex;
+}
+
+.gift__compliment svg,
+.initial_off___compliment svg,
+.final_off___compliment svg {
+  margin-right: 10px;
+}
+
+.after_membership {
+  display: none;
+}
+
+.facet-filters__field .select .facet-filters__sort {
+  color: #142c73;
+}
+
+.product-count .product-count__text.text-body #ProductCount {
+  color: #142c73;
+}
+
+.discount_bar_heading__tootip {
+  display: flex;
+}
+
+/* the membership section of cx ortho ends here */
+
+
+/* Additional CSS styles for the tooltip */
+/* .membership__heaing{
+  position: relative;
+} */
+
+.discount_bar_heading.discount_bar_heading__tootip {
+  position: relative;
+}
+
+/* @media(min-width:749px) and (max-width:1024px){
+  .discount_bar_heading.discount_bar_heading__tootip{
+    left: 10% !important;
+    justify-content: center !important;
+  }
+}
+@media(max-width:520px){
+  .discount_bar_heading.discount_bar_heading__tootip{
+    left: 0 !important;
+    justify-content: center !important;
+  }
+} */
+/* @media(max-width:420px){
+  .discount_bar_heading.discount_bar_heading__tootip{
+    left: 0 !important;
+    justify-content: center !important;
+  }
+} */
+
+.discount_bar {
+  margin-top: 40px;
+}
+
+.discount_bar_heading.discount_bar_heading__tootip {
+  min-width: 200px;
+  position: relative;
+  top: -59px;
+  left: auto;
+}
+
+/* @media (max-width:375px){
+.discount_bar_heading.discount_bar_heading__tootip{
+  margin-left: -80% !important;
+}
+} */
+
+.header__icon-list .header__link-list .contents li:last-child .bold.link-faded-reverse {
+  background: red;
+  color: #fff;
+  height: 30px;
+  width: 49px;
+  text-align: center;
+  display: flex;
+  align-items: center;
+  border-radius: 5px;
+  justify-content: center;
+}
+
+.announcement-bar.bg-custom.text-custom {
+  padding-block-start: 0.5rem;
+  padding-block-end: 0.5rem;
+}
+
+@media(min-width:1024px) {
+  .product__info-wrapper.grid__item {
+    padding-left: 70px;
+  }
+}
+.product__info-container .product-form{
+  margin: 1.9rem 0 !important;
+}
+.product-form__submit.button.button--full-width.button--primary:hover{
+ box-shadow: 2px 2px #ee0000;
+}
+.product__info-container .product__description{
+  margin: 4rem 0 2.5rem 0 !important;
+}
+/* .bg-custom.text-custom  */
+.price__container .price__sales .price-item.price-item--sale.price-item--last{
+  font-size: 16px !important;
+}
+.oke-w-recommendsModule-text,.oke-w-ratingAverageModule-count{
+  font-weight: 400;
+}
+.card__heading.h5{
+margin-bottom: 5px;
+}
+.card-wrapper .rating-star{
+  --letter-spacing: unset !important;
+}
+.related-products .grid.product-grid.grid--4-col-desktop.grid--2-col-tablet-down{
+  column-gap: 20px !important;
+}

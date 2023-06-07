@@ -1,30 +1,111 @@
-<div {{ block.shopify_attributes }}>
-  {% for block in section.blocks %}
-    <img src="{{ block.settings.img-check | img_url:'master'}}"> 
-  {% endfor %}
-  {{ customer.tags }}
+{% style %}
+  .color-primary {
+    color:{{ section.settings.primary }};
+  }
+
+  .color-secondary {
+    color:{{ section.settings.secondary }};
+  }
+
+  .color-ternary {
+    color:{{ section.settings.ternary }};
+  }
+
+  .color-fourth {
+    color:{{ section.settings.fourth }};
+  }
+  .color-penta {
+    color:{{ section.settings.penta }};
+  }
+{% endstyle %}
+
+<div class="wrapper">
+  <div class="color-{{ section.settings.select }}">
+    lorem ipusm dolore imolorem ipusm dolore imolorem ipusm dolore imolorem ipusm dolore imolorem ipusm dolore imolorem
+    ipusm dolore imolorem ipusm dolore imolorem ipusm dolore imolorem ipusm dolore imolorem ipusm dolore imolorem ipusm
+    dolore imolorem ipusm dolore imolorem ipusm dolore imolorem ipusm dolore imolorem ipusm dolore imolorem ipusm dolore
+    imolorem ipusm dolore imolorem ipusm dolore imolorem ipusm dolore imolorem ipusm dolore imolorem ipusm dolore
+    imolorem ipusm dolore imolorem ipusm dolore imolorem ipusm dolore imo
+  </div>
 </div>
+
+<div class="video">
+  <div class="main-video">
+    <iframe width="560" height="315" src="{{ section.settings.video_one }}" title="YouTube video player" frameborder="0" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture; web-share" allowfullscreen></iframe>
+  </div>
+</div>
+
 {% schema %}
 {
   "name": "testing",
-  "settings": [],
-  "blocks": [
+  "settings": [
     {
-      "name": "blocks",
-      "type": "blocks",
-      "settings": [
+      "type": "select",
+      "id": "select",
+      "label": "Select a color",
+      "options": [
         {
-          "type": "image_picker",
-          "id": "img-check",
-          "label": "Select a image"
+          "value": "primary",
+          "label": "primary"
+        },
+        {
+          "value": "secondary",
+          "label": "secondary"
+        },
+        {
+          "value": "ternary",
+          "label": "ternary"
+        },
+        {
+          "value": "fourth",
+          "label": "fourth"
+        },
+        {
+          "value": "penta",
+          "label": "penta"
         }
-      ]
+      ],
+      "default": "penta"
+    },
+    {
+      "type": "color",
+      "id": "primary",
+      "label": "Body text",
+      "default": "#000000"
+    },
+    {
+      "type": "color",
+      "id": "secondary",
+      "label": "Body text",
+      "default": "#000000"
+    },
+    {
+      "type": "color",
+      "id": "ternary",
+      "label": "Body text",
+      "default": "#000000"
+    },
+    {
+      "type": "color",
+      "id": "fourth",
+      "label": "Body text",
+      "default": "#000000"
+    },
+    {
+      "type": "color",
+      "id": "penta",
+      "label": "Body text",
+      "default": "#000000"
+    },
+    {
+      "type": "url",
+      "id": "video_one",
+      "label": "Product description video"
     }
   ],
-
   "presets": [
     {
-      "name": "testing"
+      "name": "testing colors"
     }
   ]
 }
