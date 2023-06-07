@@ -1,70 +1,111 @@
 {% style %}
-  .main-container .row .thePara {
-    color: red; /* Default color */
+  .color-primary {
+    color:{{ section.settings.primary }};
   }
 
-  .main-container .row .thePara.color-accent-1 {
-    color: red;
+  .color-secondary {
+    color:{{ section.settings.secondary }};
   }
 
-  .main-container .row .thePara.color-accent-2 {
-    color: green;
+  .color-ternary {
+    color:{{ section.settings.ternary }};
   }
 
-  .main-container .row .thePara.color-accent-3 {
-    color: yellow;
+  .color-fourth {
+    color:{{ section.settings.fourth }};
+  }
+  .color-penta {
+    color:{{ section.settings.penta }};
   }
 {% endstyle %}
 
-<div class="main-container">
-  <div class="row">
-    <p class="thePara {% if section.settings.color-main == 'accent-1' %}color-accent-1{% endif %}{% if section.settings.color-main == 'accent-2' %}color-accent-2{% endif %}{% if section.settings.color-main == 'accent-3' %}color-accent-3{% endif %}">
-      Lorem ipsum dolor sit amet consectetur adipisicing elit. Laborum, ratione.
-    </p>
+<div class="wrapper">
+  <div class="color-{{ section.settings.select }}">
+    lorem ipusm dolore imolorem ipusm dolore imolorem ipusm dolore imolorem ipusm dolore imolorem ipusm dolore imolorem
+    ipusm dolore imolorem ipusm dolore imolorem ipusm dolore imolorem ipusm dolore imolorem ipusm dolore imolorem ipusm
+    dolore imolorem ipusm dolore imolorem ipusm dolore imolorem ipusm dolore imolorem ipusm dolore imolorem ipusm dolore
+    imolorem ipusm dolore imolorem ipusm dolore imolorem ipusm dolore imolorem ipusm dolore imolorem ipusm dolore
+    imolorem ipusm dolore imolorem ipusm dolore imolorem ipusm dolore imo
   </div>
 </div>
+
+<div class="video">
+  <div class="main-video">
+    <iframe width="560" height="315" src="{{ section.settings.video_one }}" title="YouTube video player" frameborder="0" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture; web-share" allowfullscreen></iframe>
+  </div>
+</div>
+
 {% schema %}
 {
   "name": "testing",
   "settings": [
     {
       "type": "select",
-      "id": "color-main",
-      "label": "select a color",
+      "id": "select",
+      "label": "Select a color",
       "options": [
         {
-          "value": "accent-1",
-          "label": "accent-1"
+          "value": "primary",
+          "label": "primary"
         },
         {
-          "value": "accent-2",
-          "label": "accent-2"
+          "value": "secondary",
+          "label": "secondary"
         },
         {
-          "value": "accent-3",
-          "label": "accent-3"
+          "value": "ternary",
+          "label": "ternary"
+        },
+        {
+          "value": "fourth",
+          "label": "fourth"
+        },
+        {
+          "value": "penta",
+          "label": "penta"
         }
       ],
-      "default": "accent-2"
-    }
-  ],
-  "blocks": [
+      "default": "penta"
+    },
     {
-      "name": "blocks",
-      "type": "blocks",
-      "settings": [
-        {
-          "type": "image_picker",
-          "id": "img-check",
-          "label": "Select a image"
-        }
-      ]
+      "type": "color",
+      "id": "primary",
+      "label": "Body text",
+      "default": "#000000"
+    },
+    {
+      "type": "color",
+      "id": "secondary",
+      "label": "Body text",
+      "default": "#000000"
+    },
+    {
+      "type": "color",
+      "id": "ternary",
+      "label": "Body text",
+      "default": "#000000"
+    },
+    {
+      "type": "color",
+      "id": "fourth",
+      "label": "Body text",
+      "default": "#000000"
+    },
+    {
+      "type": "color",
+      "id": "penta",
+      "label": "Body text",
+      "default": "#000000"
+    },
+    {
+      "type": "url",
+      "id": "video_one",
+      "label": "Product description video"
     }
   ],
-
   "presets": [
     {
-      "name": "testing"
+      "name": "testing colors"
     }
   ]
 }

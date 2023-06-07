@@ -1,0 +1,14 @@
+{% liquid 
+assign heading = heal_co_pills.heading.value
+assign content  = heal_co_pills.content.value
+assign pills_object = heal_co_pills.image.value 
+%}
+
+<div>
+    <img src ="{{ pills_object  | img_url: 'master' }}">
+    
+
+</div>
+
+
+{% comment %} product.metafields.custom.heal_co_pills {% endcomment %}

@@ -518,7 +518,7 @@
           }
         ],
         "default": "left",
-        "label": "t:settings_schema.global.settings.text_alignment.label"
+        "label": "t:setbackground-1tings_schema.global.settings.text_alignment.label"
       },
       {
         "type": "select",

@@ -132,12 +132,16 @@
                 {{- 'products.product.on_save' | t -}}
                 {% assign price = product.selected_or_first_available_variant.price %}
                 {% assign compare_at_price = product.selected_or_first_available_variant.compare_at_price %}
-                {% assign discount_percentage = compare_at_price
-                  | minus: price
-                  | times: 100.0
-                  | divided_by: compare_at_price
-                %}
-                <span class="percent-count">{{ discount_percentage | round: 0 }}%</span>
+                {% if compare_at_price > 0 %}
+                  {% assign discount_percentage = compare_at_price
+                    | minus: price
+                    | times: 100.0
+                    | divided_by: compare_at_price
+                  %}
+                  <span class="percent-count">{{ discount_percentage | round: 0 }}%</span>
+                {% else %}
+                  <span class="percent-count">50%</span>
+                {% endif %}
               </span>
             {%- endif -%}
           </div>
@@ -160,30 +164,6 @@
               {{ card_product.title | escape }}
             </a>
           </h3>
-          <div
-            class="rating"
-            role="img"
-            aria-label="{{ 'accessibility.star_reviews_info' | t: rating_value: product.metafields.reviews.rating.value, rating_max: product.metafields.reviews.rating.value.scale_max }}"
-          >
-            <span
-              aria-hidden="true"
-              class="rating-star color-icon-{{ settings.accent_icons }}"
-              style="--rating: {{ product.metafields.reviews.rating.value.rating | floor }}; --rating-max: {{ product.metafields.reviews.rating.value.scale_max }}; --rating-decimal: {{ rating_decimal }};"
-            ></span>
-          </div>
-          <p class="rating-text caption">
-            <span aria-hidden="true">
-              {{- product.metafields.reviews.rating.value }} /
-              {{ product.metafields.reviews.rating.value.scale_max -}}
-            </span>
-          </p>
-          <p class="rating-count caption">
-            <span aria-hidden="true">{{ product.metafields.reviews.rating_count }} Reviews</span>
-            <span class="visually-hidden">
-              {{- product.metafields.reviews.rating_count }}
-              {{ 'accessibility.total_reviews' | t -}}
-            </span>
-          </p>
           <div class="card-information">
             {%- if show_vendor -%}
               <span class="visually-hidden">{{ 'accessibility.vendor' | t }}</span>
@@ -220,7 +200,7 @@
                 </span>
               </p>
               <p class="rating-count caption">
-                <span aria-hidden="true">({{ card_product.metafields.reviews.rating_count }})</span>
+                <span aria-hidden="true">{{ card_product.metafields.reviews.rating_count }} reviews</span>
                 <span class="visually-hidden">
                   {{- card_product.metafields.reviews.rating_count }}
                   {{ 'accessibility.total_reviews' | t -}}

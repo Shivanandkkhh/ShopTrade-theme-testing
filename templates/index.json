@@ -95,10 +95,22 @@
         "it-img": "shopify:\/\/shop_images\/golden-autumn-leaves.jpg",
         "enable-img": "block"
       }
+    },
+    "d10b0e5d-2593-44e5-9723-9d9b7e26d9c5": {
+      "type": "testing-section",
+      "settings": {
+        "select": "penta",
+        "primary": "#171ae7",
+        "secondary": "#edea13",
+        "ternary": "#e71919",
+        "fourth": "#1ee218",
+        "penta": "#b927f7"
+      }
     }
   },
   "order": [
     "image-with-text",
-    "87cb6542-755a-40fb-9309-5bfa2735dab2"
+    "87cb6542-755a-40fb-9309-5bfa2735dab2",
+    "d10b0e5d-2593-44e5-9723-9d9b7e26d9c5"
   ]
 }
