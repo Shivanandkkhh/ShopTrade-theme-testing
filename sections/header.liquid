@@ -98,14 +98,14 @@
       <div class="nav-links-icons m child child3">
           {% for block in section.blocks %}
             {% case block.type %}
-              {% when 'Account' %}
+              {% when 'Account' %} 
                 {% if shop.customer_accounts_enabled %}
                 <a class="account" href="{{ block.settings.iconUrl }}">
                   <img src="{{ block.settings.iconHeader | img_url }}" alt="">
                 </a>
               {% endif %}
               {% when 'Cart' %}
-                <a href=""> 
+                <a href="/cart"> 
                   <img  class="cart" src="{{ block.settings.iconHeaders | img_url }}" alt="">
                 </a> 
            {% endcase %}

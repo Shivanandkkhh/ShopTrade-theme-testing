@@ -129,7 +129,19 @@
                 id="NoMediaStandardBadge-{{ section_id }}-{{ card_product.id }}"
                 class="badge badge--bottom-left color-{{ settings.sale_badge_color_scheme }}"
               >
-                {{- 'products.product.on_sale' | t -}}
+                {{- 'products.product.on_save' | t -}}
+                {% assign price = product.selected_or_first_available_variant.price %}
+                {% assign compare_at_price = product.selected_or_first_available_variant.compare_at_price %}
+                {% if compare_at_price > 0 %}
+                  {% assign discount_percentage = compare_at_price
+                    | minus: price
+                    | times: 100.0
+                    | divided_by: compare_at_price
+                  %}
+                  <span class="percent-count">{{ discount_percentage | round: 0 }}%</span>
+                {% else %}
+                  <span class="percent-count">50%</span>
+                {% endif %}
               </span>
             {%- endif -%}
           </div>
@@ -188,7 +200,7 @@
                 </span>
               </p>
               <p class="rating-count caption">
-                <span aria-hidden="true">({{ card_product.metafields.reviews.rating_count }})</span>
+                <span aria-hidden="true">{{ card_product.metafields.reviews.rating_count }} reviews</span>
                 <span class="visually-hidden">
                   {{- card_product.metafields.reviews.rating_count }}
                   {{ 'accessibility.total_reviews' | t -}}
