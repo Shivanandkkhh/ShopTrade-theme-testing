@@ -1,111 +1,22 @@
-{% style %}
-  .color-primary {
-    color:{{ section.settings.primary }};
-  }
-
-  .color-secondary {
-    color:{{ section.settings.secondary }};
-  }
-
-  .color-ternary {
-    color:{{ section.settings.ternary }};
-  }
-
-  .color-fourth {
-    color:{{ section.settings.fourth }};
-  }
-  .color-penta {
-    color:{{ section.settings.penta }};
-  }
-{% endstyle %}
-
-<div class="wrapper">
-  <div class="color-{{ section.settings.select }}">
-    lorem ipusm dolore imolorem ipusm dolore imolorem ipusm dolore imolorem ipusm dolore imolorem ipusm dolore imolorem
-    ipusm dolore imolorem ipusm dolore imolorem ipusm dolore imolorem ipusm dolore imolorem ipusm dolore imolorem ipusm
-    dolore imolorem ipusm dolore imolorem ipusm dolore imolorem ipusm dolore imolorem ipusm dolore imolorem ipusm dolore
-    imolorem ipusm dolore imolorem ipusm dolore imolorem ipusm dolore imolorem ipusm dolore imolorem ipusm dolore
-    imolorem ipusm dolore imolorem ipusm dolore imolorem ipusm dolore imo
+{% if section.settings.video_url contains 'youtube.com' or section.settings.video_url contains 'vimeo.com' %}
+  <div class="video-container">
+    <iframe src="{{ section.settings.video_url }}" frameborder="0" allowfullscreen></iframe>
   </div>
-</div>
-
-<div class="video">
-  <div class="main-video">
-    <iframe width="560" height="315" src="{{ section.settings.video_one }}" title="YouTube video player" frameborder="0" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture; web-share" allowfullscreen></iframe>
-  </div>
-</div>
-
+{% else %}
+  <p>Please enter a valid YouTube or Vimeo video URL.</p>
+{% endif %}
 {% schema %}
 {
-  "name": "testing",
+  "name": "Video",
   "settings": [
     {
-      "type": "select",
-      "id": "select",
-      "label": "Select a color",
-      "options": [
-        {
-          "value": "primary",
-          "label": "primary"
-        },
-        {
-          "value": "secondary",
-          "label": "secondary"
-        },
-        {
-          "value": "ternary",
-          "label": "ternary"
-        },
-        {
-          "value": "fourth",
-          "label": "fourth"
-        },
-        {
-          "value": "penta",
-          "label": "penta"
-        }
-      ],
-      "default": "penta"
-    },
-    {
-      "type": "color",
-      "id": "primary",
-      "label": "Body text",
-      "default": "#000000"
-    },
-    {
-      "type": "color",
-      "id": "secondary",
-      "label": "Body text",
-      "default": "#000000"
-    },
-    {
-      "type": "color",
-      "id": "ternary",
-      "label": "Body text",
-      "default": "#000000"
-    },
-    {
-      "type": "color",
-      "id": "fourth",
-      "label": "Body text",
-      "default": "#000000"
-    },
-    {
-      "type": "color",
-      "id": "penta",
-      "label": "Body text",
-      "default": "#000000"
-    },
-    {
-      "type": "url",
-      "id": "video_one",
-      "label": "Product description video"
-    }
-  ],
-  "presets": [
-    {
-      "name": "testing colors"
+      "type": "video_url",
+      "id": "video_url",
+      "label": "Video URL",
+      "accept":[
+        "youtube",
+        "vimeo"
+      ]
     }
   ]
 }
