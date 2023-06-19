@@ -133,7 +133,7 @@ li a {
 
 .links button {
   border: none;
-  color: #000;
+  color: #000 !important;
   background: none;
   font-size: 17px;
 }

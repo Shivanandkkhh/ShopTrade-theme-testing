@@ -57,6 +57,7 @@
   {% assign variant_images = product.images | where: 'attached_to_variant?', true | map: 'src' %}
   {% assign metaData = product.metafields.custom.text_with_image_section.value %}
   {% assign metadata2 = product.metafields.custom.text_with_image.value %}
+  {% assign metadata3 = product.metafields.custom.testing_one.value %}
 
   <div class="product product--{{ section.settings.media_size }} product--{{ section.settings.media_position }} product--{{ section.settings.gallery_layout }} product--mobile-{{ section.settings.mobile_thumbnails }} grid grid--1-col {% if product.media.size > 0 %}grid--2-col-tablet{% else %}product--no-media{% endif %}">
     <div class="grid__item product__media-wrapper{% if section.settings.media_position == 'right' %} medium-hide large-up-hide{% endif %}">
@@ -199,6 +200,10 @@
                   {% comment %} {{ metadata2.heading }} {% endcomment %}
                   --------------------------
                   {{ product.description }}
+
+
+                 <h1> {{ metadata3.single }} </h1>
+                 <img src = "{{ metadata3.file | img_url : 'master' }}">
                 </div>
               {%- endif -%}
             {%- when 'sku' -%}
