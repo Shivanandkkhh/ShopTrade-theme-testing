@@ -189,7 +189,9 @@
                 <div class="product__description rte quick-add-hidden" {{ block.shopify_attributes }}>
                   {{ metaData.title }}
                   {{ metaData.description }}
-                  <img src="{{ metaData.image | img_url: 'master' }}">
+                  {% if metaData.image %}
+                    <img src="{{ metaData.image | img_url: 'master' }}">
+                  {% endif %}
                   
                   {% comment %} {{ text_with_image_section.image }}
 
@@ -203,8 +205,10 @@
 
 
                  <h1> {{ metadata3.single }} </h1>
-                 <img src = "{{ metadata3.file | img_url : 'master' }}">
-                </div>
+                 {% if metadata3.file %}                 
+                  <img src = "{{ metadata3.file | img_url : 'master' }}">
+                 {% endif %}
+                 </div>
               {%- endif -%}
             {%- when 'sku' -%}
               <p

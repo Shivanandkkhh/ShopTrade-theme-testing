@@ -1180,3 +1180,6 @@ margin-bottom: 5px;
 .related-products .grid.product-grid.grid--4-col-desktop.grid--2-col-tablet-down{
   column-gap: 20px !important;
 }
+.facet-filters__sort:focus-visible{
+  box-shadow: unset !important;
+}
