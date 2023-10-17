@@ -66,6 +66,7 @@
         "description",
         "share"
       ],
+      "disabled": true,
       "settings": {
         "enable_sticky_info": true,
         "media_size": "medium",
@@ -95,12 +96,14 @@
       "block_order": [
         "a1714d44-a2f0-41cb-9ae8-df5f5981ac44"
       ],
+      "disabled": true,
       "settings": {
         "include_margins": true
       }
     },
     "related-products": {
       "type": "related-products",
+      "disabled": true,
       "settings": {
         "heading": "You may also need these?",
         "heading_size": "h2",
@@ -115,11 +118,17 @@
         "padding_top": 0,
         "padding_bottom": 40
       }
+    },
+    "5e7e00d9-e1cb-46e8-aac1-517f0ac07f0f": {
+      "type": "my-product-page",
+      "settings": {
+      }
     }
   },
   "order": [
     "main",
     "168414448731360b9c",
-    "related-products"
+    "related-products",
+    "5e7e00d9-e1cb-46e8-aac1-517f0ac07f0f"
   ]
 }

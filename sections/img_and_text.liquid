@@ -1,7 +1,7 @@
 {% style %}
   .it-container{
     background-image: url('{{ section.settings.section_bg_img | img_url: width : 'master'}}');
-   
+
   }
 
   .it-container .imgText .imgs img{
@@ -11,9 +11,9 @@
       .imgText{
         flex-direction: {{ section.settings.adj-img }};
       }
-   
+
         @media screen and (max-width:767px){
-      
+
         .imgText{
           flex-direction: {{ section.settings.M-adj-img }} !important;
         }
@@ -22,10 +22,22 @@
 {% endstyle %}
 
 <div class="img_and_text">
+
+   {%  include   'count-down-timer',
+   
+    title: "Custom count down timer",
+    end_date: "{{ section.settings.slec_month }} {{ section.settings.slec_date }}, {{ section.settings.slec_year }} {{ section.settings.slec_time  }} " 
+
+         %}
+
+      end_date: "Nov 12, 2023 20:00:00"  
   <div class="wrapper">
     <div class="it-container">
       <div class="imgText" style="background: {{ section.settings.section_bg_color }};">
         <div class="imgs">
+          <div style = "color: red">
+         {{ section.settings.slec_month }} {{ section.settings.slec_date }}, {{ section.settings.slec_year }} {{ section.settings.slec_time  }}
+          </div>
           <img src="{{ section.settings.it-img | img_url: 'master' }}" alt="">
         </div>
         <div class="text">
@@ -69,7 +81,6 @@
       </div>
     </div>
   </div>
-</div>
 
 {% schema %}
 {
@@ -81,6 +92,51 @@
       "id": "section_bg_img",
       "label": "Select a background Image"
     },
+
+    {
+      "type": "select",
+      "id": "slec_month",
+      "label": "select month",
+      "options": [
+        {
+          "value": "Nov",
+          "label": "Nov"
+        },
+        {
+          "value": "middle",
+          "label": "Middle"
+        },
+        {
+          "value": "bottom",
+          "label": "Bottom"
+        }
+      ],
+      "default": "Nov"
+    },
+
+    {
+      "type": "range",
+      "id": "slec_date",
+      "min": 1,
+      "max": 30,
+      "step": 1,
+      "label": "select date",
+      "default": 16
+    },
+
+    {
+      "type": "number",
+      "id": "slec_year",
+      "label": "slec_year",
+      "default": 2023
+    },
+    {
+      "type": "text",
+      "id": "slec_time",
+      "label": "select_time",
+      "default": "20:00:00"
+    },
+
     // {
     //   "type": "color",
     //   "id": "section_bg_color",
@@ -175,7 +231,7 @@
           "type": "range",
           "id": "text-padding-bottom",
           "min": 1,
-          "max": 40,
+          "max": 40, 
           "step": 1,
           "unit": "px",
           "label": "Padding bottom",

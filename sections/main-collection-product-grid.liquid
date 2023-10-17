@@ -144,13 +144,11 @@
             <div class="loading-overlay gradient"></div>
 
             <ul
-              id="product-grid"
+              id="Huratips-Loop"
               data-id="{{ section.id }}"
               class="
                 grid product-grid grid--{{ section.settings.columns_mobile }}-col-tablet-down
-                grid--{{ section.settings.columns_desktop }}-col-desktop
-              "
-            >
+                grid--{{ section.settings.columns_desktop }}-col-desktop">
               {%- for product in collection.products -%}
                 {% assign lazy_load = false %}
                 {%- if forloop.index > 2 -%}
@@ -171,6 +169,12 @@
               {%- endfor -%}
             </ul>
 
+            <div id="Huratips-Pagination">
+              {% if paginate.next %}
+              <a href="{{ paginate.next.url }}">Loading More</a>
+              {% endif %}  
+           </div>
+
             {%- if paginate.pages > 1 -%}
               {% render 'pagination', paginate: paginate, anchor: '' %}
             {%- endif -%}
@@ -180,6 +184,15 @@
     </div>
   </div>
 </div>
+
+<script>
+  document.addEventListener("DOMContentLoaded", function() {
+    var endlessScroll = new Ajaxinate({
+      container: '#Huratips-Loop',
+      pagination: '#Huratips-Pagination'
+    });
+  });
+</script>
 
 {% schema %}
 {
