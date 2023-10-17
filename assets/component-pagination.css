@@ -80,3 +80,6 @@ a.pagination__item:hover::after {
 .pagination__item-arrow:hover::after {
   display: none;
 }
+.pagination__list {
+  display: none;
+}

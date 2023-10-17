@@ -15,8 +15,8 @@
     {{ 'https://cdn.jsdelivr.net/npm/slick-carousel@1.8.1/slick/slick.min.js' | script_tag }}
     {{ 'https://cdn.jsdelivr.net/npm/slick-carousel@1.8.1/slick/slick.css' | stylesheet_tag }}
     {{ 'https://cdn.jsdelivr.net/npm/slick-carousel@1.8.1/slick/slick-theme.css' | stylesheet_tag }}
-    {% comment %} {{ 'common.js' | asset_url | script_tag }} {% endcomment %}
-{{ 'https://cdn.shopify.com/s/files/1/0382/4185/files/ajaxinate.js?937' | script_tag }} 
+    {{ 'common.js' | asset_url | script_tag }}
+{% comment %} {{ 'https://cdn.shopify.com/s/files/1/0382/4185/files/ajaxinate.js?937' | script_tag }}  {% endcomment %}
 
     {%- if settings.favicon != blank -%}
       <link rel="icon" type="image/png" href="{{ settings.favicon | image_url: width: 32, height: 32 }}">

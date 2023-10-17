@@ -144,7 +144,7 @@
             <div class="loading-overlay gradient"></div>
 
             <ul
-              id="Huratips-Loop"
+              id="magepow-Loop"
               data-id="{{ section.id }}"
               class="
                 grid product-grid grid--{{ section.settings.columns_mobile }}-col-tablet-down
@@ -169,7 +169,7 @@
               {%- endfor -%}
             </ul>
 
-            <div id="Huratips-Pagination">
+            <div id="magepow-Pagination">
               {% if paginate.next %}
               <a href="{{ paginate.next.url }}">Loading More</a>
               {% endif %}  
@@ -188,8 +188,8 @@
 <script>
   document.addEventListener("DOMContentLoaded", function() {
     var endlessScroll = new Ajaxinate({
-      container: '#Huratips-Loop',
-      pagination: '#Huratips-Pagination'
+      container: '#magepow-Loop',
+      pagination: '#magepow-Pagination'
     });
   });
 </script>
