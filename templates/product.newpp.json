@@ -119,8 +119,8 @@
         "padding_bottom": 40
       }
     },
-    "5e7e00d9-e1cb-46e8-aac1-517f0ac07f0f": {
-      "type": "my-product-page",
+    "1b059cdd-fb9d-416b-984f-cc5918f942bd": {
+      "type": "main-product2",
       "settings": {
       }
     }
@@ -129,6 +129,6 @@
     "main",
     "168414448731360b9c",
     "related-products",
-    "5e7e00d9-e1cb-46e8-aac1-517f0ac07f0f"
+    "1b059cdd-fb9d-416b-984f-cc5918f942bd"
   ]
 }

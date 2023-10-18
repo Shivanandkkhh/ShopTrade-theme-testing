@@ -189,19 +189,21 @@
                 <div class="product__description rte quick-add-hidden" {{ block.shopify_attributes }}>
                   {{ metaData.title }}
                   {{ metaData.description }}
-                  {% if metaData %}              
-                  <img src="{{ metaData.image | img_url: 'master' }}"> 
-                {% endif %}
-                 
+                  <img src="{{ metaData.image | img_url: 'master' }}">
+                  
+                  {% comment %} {{ text_with_image_section.image }}
+
+                  {{ metaData.heading_my }}
+                  {{ metadata2.content }}{% endcomment %}
+                  {% comment %} {{ metaData2.image_side }}  {% endcomment %}
+
+                  {% comment %} {{ metadata2.heading }} {% endcomment %}
                   --------------------------
                   {{ product.description }}
 
-                  {% if  metadata3.single %}
-                    <h1> {{ metadata3.single }} </h1>
-                  {% endif %}
-                  {% if metadata3.file %}
-                    <img src = "{{ metadata3.file | img_url : 'master' }}">
-                  {% endif %}
+
+                 <h1> {{ metadata3.single }} </h1>
+                 <img src = "{{ metadata3.file | img_url : 'master' }}">
                 </div>
               {%- endif -%}
             {%- when 'sku' -%}
@@ -475,7 +477,7 @@
         {%- endfor -%}
         <a href="{{ product.url }}" class="link product__view-details animate-arrow">
           {{ 'products.product.view_full_details' | t }}
-        {% render 'icon-arrow' %} 
+          {% render 'icon-arrow' %}
         </a>
       </product-info>
     </div>
@@ -531,9 +533,7 @@
     document.addEventListener('DOMContentLoaded', function () {
       function isIE() {
         const ua = window.navigator.userAgent;
-       
         const msie = ua.indexOf('MSIE ');
-
         const trident = ua.indexOf('Trident/');
 
         return msie > 0 || trident > 0;
