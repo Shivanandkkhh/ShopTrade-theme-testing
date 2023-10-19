@@ -1,0 +1,59 @@
+{% assign current_variant = product.selected_or_first_available_variant %}
+
+<!-- Product media -->
+{% assign featured_media = current_variant.featured_media %}
+
+{% case featured_media.media_type %}
+  {% when 'image' %}
+    <div class="product-single__media"
+      style="padding-top: {{ 1 | divided_by: featured_media.aspect_ratio | times: 100}}%;"
+      data-media-id="{{ featured_media.id }}"
+    >
+      {{ featured_media | image_url: width: 2048 | image_tag }}
+    </div>
+  {% when 'external_video' %}
+    <div class="product-single__media"
+      style="padding-top: {{ 1 | divided_by: featured_media.aspect_ratio | times: 100}}%;"
+      data-media-id="{{ featured_media.id }}"
+    >
+      {{ featured_media | external_video_tag }}
+    </div>
+  {% when 'video' %}
+    <div class="product-single__media" data-media-id="{{ featured_media.id }}">
+      {{ featured_media | video_tag: controls: true }}
+    </div>
+  {% when 'model' %}
+    <div class="product-single__media"
+      style="padding-top: 100%"
+      data-media-id="{{ featured_media.id }}"
+    >
+      {{ featured_media | model_viewer_tag }}
+    </div>
+  {% else %}
+    <div class="product-single__media"
+      style="padding-top: 100%;"
+      data-media-id="{{ featured_media.id }}"
+    >
+      {{ featured_media | media_tag }}
+    </div>
+{% endcase %}
+
+<!-- Product price -->
+<div class="price">
+  <span class="price-reg">{{ current_variant.price | money }}</span>
+
+  {% if current_variant.compare_at_price > current_variant.price %}
+    <span class="price-sale"><s>{{ current_variant.compare_at_price | money }}</s></span>
+  {% endif %}
+</div>
+
+<!-- Variant selector -->
+<select name="id">
+  {% for variant in product.variants %}
+    <option value="{{ variant.id }}"
+      {% if variant == current_variant %}selected="selected"{% endif %}
+    >
+      {{ variant.title }} - {{ variant.price | money }}
+    </option>
+  {% endfor %}
+</select>

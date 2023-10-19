@@ -1,0 +1,119 @@
+{% stylesheet %}
+  .main_PP {
+    display: flex;
+    column-gap: 20px;
+  }
+  .PP_img {
+    width: 50%;
+  }
+  .NewPP_Info {
+    width: 50%;
+  }
+  .product-single__media {
+    padding-top: 0 !important;
+  }
+{% endstylesheet %}
+<div class="container main_PP">
+  <div class="PP_img">
+    <div class="">
+      {% for item in product.media %}
+        <div>
+          {{ item | img_tag }}
+        </div>
+      {% endfor %}
+    </div>
+  </div>
+  <div class="NewPP_Info">
+    {% form 'product', product %}
+      <input type="hidden" name="id" value="{{ product.selected_or_first_available_variant.id }}">
+      <div>{{ product.vandor }}</div>
+      <div class="">
+        <h1>{{ product.title }}</h1>
+      </div>
+      <div>
+        <p>{{ product.description }}</p>
+      </div>
+      <div class="my-3">
+        {% assign product_price = product.selected_or_first_available_variant %}
+        <span class="text-base text-grey-500 line-through">
+          {{ product_price.compare_at_price | money_with_currency }}
+        </span>
+        <span class="text-base text-grey-500"> {{ product_price.price | money_with_currency }} </span>
+        {% if product_price.price < product_price.compare_at_price %}
+          <span class="bg-red-500 text-white" style="max-width: fit-content; border-radius: 8px; padding: 2px 5px;">
+            sale
+          </span>
+        {% endif %}
+      </div>
+      <div class="my-3">
+        {% unless product.has_only_default_variant %}
+          <div class="" data-url="{{ product.url }}" data-section="{{ section.id }}">
+            {% for option in product.options_with_values %}
+              <label for="Option-{{ section.id }}--{{ forloop.index0 }}">{{ option.name }}</label>
+              <div class="my-2">
+                <select
+                  name="options[{{ option.name | escape }}]"
+                  id="Option-{{ section.id }}-{{ forloop.index0 }} "
+                  class="w-full border py-3 px-3"
+                >
+                  {% for value in option.values %}
+                    <option
+                      value="{{ value | escape }}"
+                      {% if option.selected_value == value %}
+                        selected="selected"
+                      {% endif %}
+                    >
+                      {{ value }}
+                    </option>
+                  {% endfor %}
+                </select>
+              </div>
+            {% endfor %}
+          </div>
+        {% endunless %}
+      </div>
+      <div class="my-3">
+        <label for="Quantity--{{ section.id }}"> Quantity </label>
+        <div class="my-2">
+          <input
+            class="w-full border py-3 px-2"
+            name="Quantity"
+            type="number"
+            id="Quantity--{{ section.id }}"
+            value="1"
+            min="1"
+          >
+        </div>
+      </div>
+      <div>
+        <button
+          type="submit"
+          name="add"
+          class="w-full px-6 px-4 bg-gray-900 text-white hover:bg-gray-700 rounded-sm my-2"
+          {% if product.selected_or_first_available_variant == false %}
+            disabled
+          {% endif %}
+        >
+          {% if product.selected_or_first_available_variant.available == false %}
+            Sold out
+          {% else %}
+            Add to cart
+          {% endif %}
+        </button>
+      </div>
+    {% endform %}
+  </div>
+</div>
+
+{% schema %}
+{
+  "name": "newPP",
+  "settings": [],
+
+  "presets": [
+    {
+      "name": "newPP"
+    }
+  ]
+}
+{% endschema %}
