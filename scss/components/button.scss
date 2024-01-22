@@ -1,0 +1,64 @@
+@use 'StyleComponents/colors';
+@use 'StyleComponents/typography';
+
+.button {
+    background: colors.$red;
+    color: currentColor;
+    border-radius: 4px;
+    padding: 13px 14px;
+    line-height: 1;
+    font-family: 'poppins';
+    box-shadow: none;
+    outline: 0;
+
+    @media(--xxs) {
+        padding: 13px 28px;
+    }
+
+    @include use-text-style('body-regular');
+    font-weight: typography.$semi-weight;
+
+    @media(--md) {
+        @include use-text-style('body-alt');
+        font-weight: typography.$semi-weight;
+    }
+
+    svg {
+        vertical-align: middle;
+        margin-left: 5px;
+    }
+
+    &--text:hover {
+        border:0;
+        outline:0;
+        box-shadow: none;
+    }
+
+    &--transparent {
+        background:  transparent !important;
+        color: currentColor !important;
+    }
+
+    &--outline {
+        background:  transparent !important;
+        color: currentColor !important;
+        border: 1px solid colors.$white;
+       padding: 7px 15px;
+       margin-top: 10px;
+
+       @media(--md) {
+        margin-top: 28px;
+        padding: 13px 15px;
+       }
+
+       &:hover {
+            border-color:colors.$white !important;
+            outline:0 ;
+            box-shadow: none !important;
+       }
+    }
+}
+
+.needsclick {
+    min-height: 0 !important;
+}

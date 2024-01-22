@@ -1,0 +1,79 @@
+@import 'accoutrement/sass/plugin/type';
+@import 'StyleComponents/typography';
+
+
+$fonts: (
+  'poppins': ('source': 'https://fonts.googleapis.com/css2?family=Poppins:ital,wght@0,400;0,500;0,600;1,700&display=swap"')
+);
+
+$typography: (
+  'heading-1' : ('font': 'poppins',
+    'size': #{$heading-1-size},
+    'weight': #{$heading-1-weight},
+    'height': #{$heading-1-height}),
+    'heading-1-alt' : ('font': 'poppins',
+    'size': #{$heading-1-alt-size},
+    'weight': #{$heading-1-alt-weight},
+    'height': #{$heading-1-alt-height}),
+  'heading-2' : ('font': 'poppins',
+    'size': #{$heading-2-size},
+    'weight': #{$heading-2-weight},
+    'height': #{$heading-2-height}),
+  'heading-3' : ('font': 'poppins',
+    'size': #{$heading-3-size},
+    'weight': #{$heading-3-weight},
+    'height': #{$heading-3-height}),
+  'body-title' : ('font': 'poppins',
+    'size': #{$body-title-size},
+    'weight': #{$body-title-weight},
+    'height': #{$body-title-height}),
+  'body-regular' : ('font': 'poppins',
+    'size': #{$body-regular-size},
+    'weight': #{$body-regular-weight},
+    'height': #{$body-regular-height}),
+  'body-alt' : ('font': 'poppins',
+    'size': #{$body-alt-size},
+    'weight': #{$body-alt-weight},
+    'height': #{$body-alt-height}),
+  'body-small' : ('font': 'poppins',
+    'size': #{$body-small-size},
+    'weight': #{$body-small-weight},
+    'height': #{$body-small-height}),
+  'body-alt-small' : ('font': 'poppins',
+    'size': #{$body-small-alt-size},
+    'weight': #{$body-small-alt-weight},
+    'height': #{$body-small-alt-height})
+);
+
+@include import-webfonts;
+
+
+/// @param {string} type.$token - One of keys of $typography map above.
+
+@mixin use-text-style($token: "body") {
+  $type: get-token($typography, $token);
+
+  @if (get-token($type, "font") !="font") {
+    font-family: get-token($type, "font");
+  }
+
+  @if (get-token($type, "size") !="size") {
+    font-size: get-token($type, "size");
+  }
+
+  @if (get-token($type, "weight") !="weight") {
+    font-weight: get-token($type, "weight");
+  }
+
+  @if (get-token($type, "height") !="height") {
+    line-height: get-token($type, "height");
+  }
+
+  @if (get-token($type, "spacing") !="spacing") {
+    letter-spacing: get-token($type, "spacing");
+  }
+
+  @if (get-token($type, "style") !="style") {
+    font-style: get-token($type, "style");
+  }
+}

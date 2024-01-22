@@ -1,0 +1,11 @@
+{
+    "presets": ["@babel/preset-react",["@babel/preset-env",  {
+      "targets": {
+        "esmodules": true //target browser that support esbuilds
+      },
+      "modules": false //dont compile the module files to es5 , required for tree shaking
+    }]],
+    "plugins": ["@babel/plugin-transform-runtime"]
+  }
+  
+  
