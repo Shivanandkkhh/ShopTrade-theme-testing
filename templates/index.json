@@ -2,7 +2,6 @@
   "sections": {
     "image-with-text": {
       "type": "image-with-text",
-      "disabled": true,
       "blocks": {
         "text": {
           "type": "text",
@@ -23,6 +22,7 @@
         "text",
         "c36494a6-c0e3-4d9f-8df3-7c9852a77183"
       ],
+      "disabled": true,
       "settings": {
         "height": "adapt",
         "desktop_image_width": "medium",
@@ -99,12 +99,6 @@
     "d10b0e5d-2593-44e5-9723-9d9b7e26d9c5": {
       "type": "testing-section",
       "settings": {
-        "select": "penta",
-        "primary": "#171ae7",
-        "secondary": "#edea13",
-        "ternary": "#e71919",
-        "fourth": "#1ee218",
-        "penta": "#b927f7"
       }
     }
   },
