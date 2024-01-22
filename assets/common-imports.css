@@ -1,0 +1,101 @@
+/*!******************************************************************************************************************************************************************************************************************************!*\
+  !*** css ./node_modules/css-loader/dist/cjs.js??ruleSet[1].rules[1].use[1]!./node_modules/postcss-loader/dist/cjs.js!./node_modules/sass-loader/dist/cjs.js??ruleSet[1].rules[1].use[3]!./scss/sections/common-imports.scss ***!
+  \******************************************************************************************************************************************************************************************************************************/
+:root {
+  --base-margin: 20px;
+  --grid-row-gap: 10px;
+  --grid-row-gap-large: 20px;
+  --section-content-margin: 16px;
+  --section-margin: 20px;
+  --section-padding:20px;
+  --section-heading-margin: 10px;
+  --grid-column-gap: 10px;
+  --header-padding: 10px;
+  --nav-vertical-padding: 15px;
+}
+@media (min-width: 768px) {
+  :root {
+    --grid-column-gap: 20px;
+    --grid-row-gap: 20px;
+    --header-padding: 18px;
+    --base-margin: 40px;
+  }
+}
+@media (min-width: 1024px) {
+  :root {
+    --base-margin: 40px;
+    --section-content-margin: 20px;
+    --section-margin: 20px;
+    --section-padding:20px;
+    --section-heading-margin: 20px;
+    --grid-row-gap-large: 20px;
+  }
+}
+
+.button {
+  background: #ED1C24;
+  color: currentColor;
+  border-radius: 4px;
+  padding: 13px 14px;
+  line-height: 1;
+  font-family: "poppins";
+  -webkit-box-shadow: none;
+          box-shadow: none;
+  outline: 0;
+  font-family: "poppins";
+  font-size: 12px;
+  font-weight: 400;
+  line-height: 1.2;
+  font-weight: 600;
+}
+@media (--xxs) {
+  .button {
+    padding: 13px 28px;
+  }
+}
+@media (--md) {
+  .button {
+    font-family: "poppins";
+    font-size: 16px;
+    font-weight: 400;
+    line-height: 1.2;
+    font-weight: 600;
+  }
+}
+.button svg {
+  vertical-align: middle;
+  margin-left: 5px;
+}
+.button--text:hover {
+  border: 0;
+  outline: 0;
+  -webkit-box-shadow: none;
+          box-shadow: none;
+}
+.button--transparent {
+  background: transparent !important;
+  color: currentColor !important;
+}
+.button--outline {
+  background: transparent !important;
+  color: currentColor !important;
+  border: 1px solid #fff;
+  padding: 7px 15px;
+  margin-top: 10px;
+}
+@media (--md) {
+  .button--outline {
+    margin-top: 28px;
+    padding: 13px 15px;
+  }
+}
+.button--outline:hover {
+  border-color: #fff !important;
+  outline: 0;
+  -webkit-box-shadow: none !important;
+          box-shadow: none !important;
+}
+
+.needsclick {
+  min-height: 0 !important;
+}

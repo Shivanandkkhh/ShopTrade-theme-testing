@@ -2,35 +2,148 @@
 /******/ 	"use strict";
 /******/ 	var __webpack_modules__ = ({
 
-/***/ "./js/sections/global.js":
-/*!*******************************!*\
-  !*** ./js/sections/global.js ***!
-  \*******************************/
+/***/ "./js/components/svelte-wrapper.js":
+/*!*****************************************!*\
+  !*** ./js/components/svelte-wrapper.js ***!
+  \*****************************************/
+/***/ ((__unused_webpack_module, __webpack_exports__, __webpack_require__) => {
+
+/* harmony export */ __webpack_require__.d(__webpack_exports__, {
+/* harmony export */   "default": () => (__WEBPACK_DEFAULT_EXPORT__)
+/* harmony export */ });
+/* harmony import */ var json_6__WEBPACK_IMPORTED_MODULE_0__ = __webpack_require__(/*! json-6 */ "./node_modules/json-6/dist/index.js");
+/* harmony import */ var json_6__WEBPACK_IMPORTED_MODULE_0___default = /*#__PURE__*/__webpack_require__.n(json_6__WEBPACK_IMPORTED_MODULE_0__);
+
+/* harmony default export */ const __WEBPACK_DEFAULT_EXPORT__ = ((Component, container, propsEl) => {
+  //component is a pre-compiled class
+  //container is where you want to inject component
+  //propEl pass prop when injecting
+  var appContainer = document.querySelectorAll(container);
+  return [...appContainer].map(appTarget => {
+    var initialized = appTarget.dataset.initialized || false;
+    var props = {};
+    if (appTarget && !initialized) {
+      var _props;
+      if (propsEl) {
+        var _appTarget$querySelec;
+        props = json_6__WEBPACK_IMPORTED_MODULE_0___default().parse((_appTarget$querySelec = appTarget.querySelector(propsEl)) === null || _appTarget$querySelec === void 0 ? void 0 : _appTarget$querySelec.innerHTML) || {}; //get json from the script id 
+      }
+      //inject component into container
+      var instance = new Component({
+        target: appTarget,
+        props: {
+          shopifyData: (_props = props) === null || _props === void 0 ? void 0 : _props.data //pass the prop on data prop as default
+        }
+      });
+      appTarget.dataset.initialized = true;
+      return instance;
+    }
+  });
+});
+
+/***/ }),
+
+/***/ "./js/sections/hello.js":
+/*!******************************!*\
+  !*** ./js/sections/hello.js ***!
+  \******************************/
 /***/ ((__unused_webpack_module, __unused_webpack___webpack_exports__, __webpack_require__) => {
 
-/* harmony import */ var lazysizes__WEBPACK_IMPORTED_MODULE_0__ = __webpack_require__(/*! lazysizes */ "./node_modules/lazysizes/lazysizes.js");
-/* harmony import */ var lazysizes__WEBPACK_IMPORTED_MODULE_0___default = /*#__PURE__*/__webpack_require__.n(lazysizes__WEBPACK_IMPORTED_MODULE_0__);
-/* harmony import */ var lazysizes_plugins_object_fit_ls_object_fit__WEBPACK_IMPORTED_MODULE_1__ = __webpack_require__(/*! lazysizes/plugins/object-fit/ls.object-fit */ "./node_modules/lazysizes/plugins/object-fit/ls.object-fit.js");
-/* harmony import */ var lazysizes_plugins_object_fit_ls_object_fit__WEBPACK_IMPORTED_MODULE_1___default = /*#__PURE__*/__webpack_require__.n(lazysizes_plugins_object_fit_ls_object_fit__WEBPACK_IMPORTED_MODULE_1__);
-/* harmony import */ var lazysizes_plugins_parent_fit_ls_parent_fit__WEBPACK_IMPORTED_MODULE_2__ = __webpack_require__(/*! lazysizes/plugins/parent-fit/ls.parent-fit */ "./node_modules/lazysizes/plugins/parent-fit/ls.parent-fit.js");
-/* harmony import */ var lazysizes_plugins_parent_fit_ls_parent_fit__WEBPACK_IMPORTED_MODULE_2___default = /*#__PURE__*/__webpack_require__.n(lazysizes_plugins_parent_fit_ls_parent_fit__WEBPACK_IMPORTED_MODULE_2__);
-/* harmony import */ var lazysizes_plugins_rias_ls_rias__WEBPACK_IMPORTED_MODULE_3__ = __webpack_require__(/*! lazysizes/plugins/rias/ls.rias */ "./node_modules/lazysizes/plugins/rias/ls.rias.js");
-/* harmony import */ var lazysizes_plugins_rias_ls_rias__WEBPACK_IMPORTED_MODULE_3___default = /*#__PURE__*/__webpack_require__.n(lazysizes_plugins_rias_ls_rias__WEBPACK_IMPORTED_MODULE_3__);
-/* harmony import */ var lazysizes_plugins_bgset_ls_bgset__WEBPACK_IMPORTED_MODULE_4__ = __webpack_require__(/*! lazysizes/plugins/bgset/ls.bgset */ "./node_modules/lazysizes/plugins/bgset/ls.bgset.js");
-/* harmony import */ var lazysizes_plugins_bgset_ls_bgset__WEBPACK_IMPORTED_MODULE_4___default = /*#__PURE__*/__webpack_require__.n(lazysizes_plugins_bgset_ls_bgset__WEBPACK_IMPORTED_MODULE_4__);
-/* harmony import */ var lazysizes_plugins_respimg_ls_respimg__WEBPACK_IMPORTED_MODULE_5__ = __webpack_require__(/*! lazysizes/plugins/respimg/ls.respimg */ "./node_modules/lazysizes/plugins/respimg/ls.respimg.js");
-/* harmony import */ var lazysizes_plugins_respimg_ls_respimg__WEBPACK_IMPORTED_MODULE_5___default = /*#__PURE__*/__webpack_require__.n(lazysizes_plugins_respimg_ls_respimg__WEBPACK_IMPORTED_MODULE_5__);
-//global imports here
+/* harmony import */ var JsComponents_svelte_wrapper__WEBPACK_IMPORTED_MODULE_0__ = __webpack_require__(/*! JsComponents/svelte-wrapper */ "./js/components/svelte-wrapper.js");
+/* harmony import */ var SvelteComponents_sample_svelte__WEBPACK_IMPORTED_MODULE_1__ = __webpack_require__(/*! SvelteComponents/sample.svelte */ "./js/components/svelte/sample.svelte");
+
+
+/* unused harmony default export */ var __WEBPACK_DEFAULT_EXPORT__ = (() => {
+  (0,JsComponents_svelte_wrapper__WEBPACK_IMPORTED_MODULE_0__["default"])(SvelteComponents_sample_svelte__WEBPACK_IMPORTED_MODULE_1__["default"], 'sample-svelte', '#svelte-data');
+  //sampleSvelte is a svelte component
+  //sample-svelte is a custom element where you want to render , simply create a snippet or section and define 
+  // <sample-svelte> </sample-svelte>
+  //if you want to pass props or shopify data simply add the script with the id  #svelte-data 
+  // <sample-svelte>
+  //   <script id="#svelte-data">
+  //     {
+  //         "data": {}  //shopify json here
+  //     }
+  //   </script>
+  //</sample-svelte>
+  //on sample-svelte.js , you can access the shopify data in variable shopifyData 
+  //check svelte-wrapper.js for more info
+});
+
+/***/ }),
+
+/***/ "./js/components/svelte/sample.svelte":
+/*!********************************************!*\
+  !*** ./js/components/svelte/sample.svelte ***!
+  \********************************************/
+/***/ ((__unused_webpack_module, __webpack_exports__, __webpack_require__) => {
+
+/* harmony export */ __webpack_require__.d(__webpack_exports__, {
+/* harmony export */   "default": () => (__WEBPACK_DEFAULT_EXPORT__)
+/* harmony export */ });
+/* harmony import */ var svelte_internal__WEBPACK_IMPORTED_MODULE_0__ = __webpack_require__(/*! svelte/internal */ "./node_modules/svelte/src/runtime/internal/index.js");
+/* harmony import */ var svelte_internal_disclose_version__WEBPACK_IMPORTED_MODULE_1__ = __webpack_require__(/*! svelte/internal/disclose-version */ "./node_modules/svelte/src/runtime/internal/disclose-version/index.js");
+/* harmony import */ var svelte__WEBPACK_IMPORTED_MODULE_2__ = __webpack_require__(/*! svelte */ "./node_modules/svelte/src/runtime/index.js");
+/* js/components/svelte/sample.svelte generated by Svelte v4.2.9 */
 
 
 
 
 
+function create_fragment(ctx) {
+	let h1;
 
-//lazyload image dependencies
-(lazysizes__WEBPACK_IMPORTED_MODULE_0___default().cfg).loadMode = 1; //init lazyload
+	return {
+		c() {
+			h1 = (0,svelte_internal__WEBPACK_IMPORTED_MODULE_0__.element)("h1");
+			h1.textContent = "Hello Svelte!!";
+		},
+		m(target, anchor) {
+			(0,svelte_internal__WEBPACK_IMPORTED_MODULE_0__.insert)(target, h1, anchor);
+		},
+		p: svelte_internal__WEBPACK_IMPORTED_MODULE_0__.noop,
+		i: svelte_internal__WEBPACK_IMPORTED_MODULE_0__.noop,
+		o: svelte_internal__WEBPACK_IMPORTED_MODULE_0__.noop,
+		d(detaching) {
+			if (detaching) {
+				(0,svelte_internal__WEBPACK_IMPORTED_MODULE_0__.detach)(h1);
+			}
+		}
+	};
+}
 
-document.addEventListener('DOMContentLoaded', () => {});
+function instance($$self, $$props, $$invalidate) {
+	let { shopifyData } = $$props;
+
+	(0,svelte__WEBPACK_IMPORTED_MODULE_2__.onMount)(() => {
+		console.log(shopifyData, "Data from shopify");
+	});
+
+	$$self.$$set = $$props => {
+		if ('shopifyData' in $$props) $$invalidate(0, shopifyData = $$props.shopifyData);
+	};
+
+	return [shopifyData];
+}
+
+class Sample extends svelte_internal__WEBPACK_IMPORTED_MODULE_0__.SvelteComponent {
+	constructor(options) {
+		super();
+		(0,svelte_internal__WEBPACK_IMPORTED_MODULE_0__.init)(this, options, instance, create_fragment, svelte_internal__WEBPACK_IMPORTED_MODULE_0__.safe_not_equal, { shopifyData: 0 });
+	}
+
+	get shopifyData() {
+		return this.$$.ctx[0];
+	}
+
+	set shopifyData(shopifyData) {
+		this.$$set({ shopifyData });
+		(0,svelte_internal__WEBPACK_IMPORTED_MODULE_0__.flush)();
+	}
+}
+
+(0,svelte_internal__WEBPACK_IMPORTED_MODULE_0__.create_custom_element)(Sample, {"shopifyData":{}}, [], [], true);
+/* harmony default export */ const __WEBPACK_DEFAULT_EXPORT__ = (Sample);
 
 /***/ })
 
@@ -145,7 +258,7 @@ document.addEventListener('DOMContentLoaded', () => {});
 /******/ 		// undefined = chunk not loaded, null = chunk preloaded/prefetched
 /******/ 		// [resolve, reject, Promise] = chunk loading, 0 = chunk loaded
 /******/ 		var installedChunks = {
-/******/ 			"global": 0
+/******/ 			"hello": 0
 /******/ 		};
 /******/ 		
 /******/ 		// no chunk on demand loading
@@ -195,7 +308,7 @@ document.addEventListener('DOMContentLoaded', () => {});
 /******/ 	// startup
 /******/ 	// Load entry module and return exports
 /******/ 	// This entry module depends on other loaded chunks and execution need to be delayed
-/******/ 	var __webpack_exports__ = __webpack_require__.O(undefined, ["vendors"], () => (__webpack_require__("./js/sections/global.js")))
+/******/ 	var __webpack_exports__ = __webpack_require__.O(undefined, ["vendors"], () => (__webpack_require__("./js/sections/hello.js")))
 /******/ 	__webpack_exports__ = __webpack_require__.O(__webpack_exports__);
 /******/ 	
 /******/ })()
