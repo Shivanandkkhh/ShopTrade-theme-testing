@@ -56,6 +56,7 @@
             id = "ProductSubmitButton-{{ section_id }}"
             type="submit"
             name="add"
+            data-buttons
             class="product-form__submit button button--full-width {% if block.settings.show_dynamic_checkout %}button--secondary{% else %}button--primary{% endif %}"
             {% if product.selected_or_first_available_variant.available == false or quantity_rule_soldout %}
               disabled
@@ -176,6 +177,7 @@
         <button
           type="submit"
           name="add"
+          data-button
           class="product-form__submit button button--full-width button--primary"
           disabled
         >
@@ -216,4 +218,5 @@
 
     <script src="{{ 'pickup-availability.js' | asset_url }}" defer="defer"></script>
   {%- endif -%}
+  <p class="product-added-card">Added to cart ! </p>
 </div>

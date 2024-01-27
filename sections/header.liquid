@@ -105,7 +105,8 @@
                 </a>
               {% endif %}
               {% when 'Cart' %}
-                <a href="/cart"> 
+                <a data-cart href="/cart">
+                  {{ cart.item_count }} 
                   <img  class="cart" src="{{ block.settings.iconHeaders | img_url }}" alt="">
                 </a> 
            {% endcase %}

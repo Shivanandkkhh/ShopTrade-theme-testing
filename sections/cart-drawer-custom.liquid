@@ -1,0 +1,51 @@
+<div class="cart-container-custom-wrapper">
+  <div class="cart-container-custom">
+    {% if cart.empty? %}
+      <div>NO Items in the cart</div>
+    {%- else -%}
+      <div class="cart_form">
+        {% form 'cart', cart %}
+          {% for item in cart.items %}
+            <div class="cart-item" data-line-item-key="{{ item.key }}">
+              <div>
+                <img src="{{ item.image | img_url: '200x' }}" alt="{{ item.title }}">
+              </div>
+              <h3>
+                <a> {{ item.product.title }}</a>
+              </h3>
+              <p>{{ item.variant.title }}</p>
+              <a href="{{ item.url_to_remove }}" class="remove-link">Remove</a>
+              <p>{{ item.final_line_price | money }}</p>
+              <div data-cart-quantity class="cart-drawer_quantity_selector">
+                <button type="button" name="minus" class="cart_drawer_quantity_selector_minus">-</button>
+                <input name="quantity" value="{{ item.quantity }}">
+                <button type="button" name="plus" class="cart-drawer_quantity_selector_plus">+</button>
+              </div>
+            </div>
+          {% endfor %}
+
+          <div>
+            <p>Total Discounts: {{ cart.total_discounts | money }}</p>
+            <p>Total Price: {{ cart.total_price | money }}</p>
+          </div>
+
+          <button type="submit" name="checkout" class="checkout-button">Checkout</button>
+        {% endform %}
+      </div>
+      <button class="close_button" data-close-button>X Close</button>
+    {% endif %}
+  </div>
+</div>
+{% schema %}
+{
+  "name": "cart-drawer-custom",
+  "tag": "section",
+  "settings": [],
+  "presets": [
+    {
+      "name": "cart-drawer-custom",
+      "settings": {}
+    }
+  ]
+}
+{% endschema %}

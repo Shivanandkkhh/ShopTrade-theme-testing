@@ -1,0 +1,188 @@
+// const productSubmitButton = document.querySelecto('[data-buttons]');
+// console.log(productSubmitButton,productSubmitButton,"productSubmitButton");
+// productSubmitButton.addEventListener("submit", async(ele)=>{
+//     ele.preventDefault(); 
+//     await fetch ('cart/add',{
+//       method: 'post',
+//       body: new FormData(form),
+//     });
+// });
+
+
+// ///////////////////////////////
+// const addToCart = document.querySelectorAll('form[action="/cart/add"]');
+// addToCart.forEach(form =>{
+//   form.addEventListener("submit", async  (event) =>{
+//     event.preventDefault(); 
+//     await fetch (window.Shopify.routes.root + 'cart/add.js', {
+//       method: 'post',
+//       body: new FormData(form)
+//     });
+
+//     const res = await fetch(window.Shopify.routes.root + 'cart.json')
+//     const cart  = await res.json();
+//     const cartDrawer = document.querySelectorAll('[data-cart]');
+//     cartDrawer.forEach( (e)=>{
+//      e.textContent = cart.item_count;  
+//     })
+//     let cartMsg = document.querySelector('.product-added-card');
+//     cartMsg.classList.add("product-added-card-active");
+//     setTimeout( ()=>{
+//       cartMsg.classList.remove("product-added-card-active");
+//     },2000);
+
+
+
+
+//   // body.addEventListener('click',()=>{
+//   //   drawer.classList.remove('cart-container-custom-active');
+//   // })
+
+
+// ////
+
+
+// });
+// const addToCartMine = document.querySelectorAll('form[action="/cart/add"]');
+// addToCartMine.forEach(form =>{
+//   form.addEventListener("submit", async  (event) =>{
+//     event.preventDefault(); 
+//     await fetch (window.Shopify.routes.root + 'cart/add.js', {
+//       method: 'post',
+//       body: new FormData(form)
+//     });
+
+
+//     async function updateCart(){
+//       let resp = await fetch('/?section_id=cart-drawer-custom');
+//       console.log(resp);
+//       const text = await  resp.text();
+//       const html = document.createElement('div');
+
+//       html.innerHTML = text;
+//       const newBox = html.querySelector('.cart-container-custom').innerHTML;
+//       document.querySelector('.cart-container-custom').innerHTML = newBox;
+//      }
+//      await updateCart()
+//      });
+
+//   })
+
+
+//   let drawer = document.querySelector('.cart-container-custom');
+//   let body = document.querySelector('body');
+
+//   function open(){
+//     drawer.classList.add('cart-container-custom-active');
+//   }
+//   function close(){
+//     drawer.classList.remove('cart-container-custom-active');
+//   }
+
+//   form.addEventListener('click', ()=>{
+//     open();
+//   });
+
+// })
+
+
+// document.querySelectorAll('a[href="/cart"]').forEach(a =>{
+//   a.addEventListener('click', (e)=>{
+//     e.preventDefault();
+//   })
+// });
+
+// //////////////////////////////////////
+
+// let addToCartForm = document.querySelector('form[action$="/cart/add"]');
+// let formData = new FormData(addToCartForm);
+
+// fetch(window.Shopify.routes.root + 'cart/add.js', {
+//   method: 'POST',
+//   body: formData
+// })
+// .then(response => {
+//   return response.json();
+// })
+// .catch((error) => {
+//   console.error('Error:', error);
+// });
+
+
+
+
+
+
+
+// const submitForm = document.querySelectorAll('form[action="/cart/add"]');
+// console.log("submitForm",submitForm);
+// submitForm.forEach((form)=>{
+//   form.addEventListener('submit', async(e)=>{
+//     e.preventDefault();
+//     await fetch(window.Shopify.routes.root + 'cart/add.js',{
+//       method: 'POST',
+//       body: new FormData(form),
+//     });
+
+//     let num = document.querySelectorAll('[data-cart]');
+//     let responce = await fetch (window.Shopify.routes.root + 'cart.json');
+//     let cart = await responce.json();
+
+//     num.forEach((r)=>{
+//       console.log(r);
+//       r.textContent = cart.item_count; 
+//     }); 
+//   })
+
+// })
+
+// ///////////////////////////
+// // const addToCart = document.querySelectorAll('form[action="/cart/add"]');
+// // addToCart.forEach(form =>{
+// //   form.addEventListener("submit", async  (event) =>{
+// //     event.preventDefault(); 
+// //     await fetch (window.Shopify.routes.root + 'cart/add.js', {
+// //       method: 'post',
+// //       body: new FormData(form)
+// //     });
+
+// //     const res = await fetch(window.Shopify.routes.root + 'cart.json')
+// //     const cart  = await res.json();
+// //     const cartDrawer = document.querySelectorAll('[data-cart]');
+// //     cartDrawer.forEach( (e)=>{
+// //      e.textContent = cart.item_count;  
+// //     })
+// //     let cartMsg = document.querySelector('.product-added-card');
+// //     cartMsg.classList.add("product-added-card-active");
+// //     setTimeout( ()=>{
+// //       cartMsg.classList.remove("product-added-card-active");
+// //     },2000);
+// //   });
+
+
+// // });
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+

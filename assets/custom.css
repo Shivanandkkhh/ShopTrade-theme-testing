@@ -1180,3 +1180,71 @@ margin-bottom: 5px;
 .related-products .grid.product-grid.grid--4-col-desktop.grid--2-col-tablet-down{
   column-gap: 20px !important;
 }
+.product-added-card{
+  color: green;
+  text-align: center;
+  display: none;
+}
+.product-added-card-active{
+  display: block;
+}
+
+/* Style for the cart container */
+.cart-container {
+  border: 1px solid #ddd;
+  padding: 10px;
+  margin: 10px;
+}
+
+/* Style for each cart item */
+.cart-item {
+  border-bottom: 1px solid #eee;
+  padding: 10px;
+  margin-bottom: 10px;
+}
+
+/* Style for the remove link */
+.remove-link {
+  color: red;
+  text-decoration: none;
+  margin-left: 10px;
+}
+
+/* Style for the quantity input */
+input[name="quantity"] {
+  width: 40px;
+  text-align: center;
+}
+
+/* Style for the checkout button */
+.checkout-button {
+  background-color: #4caf50;
+  color: white;
+  padding: 10px 15px;
+  border: none;
+  border-radius: 4px;
+  cursor: pointer;
+}
+.cart-container-custom{
+  position: fixed;
+  top: 0; 
+  display: none;
+  right: 0;
+  padding: 2% 0 0 2%;
+  min-width: 30%;
+  width: fit-content;
+  z-index: 9;
+  height: 100vh;
+  background-color: #fff;
+  box-shadow: 0 0 15px 10px;
+  /* display: grid; */
+  grid-template-columns: 3fr 1fr;
+}
+.cart-container-custom-active {
+  display: block;
+}
+.close_button{
+  height: fit-content;
+  width: fit-content;
+}
+ 
