@@ -1,118 +1,9 @@
-// let cartDrawer = document.querySelectorAll('.cart-container-custom');
-
-// function hide() {
-//     cartDrawer.forEach((e) => {
-//         e.style.display = "none";
-//         document.querySelector('body').style.overflow = "auto";
-//     })
-// };
-
-// function show() {
-//     cartDrawer.forEach((e) => {
-//         e.style.display = "grid";
-//         document.querySelector('body').style.overflow = "hidden";
-//     })
-// }
-
-
-// async function updateCartItemCounts() {
-//    let countItem = await fetch(window.Shopify.routes.root + 'cart.js');
-//    let item = await countItem.json();
-//    let  count = item.item_count 
-//    console.log(count);
-//     document.querySelectorAll("[data-cart]").forEach(  (el)=> {
-//         el.textContent = count;
-//     });
-// }
-
-// async function updateme() {
-//     let res = await fetch('/?section_id=cart-drawer-custom');
-//     let data = await res.text();
-//     let html = document.createElement('div');
-//     html.innerHTML = data
-
-//     let newBoxd = html.querySelector('.cart-container-custom');
-//     let oldBoxd = document.querySelector('.cart-container-custom');
-
-//     oldBoxd.innerHTML = newBoxd.innerHTML;
-//     addToCartEvent();
-// }
-
-// function addToCartEvent() {
-
-//     let updateItem = document.querySelectorAll('.cart-drawer_quantity_selector button');
-//     updateItem.forEach((button) => {
-//         // Get line items
-//         button.addEventListener('click', async function () {
-//             let rootItem = button.parentElement.parentElement;
-//             const key = rootItem.getAttribute('data-line-item-key');
-
-//             // Get new quantity
-//             let currentQuantity = Number(button.parentElement.querySelector('input').value);
-//             let isUp = button.classList.contains('cart-drawer_quantity_selector_plus');
-
-//             const newQuantity = isUp ? currentQuantity + 1 : currentQuantity - 1;
-
-//             const respo = await fetch(window.Shopify.routes.root + 'cart/update.js', {
-//                 method: 'POST',
-//                 headers: {
-//                     Accept: 'application/json',
-//                     'Content-Type': 'application/json'
-//                 },
-//                 body: JSON.stringify({ updates: { [key]: newQuantity } }),
-//             });
-
-//             //update cart
-//             updateme()
-
-//         });
-
-//     });
-// }
-
-// addToCartEvent();
-
-// const subForm = document.querySelectorAll('form[action="/cart/add"]');
-
-// subForm.forEach((form) => {
-//     form.addEventListener('submit', async (e) => {
-//         e.preventDefault();
-//         await fetch(window.Shopify.routes.root + 'cart/add.js', {
-//             method: 'POST',
-//             body: new FormData(form),
-//         });
-//         await fetch(window.Shopify.routes.root + 'cart.js', {
-//             method: 'POST',
-//             body: new FormData(form),
-//         });
-
-//         await updateme();
-//         show();
-//         addToCartEvent();
-
-
-
-//         updateCartItemCounts()
-
-//         let closeButton = document.querySelectorAll("[data-close-button]");
-
-
-
-//         closeButton.forEach((e) => {
-//             e.addEventListener('click', () => {
-//                 // console.log("closeButton",e);
-//                 hide();
-//             });
-//         });
-
-//     })
-// });
-
-
 const submitForm = document.querySelectorAll('form[action="/cart/add"]');
 const cartItemsTotal = document.querySelectorAll('[data-cart]');
 const cartDrawerBar = document.querySelector('.cart-container-custom');
+let sbumitFormButton = submitForm.forEach( (button) =>{ 
 
+});
 
 async function updateCartItem() {
     let cartItem = await fetch(window.Shopify.routes.root + 'cart.js');
@@ -132,7 +23,51 @@ async function updateCart(){
     let newBox = html.querySelector('.cart-container-custom');
     oldBox.innerHTML = newBox.innerHTML;
 
-    cartDrawerBar.style.display = 'grid';
+    
+     addToCartEvent();
+     let closeButton = document.querySelectorAll('[data-close-button]');
+     let closeDrawer = document.querySelector('.cart-container-custom');
+     closeButton.forEach( (e)=>{
+        e.addEventListener('click', ()=>{
+            closeDrawer.style.display = 'none';
+        });
+     });
+
+     document.addEventListener('click', ()=>{
+        if(!closeDrawer.contains(event.target) && event.target !== sbumitFormButton){
+         closeDrawer.style.display = 'none';
+        }
+     })
+
+}
+
+ function addToCartEvent(){
+    const quantityNumber = document.querySelectorAll('[data-cart-quantity] button');
+
+    quantityNumber.forEach ( (button)=>{
+        button.addEventListener('click', async (e)=>{
+            let rootItem = button.parentElement.parentElement;
+            const key = rootItem.getAttribute('data-line-item-key');
+
+           
+
+            let inputValue = Number( button.parentElement.querySelector('input').value);
+            console.log('rootItem',inputValue);
+            let isPlus = button.classList.contains('cart-drawer_quantity_selector_plus');
+            let updatedQuantity = isPlus ? inputValue + 1 : inputValue - 1;
+
+            await fetch(window.Shopify.routes.root + 'cart/update.js', {
+                method: 'POST',
+                headers: {
+                    Accept: 'application/json',
+                    'Content-Type': 'application/json',
+                },
+                body: JSON.stringify({ updates: { [key]: updatedQuantity } }),
+            });
+
+            updateCart();
+        });
+    });
 }
 
 
@@ -143,49 +78,13 @@ submitForm.forEach((form) => {
             method: "POST",
             body: new FormData(form),
         });
-
+        cartDrawerBar.style.display = 'grid';
         updateCartItem()
         updateCart();
-
-        //
-
-        // let quantityButton = document.querySelectorAll('.cart-drawer_quantity_selector button');
-
-        // quantityButton.forEach((button) => { 
-        //     button.addEventListener('click', async () => {
-        //         let rootItem = button.parentElement.parentElement;
-        //         const key = rootItem.getAttribute('data-line-item-key');
-        //         console.log("key:", key);
-
-        //     });
-        // });
-
-        let updateItem = document.querySelectorAll('.cart-drawer_quantity_selector button');
-        updateItem.forEach((button) => {
-            // Get line items
-            button.addEventListener('click', async function () {
-                let rootItem = button.parentElement.parentElement;
-                const key = rootItem.getAttribute('data-line-item-key');
-                console.log(key);
-
-            });
-        });
-        // let updateQantity  = await   fetch(window.Shopify.routes.root + 'cart/update.js', {
-        //         method: 'POST',
-        //         headers: {
-        //         'Content-Type': 'application/json'
-        //         },
-        //         body: JSON.stringify({updates:[{[key] : 1 }]})
-        //     }) 
-
-            // console.log('updateQantity',updateQantity);
-            // get the qantity
-
-            //
 
     });
 }); 
 
 
 
- 
+ ///// cart change js
