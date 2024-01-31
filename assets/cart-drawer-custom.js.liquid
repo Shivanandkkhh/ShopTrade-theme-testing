@@ -25,6 +25,7 @@ async function updateCart(){
 
     
      addToCartEvent();
+     changeCartItem();
      let closeButton = document.querySelectorAll('[data-close-button]');
      let closeDrawer = document.querySelector('.cart-container-custom');
      closeButton.forEach( (e)=>{
@@ -88,3 +89,42 @@ submitForm.forEach((form) => {
 
 
  ///// cart change js
+
+ function changeCartItem(){
+
+ const quantityNumberItem = document.querySelectorAll('[data-cart-quantity] button');
+
+ quantityNumberItem.forEach ( (buttonItem)=>{
+     buttonItem.addEventListener('click', async (e)=>{
+
+        let rootItemItem = buttonItem.parentElement.parentElement;
+        const keyItem = rootItemItem.getAttribute('data-line-item-key');
+         let inputValueItem = buttonItem.parentElement.querySelector('input');
+         let valueItem = Number((inputValueItem).value);
+        //  console.log('rootItem',inputValueItem);
+         let isPlusItem = buttonItem.classList.contains('cart-drawer_quantity_selector_plus');
+         let updatedQuantityItem = isPlusItem ? inputValueItem + 1 : inputValueItem - 1;
+
+       if(isPlusItem){
+        const newvalue = valueItem + 1;
+        inputValueItem.value = newvalue;
+        changeCartItemQantity(keyItem,newvalue)
+       }else if (valueItem > 1 ){
+        const newvalue = valueItem - 1;
+        inputValueItem.value = newvalue;
+        changeCartItemQantity(keyItem,newvalue)
+       }
+     });
+    });
+}
+
+function changeCartItemQantity(keyItem,newvalue){
+console.log({keyItem,newvalue})
+    axios.post('cart/change.js',{
+        id: keyItem,
+        newvalue
+    }).then( (res)=>{
+        console.log("res.data",res.data);
+    })
+
+}
