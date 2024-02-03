@@ -4,7 +4,7 @@ const cartDrawerBar = document.querySelector('.cart-container-custom');
 let sbumitFormButton = submitForm.forEach( (button) =>{ 
 
 });
-
+// added updateCartItem function
 async function updateCartItem() {
     let cartItem = await fetch(window.Shopify.routes.root + 'cart.js');
     let itemCount = await cartItem.json();
@@ -13,6 +13,7 @@ async function updateCartItem() {
         e.textContent = count;
     })
 }
+// added updateCart function
 async function updateCart(){
     let cartDrawer =  await fetch('/?section=cart-drawer-custom');
     let  text  = await cartDrawer.text();
